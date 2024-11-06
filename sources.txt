@@ -1,0 +1,11 @@
+Sources used:
+
+Tkinter:
+https://www.youtube.com/watch?v=YXPyB4XeYLA&t=18937s
+https://stackoverflow.com/questions/31128780/tkinter-how-to-make-a-button-center-itself
+
+
+Opening Logfile:
+https://stackoverflow.com/questions/13184414/how-can-i-get-the-path-to-the-appdata-directory-in-python
+https://stackoverflow.com/questions/39983886/python-writing-and-reading-from-a-temporary-file
+https://stackoverflow.com/questions/34275782/how-to-get-desktop-location
