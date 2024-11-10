@@ -1,6 +1,8 @@
 import os
-from app.load_balance_screen import load_balance
+from app import *
 from tkinter import Tk
+from app.login import login_screen
+from app.load_balance_screen import load_balance
 
 def create_root():
     root = Tk()
@@ -28,6 +30,7 @@ def open_logfile():
 
 root = create_root()
 open_logfile()
-load_balance(root)
+login_screen(root)
+#load_balance(root)
 
 root.mainloop()
