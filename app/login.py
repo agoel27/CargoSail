@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import *
 from app.load_balance_screen import load_balance
 
-
 def login_screen(root):
     
     # create login screen frame
