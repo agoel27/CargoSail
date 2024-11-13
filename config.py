@@ -1,4 +1,5 @@
-
+# global functions for easy access from all files
+# to access from the app folder do: from config import *
 def set_logfile_path(path):
     """
     Set the global logfile_path variable.
