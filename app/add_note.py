@@ -1,5 +1,6 @@
 import os
 from tkinter import *
+from config import *
 
 def add_note(root):
     '''
@@ -30,11 +31,12 @@ def add_note(root):
     # https://stackoverflow.com/questions/41946222/how-do-i-create-a-popup-window-in-tkinter
     popup.grab_set()
     
-    def add_note_to_log(): # https://www.geeksforgeeks.org/python-tkinter-text-widget/
+    # https://www.geeksforgeeks.org/python-tkinter-text-widget/
+    def add_note_to_log(): 
         user_input = text_box.get("1.0", "end-1c")
-        
-        # with open(logfile_path, 'a') as logfile:
-        #     logfile.write(user_input)
+        logfile_path = get_logfile_path()
+        with open(logfile_path, 'a') as logfile:
+            logfile.write(user_input)
         popup.destroy()
 
     label = Label(popup, text="Enter some text:")
