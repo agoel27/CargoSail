@@ -9,9 +9,6 @@ def add_note(root):
         To call it, do: 
             command=lambda:add_note(root)
         in the button
-        
-        Note: I cant figure out how to make the logfile path a 
-        global variable so for now it doesnt do anything
     '''    
 
     popup = Toplevel(root)
