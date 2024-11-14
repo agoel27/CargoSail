@@ -5,6 +5,9 @@ https://www.youtube.com/watch?v=YXPyB4XeYLA&t=18937s
 https://stackoverflow.com/questions/31128780/tkinter-how-to-make-a-button-center-itself
 https://docs.python.org/3/library/tkinter.html
 https://www.geeksforgeeks.org/python-gui-tkinter/
+https://stackoverflow.com/questions/73184529/tkinter-make-my-pop-up-window-in-middle-of-the-screen
+https://stackoverflow.com/questions/41946222/how-do-i-create-a-popup-window-in-tkinter
+https://www.geeksforgeeks.org/python-tkinter-text-widget/
 
 
 Opening Logfile:

@@ -1,7 +1,9 @@
 
 import tkinter as Tk
 from tkinter import *
+from .add_note import *
 from app.popup_login import login_popup    
+
 
 def load_balance(root,login_frame):
     
