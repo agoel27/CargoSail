@@ -6,3 +6,8 @@ def set_logfile_path(path):
     
 def get_logfile_path():
     return logfile_path
+
+def add_logEntry(message):
+    logfile_path =  get_logfile_path()
+    with open(logfile_path, 'a') as logfile:
+        logfile.write(message)
