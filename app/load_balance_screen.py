@@ -2,6 +2,7 @@
 import tkinter as Tk
 from tkinter import *
 from .add_note import *
+from app.selection import selection
 
 def login_popup(root):
     
@@ -38,7 +39,6 @@ def login_popup(root):
     
 
 def load_balance(root,frame1):
-    
     # destroys previous frame
     frame1.place_forget()
 
@@ -49,7 +49,7 @@ def load_balance(root,frame1):
     loadBalance_frame = Frame(root)
     loadBalance_frame.place(relx=0.5, rely=0.5, anchor="center")
 
-    loadUnloadButton = Button(loadBalance_frame, text="Load/Unload", padx=10, pady=10)
+    loadUnloadButton = Button(loadBalance_frame, text="Load/Unload", padx=10, pady=10, command= lambda: selection(root, loadBalance_frame))
     loadUnloadButton.grid(row=0, column=0, padx=5)
 
     balanceButton = Button(loadBalance_frame, text="Balance", padx=10, pady=10)
