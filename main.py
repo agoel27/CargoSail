@@ -4,7 +4,6 @@ from tkinter import Tk
 from config import *
 from app.login import login_screen
 from app.load_balance_screen import load_balance
-from app.logfile import *
 from app.add_note import add_note
 
 

@@ -2,7 +2,7 @@ import os
 import re
 import tkinter as tk
 from tkinter import *
-from app.logfile import add_logEntry
+from config import *
 
 def input_validation(input_field, error_message):
     
