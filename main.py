@@ -3,11 +3,12 @@ from app import *
 from tkinter import Tk
 from app.login import login_screen
 from app.load_balance_screen import load_balance
+from app.operations_screen import operations_screen
 
 def create_root():
     root = Tk()
     root.title("CargoSail Solutions")
-    root.geometry("800x600")
+    root.geometry("1400x800")
     return root
 
 def open_logfile():
@@ -30,7 +31,8 @@ def open_logfile():
 
 root = create_root()
 open_logfile()
-login_screen(root)
+operations_screen(root)
+#login_screen(root)
 #load_balance(root)
 
 root.mainloop()
