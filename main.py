@@ -1,9 +1,11 @@
 import os
 from app import *
 from tkinter import Tk
+from config import *
 from app.login import login_screen
 from app.load_balance_screen import load_balance
 from app.operations_screen import operations_screen
+from app.add_note import add_note
 
 def create_root():
     root = Tk()
@@ -24,6 +26,7 @@ def open_logfile():
     os.makedirs(cargosail_folder, exist_ok=True)
     
     logfile_path = os.path.join(cargosail_folder, 'logfile2024.txt')
+    set_logfile_path(logfile_path)
     
     with open(logfile_path, 'a') as logfile:
         logfile.write("hello\n")
@@ -31,8 +34,8 @@ def open_logfile():
 
 root = create_root()
 open_logfile()
-operations_screen(root)
-#login_screen(root)
+#operations_screen(root)
+login_screen(root)
 #load_balance(root)
 
 root.mainloop()
