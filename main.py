@@ -7,6 +7,7 @@ from app.load_balance_screen import load_balance
 from app.logfile import *
 from app.add_note import add_note
 
+
 def create_root():
     root = Tk()
     root.title("CargoSail Solutions")
