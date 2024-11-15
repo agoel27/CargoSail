@@ -8,7 +8,8 @@ https://www.geeksforgeeks.org/python-gui-tkinter/
 https://stackoverflow.com/questions/73184529/tkinter-make-my-pop-up-window-in-middle-of-the-screen
 https://stackoverflow.com/questions/41946222/how-do-i-create-a-popup-window-in-tkinter
 https://www.geeksforgeeks.org/python-tkinter-text-widget/
-
+https://www.geeksforgeeks.org/regular-expression-python-examples/
+https://www.w3schools.com/python/python_regex.asp
 
 Opening Logfile:
 https://stackoverflow.com/questions/13184414/how-can-i-get-the-path-to-the-appdata-directory-in-python
