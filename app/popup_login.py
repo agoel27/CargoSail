@@ -3,7 +3,7 @@ import datetime
 import tkinter as Tk
 from tkinter import *
 from app.login import *
-from app.logfile import *
+from config import *
 from app.input_valid import *
     
 def login_store(root, current_username, new_username, login_popup_frame, error_message):

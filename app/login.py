@@ -3,7 +3,7 @@ import re
 import datetime
 import tkinter as tk
 from tkinter import *
-from app.logfile import add_logEntry
+from config import *
 from app.input_valid import input_validation
 from app.load_balance_screen import load_balance
 
