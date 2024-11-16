@@ -1,8 +1,9 @@
 import tkinter as tk
 from tkinter import *
-from load_balance_screen  import login_popup
+from app.load_balance_screen import login_popup
+from app.operations_screen import operations_screen
 
-root = tk.Tk()
+# root = tk.Tk()
 array = [
     ["walmart", "costco", "uniqlo"],
     ["Honda", "Subaru", "Jeep"],
@@ -29,7 +30,7 @@ def displayOperations(root):
     #place and define buttons/labels/entryBox etc..
     loginButton = Button(loginButtonFrame, text="login",command=lambda:login_popup(root))
     loginButton.grid(row=0,column=0)
-    doneButton = Button(doneButtonFrame, text="Done",command=lambda:operations_screen(root,loadUnloadFrame))
+    doneButton = Button(doneButtonFrame, text="Done",command=lambda:operations_screen(root))
     doneButton.grid(row=0,column=0)
     containerInput = tk.Entry(selectContainerFrame)
     containerInput.grid(row=0,column=0)
@@ -43,8 +44,8 @@ def displayOperations(root):
     #display the ships current cargo
     displayCurrentCargo(cargoFrame,array,containerList)
 
-def operations_screen(root,frame1):
-    frame1.pack_forget()
+# def operations_screen(root,frame1):
+#     frame1.pack_forget()
 
 def displayCurrentCargo(frame,CurrentCargo,containerList):
     for row_index, row in enumerate(CurrentCargo):
@@ -54,11 +55,11 @@ def displayCurrentCargo(frame,CurrentCargo,containerList):
             label.bind("<Button 1>",lambda event, name=value:containerList.insert(0,name))
 
 
-def myFunc(name):
-    print(name)
+# def myFunc(name):
+#     print(name)
 
-displayOperations(root)
-root.geometry("800x600")
-root.mainloop()
+# displayOperations(root)
+# root.geometry("800x600")
+# root.mainloop()
 
 
