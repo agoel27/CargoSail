@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import *
 from app.load_balance_screen import login_popup
 from app.operations_screen import operations_screen
+from app.table import Table
 
 # root = tk.Tk()
 array = [
@@ -29,7 +30,7 @@ def display_operations(root, selection):
     cargo_frame.place(relx=.5, rely=.5, anchor='center')
 
     # place and define buttons/labels/entry box etc.
-    done_button = Button(done_button_frame, text="Done", command=lambda: operations_screen(load_unload_frame))
+    done_button = Button(done_button_frame, text="Done", command=lambda: operations_screen(root, load_unload_frame))
     done_button.grid(row=0, column=0)
     container_input = tk.Entry(select_container_frame)
     container_input.grid(row=0, column=0)
@@ -41,7 +42,8 @@ def display_operations(root, selection):
     container_list.grid(row=1, column=0)
 
     # display the ship's current cargo
-    display_current_cargo(cargo_frame, array, container_list)
+    #display_current_cargo(cargo_frame, array, container_list)
+    Table(cargo_frame, array)
 
 # def operations_screen(root, frame1):
 #     frame1.pack_forget()
