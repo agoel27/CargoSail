@@ -10,14 +10,15 @@ array = [
     ["Acura", "Toyota", "Saab"]
     
 ]
-def displayOperations(root):
+def displayOperations(root, selection):
+    # destroys login page
+    selection.pack_forget()
+    
     #parent frame of the page
     loadUnloadFrame = tk.Frame(root)
     loadUnloadFrame.pack(expand=1,fill="both")
     
     #create frames for visuals on screen
-    loginButtonFrame = tk.Frame(loadUnloadFrame)
-    loginButtonFrame.place(relx=0,rely=0,anchor="nw")
     doneButtonFrame = tk.Frame(loadUnloadFrame)
     doneButtonFrame.place(relx=0,rely=1,anchor="sw")
     selectContainerFrame = tk.Frame(loadUnloadFrame)
@@ -28,9 +29,7 @@ def displayOperations(root):
     cargoFrame.place(relx=.5,rely=.5,anchor='center')
 
     #place and define buttons/labels/entryBox etc..
-    loginButton = Button(loginButtonFrame, text="login",command=lambda:login_popup(root))
-    loginButton.grid(row=0,column=0)
-    doneButton = Button(doneButtonFrame, text="Done",command=lambda:operations_screen(root))
+    doneButton = Button(doneButtonFrame, text="Done",command=lambda:operations_screen(loadUnloadFrame))
     doneButton.grid(row=0,column=0)
     containerInput = tk.Entry(selectContainerFrame)
     containerInput.grid(row=0,column=0)
