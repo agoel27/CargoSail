@@ -33,7 +33,7 @@ def display_operations(root, selection):
     done_button.grid(row=0, column=0)
     container_input = tk.Entry(select_container_frame)
     container_input.grid(row=0, column=0)
-    container_button = Button(select_container_frame, text="load", bg="red", command=lambda: container_list.insert(0, container_input.get()))
+    container_button = Button(select_container_frame, text="Load", bg="red", command=lambda: container_list.insert(0, container_input.get()))
     container_button.grid(row=1, column=0)
     container_list_label = Label(list_container_frame, text="Containers to Load/Unload:", wraplength=75, anchor="w", justify="left")
     container_list_label.grid(row=0, column=0)
