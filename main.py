@@ -24,9 +24,6 @@ def open_logfile():
     
     logfile_path = os.path.join(cargosail_folder, 'logfile2024.txt')
     set_logfile_path(logfile_path)
-    
-    with open(logfile_path, 'a') as logfile:
-        logfile.write("hello\n")
 
 root = create_root()
 open_logfile()

@@ -31,9 +31,7 @@ def add_note(root):
     # https://www.geeksforgeeks.org/python-tkinter-text-widget/
     def add_note_to_log(): 
         user_input = text_box.get("1.0", "end-1c")
-        logfile_path = get_logfile_path()
-        with open(logfile_path, 'a') as logfile:
-            logfile.write(user_input)
+        add_logEntry(user_input)
         popup.destroy()
 
     label = Label(popup, text="Enter some text:")
