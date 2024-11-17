@@ -4,7 +4,7 @@ from app.load_balance_screen import login_popup
 from app.table import Table
 from app.current_move_frame import CurrentMoveFrame
 
-def operations_screen(root):
+def operations_screen(root, prevFrame):
 
     buffer_data = [
         ["Lion", "", "Elephant", "", "Zebra", "", "", "", "Dolphin", "", "Shark", "", "", "Koala", "", "", "Fox", "Rabbit", "Deer", "Eagle","Hawk", "Owl", "", ""],
@@ -25,15 +25,11 @@ def operations_screen(root):
     ]
 
     # destroys previous frame
-    # prevFrame.pack_forget()
+    prevFrame.pack_forget()
 
     # create operations screen frame
     operations_screen_frame = tk.Frame(root)
     operations_screen_frame.pack(expand=1,fill="both")
-
-    # create add note frame
-    add_note_frame = tk.Frame(operations_screen_frame)
-    add_note_frame.place(relx=1, rely=0, anchor="ne")
 
     # create buffer area frame
     buffer_area_frame = tk.Frame(operations_screen_frame)
@@ -46,10 +42,6 @@ def operations_screen(root):
     # create ship frame
     truck_frame = tk.Frame(operations_screen_frame)
     truck_frame.place(relx=0.25, rely=0.64, anchor="c")
-
-    # place add note button in add note frame
-    addNoteButton = Button(add_note_frame, text="Add Note" , padx=10, pady=10)
-    addNoteButton.pack(anchor="ne", padx=5, pady=5)
 
     # place table in buffer area frame
     buffer_area_table = Table(buffer_area_frame, buffer_data)

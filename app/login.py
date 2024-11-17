@@ -9,7 +9,7 @@ from app.load_balance_screen import load_balance
 
 def login_store(root, input_field, login_frame, error_message):
     
-    validation_test = input_validation(input_field,error_message)
+    validation_test = input_validation(input_field, error_message)
       
     if validation_test:
         # date and time formatted
