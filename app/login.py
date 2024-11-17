@@ -25,7 +25,7 @@ def login_store(root, input_field, login_frame, error_message):
 def login_screen(root):
     # create login screen frame
     login_frame = tk.Frame(root)
-    login_frame.place(relx=0.5, rely=0.5, anchor="c")
+    login_frame.pack(expand=True)
     
     # message on top of input field
     message = Label(login_frame, text='Enter Name ')
