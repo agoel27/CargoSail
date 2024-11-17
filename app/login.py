@@ -1,6 +1,5 @@
 import os
 import re
-import datetime
 import tkinter as tk
 from tkinter import *
 from config import *
@@ -12,15 +11,13 @@ def login_store(root, input_field, login_frame, error_message):
     validation_test = input_validation(input_field, error_message)
       
     if validation_test:
-        # date and time formatted
-        date = datetime.datetime.now().strftime("%B %d %G: %H:%M")
-        entry = date + " "+ input_field.get() + " signs in\n" 
+        entry = input_field.get() + " has signed in\n" 
         
          # signing in new name
         add_logEntry(entry)
         
         # proceed to the load balance page
-        load_balance(root, login_frame, input_field) 
+        load_balance(root, login_frame, input_field)
 
 def login_screen(root):
     # create login screen frame
