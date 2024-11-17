@@ -12,7 +12,7 @@ array = [
     ["Acura", "Toyota", "Saab"]
     
 ]
-def display_operations(root, selection, current_username):
+def display_operations(root, selection):
     # destroys login page
     selection.pack_forget()
 
@@ -31,11 +31,11 @@ def display_operations(root, selection, current_username):
     cargo_frame.place(relx=.5, rely=.5, anchor='center')
 
     # place and define buttons/labels/entry box etc.
-    loginButton = Button(load_unload_frame, text="Login", padx=10, pady=10, command= lambda:login_popup(root, current_username))
+    loginButton = Button(load_unload_frame, text="Login", padx=10, pady=10, command= lambda:login_popup(root))
     loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
     addNoteButton = Button(load_unload_frame, text="Add Note", padx=10, pady=10, command=lambda:add_note(root))
     addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
-    done_button = Button(done_button_frame, text="Done", command=lambda: operations_screen(root, load_unload_frame, current_username))
+    done_button = Button(done_button_frame, text="Done", command=lambda: operations_screen(root, load_unload_frame))
     done_button.grid(row=0, column=0)
     container_input = tk.Entry(select_container_frame)
     container_input.grid(row=0, column=0)

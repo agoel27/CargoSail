@@ -16,8 +16,10 @@ def login_store(root, input_field, login_frame, error_message):
          # signing in new name
         add_logEntry(entry)
         
+        set_username(input_field.get())
+        
         # proceed to the load balance page
-        load_balance(root, login_frame, input_field)
+        load_balance(root, login_frame)
 
 def login_screen(root):
     # create login screen frame
