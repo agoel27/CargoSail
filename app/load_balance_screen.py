@@ -4,7 +4,7 @@ from tkinter import *
 from tkinter import filedialog, messagebox
 from .add_note import *
 from app.popup_login import login_popup    
-from app.operations import displayOperations
+from app.operations import display_operations
 
 def load_file():
     file_path = filedialog.askopenfilename(
@@ -22,7 +22,7 @@ def load_file():
 
 def load_operation(root, load_balance_frame):
     load_file()
-    displayOperations(root, load_balance_frame)
+    display_operations(root, load_balance_frame)
 
 def load_balance(root, login_frame, current_username):
     
@@ -39,7 +39,7 @@ def load_balance(root, login_frame, current_username):
     loadUnloadButton = Button(loadBalance_frame, text="Load/Unload", padx=10, pady=10, command=lambda:load_operation(root, loadBalance_frame))
     loadUnloadButton.grid(row=0, column=0, padx=5)
 
-    balanceButton = Button(loadBalance_frame, text="Balance", padx=10, pady=10, command=lambda:displayOperations(root))
+    balanceButton = Button(loadBalance_frame, text="Balance", padx=10, pady=10, command=lambda:display_operations(root))
     balanceButton.grid(row=0, column=1, padx=5)
     
     
