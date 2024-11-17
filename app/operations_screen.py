@@ -31,10 +31,6 @@ def operations_screen(root):
     operations_screen_frame = tk.Frame(root)
     operations_screen_frame.pack(expand=1,fill="both")
 
-    # create login button frame
-    login_button_frame = tk.Frame(operations_screen_frame)
-    login_button_frame.place(relx=0, rely=0, anchor="nw")
-
     # create add note frame
     add_note_frame = tk.Frame(operations_screen_frame)
     add_note_frame.place(relx=1, rely=0, anchor="ne")
@@ -50,10 +46,6 @@ def operations_screen(root):
     # create ship frame
     truck_frame = tk.Frame(operations_screen_frame)
     truck_frame.place(relx=0.25, rely=0.64, anchor="c")
-
-    # place login button in login button frame
-    loginButton = Button(login_button_frame, text="Login" , padx=10, pady=10, command= lambda:login_popup(root))
-    loginButton.pack(anchor="nw", padx=5, pady=5)
 
     # place add note button in add note frame
     addNoteButton = Button(add_note_frame, text="Add Note" , padx=10, pady=10)

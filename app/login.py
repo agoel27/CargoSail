@@ -23,7 +23,6 @@ def login_store(root, input_field, login_frame, error_message):
         load_balance(root, login_frame, input_field) 
 
 def login_screen(root):
-    
     # create login screen frame
     login_frame = tk.Frame(root)
     login_frame.place(relx=0.5, rely=0.5, anchor="c")
