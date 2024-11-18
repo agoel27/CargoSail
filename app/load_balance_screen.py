@@ -24,12 +24,12 @@ def load_operation(root, load_balance_frame):
     load_file()
     display_operations(root, load_balance_frame)
 
-def load_balance(root, login_frame, current_username):
+def load_balance(root, login_frame):
     
     # destroys login page
     login_frame.place_forget()
 
-    loginButton = Button(root, text="Login" , padx=10, pady=10, command= lambda:login_popup(root, current_username))
+    loginButton = Button(root, text="Login" , padx=10, pady=10, command= lambda:login_popup(root))
     loginButton.pack(anchor="ne", padx=5, pady=5)    
 
     # frame for load/unload and balance buttons to have them centered

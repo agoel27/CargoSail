@@ -1,9 +1,10 @@
 import os
 import re
+import config
 import datetime
 import tkinter as tk
-from tkinter import *
 from config import *
+from tkinter import *
 from app.input_valid import input_validation
 from app.load_balance_screen import load_balance
 
@@ -19,8 +20,11 @@ def login_store(root, input_field, login_frame, error_message):
          # signing in new name
         add_logEntry(entry)
         
+        # store username to global variable in config.py
+        config.current_username = input_field.get()
+        
         # proceed to the load balance page
-        load_balance(root, login_frame, input_field) 
+        load_balance(root, login_frame) 
 
 def login_screen(root):
     # create login screen frame

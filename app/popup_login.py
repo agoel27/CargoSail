@@ -3,10 +3,10 @@ import datetime
 import tkinter as Tk
 from tkinter import *
 from app.login import *
-from config import *
 from app.input_valid import *
+import config
     
-def login_store(root, current_username, new_username, login_popup_frame, error_message):
+def login_store(root, new_username, login_popup_frame, error_message):
     
     validation_test = input_validation(new_username, error_message)
       
@@ -16,19 +16,22 @@ def login_store(root, current_username, new_username, login_popup_frame, error_m
         date = datetime.datetime.now().strftime("%B %d %G: %H:%M")
         
         # signing out previous name
-        entryOld = date + " "+ current_username.get() + " signs out\n" 
+        entryOld = date + " "+ config.current_username  + " signs out\n" 
         add_logEntry(entryOld)
         
         # signing in new name
         entryNew = date + " "+ new_username.get() + " signs in\n" 
         add_logEntry(entryNew)
         
+        # store new name to global variable
+        config.current_username = new_username.get()
+        
         # exits popup return to load balance
         login_popup_frame.destroy()
      
         
 
-def login_popup(root, current_username):
+def login_popup(root):
     
     # create login popup frame
     login = Toplevel()
@@ -62,6 +65,6 @@ def login_popup(root, current_username):
     input_field.place(relx = 0.5, rely = 0.5, anchor = 'center')
     
     # sign in button when pressed closes top window
-    sign_in = Button(login, text="Sign in", command= lambda: [login_store(root, current_username, input_field, login, error_message)])
+    sign_in = Button(login, text="Sign in", command= lambda: [login_store(root, input_field, login, error_message)])
     sign_in.place(x=100, y=95)
     
