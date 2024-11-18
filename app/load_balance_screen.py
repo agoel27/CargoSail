@@ -25,16 +25,16 @@ def load_file():
     
     return False
 
-def load_operation(root, load_balance_frame, current_username):
+def load_operation(root, load_balance_frame):
     if load_file():
-        display_operations(root, load_balance_frame, current_username)
+        display_operations(root, load_balance_frame)
         
-def balance_operation(root, load_balance_frame, current_username):
+def balance_operation(root, load_balance_frame):
     if load_file():
-        operations_screen(root, load_balance_frame, current_username)
+        operations_screen(root, load_balance_frame)
 
 
-def load_balance(root, login_frame, current_username):
+def load_balance(root, login_frame):
     
     # destroys login page
     login_frame.pack_forget()
@@ -43,16 +43,16 @@ def load_balance(root, login_frame, current_username):
     loadBalance_frame = Frame(root)
     loadBalance_frame.place(relx=0, rely=0, relwidth=1, relheight=1)
 
-    loginButton = Button(loadBalance_frame, text="Login", padx=10, pady=10, command= lambda:login_popup(root, current_username))
+    loginButton = Button(loadBalance_frame, text="Login", padx=10, pady=10, command= lambda:login_popup(root))
     loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
 
     addNoteButton = Button(loadBalance_frame, text="Add Note", padx=10, pady=10, command=lambda:add_note(root))
     addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
 
-    loadUnloadButton = Button(loadBalance_frame, text="Load/Unload", padx=10, pady=10, command=lambda:load_operation(root, loadBalance_frame, current_username))
+    loadUnloadButton = Button(loadBalance_frame, text="Load/Unload", padx=10, pady=10, command=lambda:load_operation(root, loadBalance_frame))
     loadUnloadButton.place(anchor="c", relx=0.4, rely=0.5)
 
-    balanceButton = Button(loadBalance_frame, text="Balance", padx=10, pady=10, command=lambda:balance_operation(root, loadBalance_frame, current_username))
+    balanceButton = Button(loadBalance_frame, text="Balance", padx=10, pady=10, command=lambda:balance_operation(root, loadBalance_frame))
     balanceButton.place(anchor="c", relx=0.6, rely=0.5)
     
     

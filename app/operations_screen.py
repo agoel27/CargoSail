@@ -5,7 +5,7 @@ from app.add_note import add_note
 from app.table import Table
 from app.current_move_frame import CurrentMoveFrame
 
-def operations_screen(root, prevFrame, current_username):
+def operations_screen(root, prevFrame):
 
     buffer_data = [
         ["Lion", "", "Elephant", "", "Zebra", "", "", "", "Dolphin", "", "Shark", "", "", "Koala", "", "", "Fox", "Rabbit", "Deer", "Eagle","Hawk", "Owl", "", ""],
@@ -40,7 +40,7 @@ def operations_screen(root, prevFrame, current_username):
     # add_note_frame = tk.Frame(operations_screen_frame)
     # add_note_frame.place(relx=0, rely=0, anchor="nw")
 
-    loginButton = Button(operations_screen_frame, text="Login", padx=10, pady=10, command= lambda:login_popup(root, current_username))
+    loginButton = Button(operations_screen_frame, text="Login", padx=10, pady=10, command= lambda:login_popup(root))
     loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
 
     addNoteButton = Button(operations_screen_frame, text="Add Note", padx=10, pady=10, command=lambda:add_note(root))
@@ -59,7 +59,7 @@ def operations_screen(root, prevFrame, current_username):
     truck_frame.place(relx=0.25, rely=0.64, anchor="c")
 
     # # place login button in login button frame
-    # loginButton = Button(login_button_frame, text="Login" , padx=10, pady=10, command= lambda:login_popup(root, current_username))
+    # loginButton = Button(login_button_frame, text="Login" , padx=10, pady=10, command= lambda:login_popup(root))
     # loginButton.pack(anchor="ne", padx=5, pady=5)
 
     # # place add note button in add note frame
@@ -77,4 +77,4 @@ def operations_screen(root, prevFrame, current_username):
     truck_label.grid(row=0, column=0, sticky="nsew")
 
     # place current move frame in operations screen frame
-    current_move_frame = CurrentMoveFrame(operations_screen_frame, 19, 48, 2, "truck", "[03,12]", 5, current_username)
+    current_move_frame = CurrentMoveFrame(operations_screen_frame, 19, 48, 2, "truck", "[03,12]", 5)
