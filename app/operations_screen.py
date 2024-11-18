@@ -48,6 +48,7 @@ def operations_screen(root, prevFrame):
 
     # place table in ship frame
     ship_table = Table(ship_frame, get_manifest())
+    ship_table.flash_cells((8, 3), (2, 2))
 
     # place truck in truck frame
     truck_label = tk.Label(truck_frame, text="Truck", borderwidth=1, relief="solid", width=7, height=2, font=("Arial", 12), anchor="center")

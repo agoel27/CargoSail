@@ -13,6 +13,7 @@ class Table:
         self.rows = len(data)
         self.columns = len(data[0])
         self.data = data
+        self.cell_widgets = {}
 
         # label for hovering over cell
         self.hover_label = tk.Label(frame.master, bg="yellow", text="", font=("Arial", 12), relief="solid", borderwidth=1)
@@ -28,6 +29,8 @@ class Table:
         for widget in self.frame.winfo_children():
             if widget != self.hover_label:  # skip hover_label widget
                 widget.destroy()
+
+        self.cell_widgets = {}
 
         # create labels for each cell
         for i in range(self.rows):
@@ -46,6 +49,8 @@ class Table:
                 # bind hover events to the cell
                 cell.bind("<Enter>", lambda event, row=i, col=j: self.show_hover_label(event, row, col))
                 cell.bind("<Leave>", self.hide_hover_label)
+
+                self.cell_widgets[(i, j)] = cell
 
         # make uniform rows and columns
         for i in range(self.rows):
@@ -98,3 +103,26 @@ class Table:
         """
         if self.hover_label.winfo_exists():
             self.hover_label.place_forget()
+
+    def flash_cells(self, cell1, cell2):
+        """
+        flash the background of two cells red twice per second.
+
+        cell1: tuple (row, column) of first cell
+        cell2: tuple (row, column) of second cell
+        """
+        def toggle_flash(count=4):
+            if count == 0:
+                return  # stop flashing
+
+            for cell in (cell1, cell2):
+                widget = self.cell_widgets.get(cell)
+                if widget:
+                    current_color = widget.cget("bg")
+                    new_color = "red" if current_color != "red" else "white"
+                    widget.config(bg=new_color)
+
+            # next flash
+            self.frame.after(500, toggle_flash, count - 1)
+
+        toggle_flash()
