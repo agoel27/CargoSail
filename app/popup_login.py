@@ -11,8 +11,8 @@ def login_store(root, new_username, login_popup_frame, error_message):
     validation_test = input_validation(new_username, error_message)
       
     if validation_test:
-        entryNew = get_username() + " has signed out\n" 
-        add_logEntry(entryNew)
+        entryOld = get_username() + " has signed out\n" 
+        add_logEntry(entryOld)
         
         entryNew = new_username.get() + " has signed in\n" 
         add_logEntry(entryNew)
