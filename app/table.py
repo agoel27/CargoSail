@@ -13,6 +13,10 @@ class Table:
         self.rows = len(data)
         self.columns = len(data[0])
         self.data = data
+
+        # label for hovering over cell
+        self.hover_label = tk.Label(frame.master, bg="yellow", text="", font=("Arial", 12), relief="solid", borderwidth=1)
+        #self.hover_label.place_forget()  # hide the hover_label
         
         self.create_table()
 
@@ -22,16 +26,22 @@ class Table:
         """
         # clear existing table
         for widget in self.frame.winfo_children():
-            widget.destroy()
+            if widget != self.hover_label:  # skip hover_label widget
+                widget.destroy()
 
         # create labels for each cell
         for i in range(self.rows):
             for j in range(self.columns):
-                # Truncate the text to the first 7 characters
+
+                # truncate text to first 7 characters
                 truncated_value = self.data[i][j][:7]
 
                 cell = tk.Label(self.frame, text=truncated_value, borderwidth=1, relief="solid", width=7, height=2, font=("Arial", 12), anchor="center")
                 cell.grid(row=i, column=j, sticky="nsew")
+
+                # bind hover events to the cell
+                cell.bind("<Enter>", lambda event, row=i, col=j: self.show_hover_label(event, row, col))
+                cell.bind("<Leave>", self.hide_hover_label)
 
         # make uniform rows and columns
         for i in range(self.rows):
@@ -47,7 +57,7 @@ class Table:
         """
         if len(new_data) == self.rows and len(new_data[0]) == self.columns:
             self.data = new_data
-            self.create_table()  # Update the table UI
+            self.create_table()  # update table UI
         else:
             print("Error: The data dimensions do not match the table size.")
 
@@ -61,6 +71,26 @@ class Table:
         """
         if 0 <= row < self.rows and 0 <= col < self.columns:
             self.data[row][col] = value
-            self.create_table()  # Update the table UI
+            self.create_table()  # update table UI
         else:
             print("Error: Invalid cell coordinates.")
+
+    def show_hover_label(self, event, row, col):
+        """
+        show hover_label with text of hovered cell
+
+        event:  tkinter event object
+        row:    row index of hovered cell
+        col:    column index of hovered cell
+        """
+        text = self.data[row][col]
+        if text:  # only show hover_label if there's text
+            self.hover_label.config(text=text)
+            self.hover_label.place(relx=0.5, rely=0.1, anchor="c")
+
+    def hide_hover_label(self, event):
+        """
+        hide hover_label when mouse leaves a cell.
+        """
+        if self.hover_label.winfo_exists():
+            self.hover_label.place_forget()

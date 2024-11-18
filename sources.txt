@@ -18,3 +18,6 @@ Login:
 https://www.geeksforgeeks.org/regular-expression-python-examples/
 https://www.w3schools.com/python/python_regex.asp
 https://www.w3schools.com/python/python_datetime.asp
+
+Time: 
+https://worldtimeapi.org/

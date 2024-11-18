@@ -1,8 +1,11 @@
 import tkinter as tk
 from tkinter import ttk
+#from app.load_balance_screen import *
+#from app.add_note import add_note
+import app.load_balance_screen as load_balance_screen
 
 class CurrentMoveFrame:
-    def __init__(self, frame, total_moves, total_minutes, current_move_number, current_move_from, current_move_to, estimated_time_for_move):
+    def __init__(self, frame, total_moves, total_minutes, current_move_number, current_move_from, current_move_to, estimated_time_for_move, current_username):
         """
         initialize CurrentMoveFrame class
         
@@ -21,6 +24,7 @@ class CurrentMoveFrame:
         self.current_move_from = current_move_from
         self.current_move_to = current_move_to
         self.estimated_time_for_move = estimated_time_for_move
+        self.current_username = current_username
         
         self.create_current_move_frame()
 
@@ -43,5 +47,5 @@ class CurrentMoveFrame:
         info_label = tk.Label(move_info_frame, text=move_info_text, font=("Arial", 16), anchor="center", justify="center")
         info_label.pack(fill="x", pady=10)
 
-        next_button = tk.Button(move_info_frame, text="Next", font=("Arial", 16))
+        next_button = tk.Button(move_info_frame, text="Next", font=("Arial", 16), padx=10, pady=10, command=lambda: load_balance_screen.load_balance(self.frame.master, self.frame, self.current_username))
         next_button.pack(pady=10)

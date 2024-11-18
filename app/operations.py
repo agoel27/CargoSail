@@ -1,7 +1,9 @@
 import tkinter as tk
 from tkinter import *
-from app.load_balance_screen import login_popup
+from app.popup_login import login_popup
+from app.add_note import add_note
 from app.operations_screen import operations_screen
+from app.table import Table
 
 # root = tk.Tk()
 array = [
@@ -10,7 +12,7 @@ array = [
     ["Acura", "Toyota", "Saab"]
     
 ]
-def display_operations(root, selection):
+def display_operations(root, selection, current_username):
     # destroys login page
     selection.pack_forget()
 
@@ -29,11 +31,15 @@ def display_operations(root, selection):
     cargo_frame.place(relx=.5, rely=.5, anchor='center')
 
     # place and define buttons/labels/entry box etc.
-    done_button = Button(done_button_frame, text="Done", command=lambda: operations_screen(load_unload_frame))
+    loginButton = Button(load_unload_frame, text="Login", padx=10, pady=10, command= lambda:login_popup(root, current_username))
+    loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
+    addNoteButton = Button(load_unload_frame, text="Add Note", padx=10, pady=10, command=lambda:add_note(root))
+    addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
+    done_button = Button(done_button_frame, text="Done", command=lambda: operations_screen(root, load_unload_frame, current_username))
     done_button.grid(row=0, column=0)
     container_input = tk.Entry(select_container_frame)
     container_input.grid(row=0, column=0)
-    container_button = Button(select_container_frame, text="load", bg="red", command=lambda: container_list.insert(0, container_input.get()))
+    container_button = Button(select_container_frame, text="Load", bg="red", command=lambda: container_list.insert(0, container_input.get()))
     container_button.grid(row=1, column=0)
     container_list_label = Label(list_container_frame, text="Containers to Load/Unload:", wraplength=75, anchor="w", justify="left")
     container_list_label.grid(row=0, column=0)
@@ -41,7 +47,8 @@ def display_operations(root, selection):
     container_list.grid(row=1, column=0)
 
     # display the ship's current cargo
-    display_current_cargo(cargo_frame, array, container_list)
+    #display_current_cargo(cargo_frame, array, container_list)
+    Table(cargo_frame, array)
 
 # def operations_screen(root, frame1):
 #     frame1.pack_forget()
