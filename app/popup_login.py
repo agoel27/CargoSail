@@ -11,26 +11,17 @@ def login_store(root, new_username, login_popup_frame, error_message):
     validation_test = input_validation(new_username, error_message)
       
     if validation_test:
-
-        # date and time formatted
-        date = datetime.datetime.now().strftime("%B %d %G: %H:%M")
-        
-        # signing out previous name
-        entryOld = date + " "+ config.current_username  + " signs out\n" 
-        add_logEntry(entryOld)
-        
-        # signing in new name
-        entryNew = date + " "+ new_username.get() + " signs in\n" 
+        entryNew = get_username() + " has signed out\n" 
         add_logEntry(entryNew)
         
-        # store new name to global variable
-        config.current_username = new_username.get()
+        entryNew = new_username.get() + " has signed in\n" 
+        add_logEntry(entryNew)
+        
+        set_username(new_username.get())
         
         # exits popup return to load balance
         login_popup_frame.destroy()
      
-        
-
 def login_popup(root):
     
     # create login popup frame
