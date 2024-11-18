@@ -22,7 +22,8 @@ def login_store(root, input_field, login_frame, error_message):
         set_username(input_field.get())
         
         # proceed to the load balance page
-        load_balance(root, login_frame)
+        load_balance(root, login_frame) 
+
 
 
 def login_screen(root):
