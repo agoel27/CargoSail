@@ -32,11 +32,15 @@ class Table:
         # create labels for each cell
         for i in range(self.rows):
             for j in range(self.columns):
-
                 # truncate text to first 7 characters
-                truncated_value = self.data[i][j][:7]
+                truncated_value = self.data[i][j][1][:7]
 
-                cell = tk.Label(self.frame, text=truncated_value, borderwidth=1, relief="solid", width=7, height=2, font=("Arial", 12), anchor="center")
+                if truncated_value == "UNUSED":
+                    cell = tk.Label(self.frame, borderwidth=1, relief="solid", width=7, height=2)
+                elif truncated_value == "NAN":
+                    cell = tk.Label(self.frame, borderwidth=1, relief="solid", width=7, height=2, bg="gray")
+                else:
+                    cell = tk.Label(self.frame, text=truncated_value, borderwidth=1, relief="solid", width=7, height=2, font=("Arial", 12), anchor="center")
                 cell.grid(row=i, column=j, sticky="nsew")
 
                 # bind hover events to the cell
@@ -83,7 +87,7 @@ class Table:
         row:    row index of hovered cell
         col:    column index of hovered cell
         """
-        text = self.data[row][col]
+        text = self.data[row][col][1]
         if text:  # only show hover_label if there's text
             self.hover_label.config(text=text)
             self.hover_label.place(relx=0.5, rely=0.1, anchor="c")

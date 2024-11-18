@@ -3,7 +3,6 @@
 
 import requests
 
-
 def set_logfile_path(path):
     global logfile_path
     logfile_path = path
@@ -17,6 +16,13 @@ def set_username(username):
     
 def get_username():
     return user
+
+def set_manifest(data):
+    global manifest_data
+    manifest_data = data
+
+def get_manifest():
+    return manifest_data
 
 def add_logEntry(message):
     url = "http://worldtimeapi.org/api/timezone/America/Los_Angeles"

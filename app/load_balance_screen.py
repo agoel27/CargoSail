@@ -2,13 +2,15 @@
 import tkinter as Tk
 from tkinter import *
 from tkinter import filedialog, messagebox
-from .add_note import *
 from app.popup_login import login_popup    
 from app.operations import display_operations
 from app.operations_screen import operations_screen
 from app.add_note import add_note
+from config import *
 
 def load_file():
+    ret = False
+
     file_path = filedialog.askopenfilename(
         title="Select file",
         filetypes=(("Text files", "*.txt"), ("All files", "*.*"))
@@ -16,14 +18,27 @@ def load_file():
     
     if file_path:
         try:
-            # Open the file and store its content
+            # open the file and store its contents
             with open(file_path, 'r') as file:
-                content = file.read()
-                return True
+                content = file.readlines()
+                ret = True
+
         except Exception as e:
             messagebox.showerror("Error", f"Could not read file: {e}")
-    
-    return False
+
+        data = [[None for _ in range(12)] for _ in range(8)]
+
+        # parse lines in the format: [row,column], {weight}, name
+        for line in content:
+            parts = line.strip().split(", ")
+            row, col = map(int, parts[0][1:-1].split(","))
+            weight = int(parts[1][1:-1])
+            name = parts[2]
+            data[8 - row][col - 1] = (weight, name)
+        
+        set_manifest(data)
+
+    return ret
 
 def load_operation(root, load_balance_frame):
     if load_file():
