@@ -30,13 +30,18 @@ def load_file():
 
         # parse lines in the format: [row,column], {weight}, name
         for line in content:
-            parts = line.strip().split(", ")
-            row, col = map(int, parts[0][1:-1].split(","))
-            weight = int(parts[1][1:-1])
-            name = parts[2]
-            data[8 - row][col - 1] = (weight, name)
+            try:
+                parts = line.strip().split(", ")
+                row, col = map(int, parts[0][1:-1].split(","))
+                weight = int(parts[1][1:-1])
+                name = parts[2]
+                data[8 - row][col - 1] = (weight, name)
+            except Exception as e:
+                messagebox.showerror("Error", f"Could not read Manifest")
+                break
         
-        set_manifest(data)
+        if not e:
+            set_manifest(data)
 
     return ret
 
