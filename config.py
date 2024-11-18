@@ -1,6 +1,3 @@
-# stores name of current user
-global current_username
-
 # global functions for easy access from all files
 # to access from the app folder do: from config import *
 
