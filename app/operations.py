@@ -4,14 +4,15 @@ from app.popup_login import login_popup
 from app.add_note import add_note
 from app.operations_screen import operations_screen
 from app.table import Table
+from config import *
 
 # root = tk.Tk()
-array = [
-    ["walmart", "costco", "uniqlo"],
-    ["Honda", "Subaru", "Jeep"],
-    ["Acura", "Toyota", "Saab"]
+# array = [
+#     ["walmart", "costco", "uniqlo"],
+#     ["Honda", "Subaru", "Jeep"],
+#     ["Acura", "Toyota", "Saab"]
     
-]
+# ]
 def display_operations(root, selection):
     # destroys login page
     selection.pack_forget()
@@ -48,7 +49,7 @@ def display_operations(root, selection):
 
     # display the ship's current cargo
     #display_current_cargo(cargo_frame, array, container_list)
-    Table(cargo_frame, array)
+    ship_table = Table(cargo_frame, get_manifest())
 
 # def operations_screen(root, frame1):
 #     frame1.pack_forget()

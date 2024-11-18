@@ -4,26 +4,11 @@ from app.popup_login import login_popup
 from app.add_note import add_note
 from app.table import Table
 from app.current_move_frame import CurrentMoveFrame
+from config import *
 
 def operations_screen(root, prevFrame):
 
-    buffer_data = [
-        ["Lion", "", "Elephant", "", "Zebra", "", "", "", "Dolphin", "", "Shark", "", "", "Koala", "", "", "Fox", "Rabbit", "Deer", "Eagle","Hawk", "Owl", "", ""],
-        ["", "Dog", "", "", "", "", "", "Bison", "Bison", "Monkey", "Chimpanzee", "", "", "", "", "", "", "Bat", "Squirrel", "Beaver", "Badger", "", "Meerkat", ""],
-        ["", "Panda", "Giraffe", "", "", "Cheetah", "Tiger", "", "Wolf", "", "", "", "Penguin", "Kangaroo", "", "Whale", "", "Leopard", "Gorilla", "", "", "", "Parrot", "Crow"],
-        ["", "Cat", "", "Horse", "Cow", "Goat", "", "", "Bison", "", "Chimpanzee", "Sloth", "", "Bat", "", "Otter", "", "Ocelot", "", "Zebra", "", "Bear", "", "Fox"]
-    ]
-
-    ship_data = [
-        ["", "", "", "", "", "", "", "", "", "", "", ""],
-        ["", "", "", "", "", "", "", "", "", "", "Bag", ""],
-        ["", "", "", "", "", "", "", "", "", "Mouse", "Desk", ""],
-        ["", "", "", "", "", "", "", "", "Shoes", "Bag", "Wallet", "Printer"],
-        ["", "", "", "", "", "", "", "Headphones", "Bag", "Charger", "Speaker", "Printer"],
-        ["", "", "", "", "", "", "Bag", "Desk", "Wallet", "Speakers", "Speaker", "Printer"],
-        ["Speaker", "", "", "", "", "Headphones", "Monitor", "Bag", "Pen", "Notebook", "Lamp", "Tablet"],
-        ["Chair", "", "", "", "Headphones", "Chair", "Desk", "Speaker", "Tablet", "Laptop", "Speaker", "Printer"]
-    ]
+    buffer_data = [[(0, "UNUSED") for _ in range(24)] for _ in range(4)]
 
     # destroys previous frame
     prevFrame.pack_forget()
@@ -58,19 +43,11 @@ def operations_screen(root, prevFrame):
     truck_frame = tk.Frame(operations_screen_frame)
     truck_frame.place(relx=0.25, rely=0.64, anchor="c")
 
-    # # place login button in login button frame
-    # loginButton = Button(login_button_frame, text="Login" , padx=10, pady=10, command= lambda:login_popup(root))
-    # loginButton.pack(anchor="ne", padx=5, pady=5)
-
-    # # place add note button in add note frame
-    # addNoteButton = Button(add_note_frame, text="Add Note" , padx=10, pady=10, command= lambda:add_note(root))
-    # addNoteButton.pack(anchor="nw", padx=5, pady=5)
-    
     # place table in buffer area frame
     buffer_area_table = Table(buffer_area_frame, buffer_data)
 
     # place table in ship frame
-    ship_table = Table(ship_frame, ship_data)
+    ship_table = Table(ship_frame, get_manifest())
 
     # place truck in truck frame
     truck_label = tk.Label(truck_frame, text="Truck", borderwidth=1, relief="solid", width=7, height=2, font=("Arial", 12), anchor="center")
