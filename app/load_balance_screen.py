@@ -1,57 +1,45 @@
 
 import tkinter as Tk
 from tkinter import *
+from tkinter import filedialog, messagebox
+from .add_note import *
+from app.popup_login import login_popup    
+from app.operations import displayOperations
 
-def login_popup(root):
+def load_file():
+    file_path = filedialog.askopenfilename(
+        title="Select file",
+        filetypes=(("Text files", "*.txt"), ("All files", "*.*"))
+    )
     
-    # create login popup frame
-    login = Toplevel()
-    login.title("Login")
-    login.geometry("250x150") 
-    
-    # selects popup as active window
-    login.focus()
-    
-    # prevents user from interacting w/ parent window
-    login.grab_set()
-    
-    # position pop up to center of window
-    x = root.winfo_x()
-    y = root.winfo_y()
-    login.geometry("+%d+%d" %(x+275,y+250))
-    
-    # prevents resizing window
-    login.resizable(False, False)
-    
-    # message top of input field
-    message = Label(login, text='Enter Name: ')
-    message.place(relx = 0.4, rely = 0.35, anchor = 'center')
-    
-    # input field
-    input_field = Entry(login)
-    input_field.place(relx = 0.5, rely = 0.5, anchor = 'center')
-    
-    # sign in button when pressed closes top window
-    sign_in = Button(login, text="Sign in", command= login.destroy)
-    sign_in.place(x=100, y=95)
-    
+    if file_path:
+        try:
+            # Open the file and store its content
+            with open(file_path, 'r') as file:
+                content = file.read()
+        except Exception as e:
+            messagebox.showerror("Error", f"Could not read file: {e}")
 
-def load_balance(root,frame1):
-    
-    # destroys previous frame
-    frame1.place_forget()
+def load_operation(root, load_balance_frame):
+    load_file()
+    displayOperations(root, load_balance_frame)
 
-    loginButton = Button(root, text="Login" , padx=10, pady=10, command= lambda:login_popup(root))
+def load_balance(root, login_frame, current_username):
+    
+    # destroys login page
+    login_frame.place_forget()
+
+    loginButton = Button(root, text="Login" , padx=10, pady=10, command= lambda:login_popup(root, current_username))
     loginButton.pack(anchor="ne", padx=5, pady=5)    
 
     # frame for load/unload and balance buttons to have them centered
     loadBalance_frame = Frame(root)
     loadBalance_frame.place(relx=0.5, rely=0.5, anchor="center")
 
-    loadUnloadButton = Button(loadBalance_frame, text="Load/Unload", padx=10, pady=10)
+    loadUnloadButton = Button(loadBalance_frame, text="Load/Unload", padx=10, pady=10, command=lambda:load_operation(root, loadBalance_frame))
     loadUnloadButton.grid(row=0, column=0, padx=5)
 
-    balanceButton = Button(loadBalance_frame, text="Balance", padx=10, pady=10)
+    balanceButton = Button(loadBalance_frame, text="Balance", padx=10, pady=10, command=lambda:displayOperations(root))
     balanceButton.grid(row=0, column=1, padx=5)
     
     
