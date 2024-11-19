@@ -10,6 +10,7 @@ from config import *
 
 def load_file():
     ret = False
+    e = None
 
     file_path = filedialog.askopenfilename(
         title="Select file",
@@ -23,8 +24,9 @@ def load_file():
                 content = file.readlines()
                 ret = True
 
-        except Exception as e:
-            messagebox.showerror("Error", f"Could not read file: {e}")
+        except Exception as exc:
+            messagebox.showerror("Error", f"Could not read file: {exc}")
+            e = exc
 
         data = [[None for _ in range(12)] for _ in range(8)]
 
@@ -36,8 +38,9 @@ def load_file():
                 weight = int(parts[1][1:-1])
                 name = parts[2]
                 data[8 - row][col - 1] = (weight, name)
-            except Exception as e:
+            except Exception as exc:
                 messagebox.showerror("Error", f"Could not read Manifest")
+                e = exc
                 break
         
         if not e:
