@@ -3,7 +3,7 @@ from tkinter import *
 from load_balance_screen  import login_popup
 
 root = tk.Tk()
-array = [
+currentCargo= [
     ["walmart", "costco", "uniqlo"],
     ["Honda", "Subaru", "Jeep"],
     ["Acura", "Toyota", "Saab"]
@@ -41,17 +41,20 @@ def displayOperations(root):
     containerList.grid(row=1,column=0)
 
     #display the ships current cargo
-    displayCurrentCargo(cargoFrame,array,containerList)
+    displayCurrentCargo(cargoFrame,currentCargo,containerList)
 
 def operations_screen(root,frame1):
     frame1.pack_forget()
+
+def darkenCell(label):
+    label.config(bg="red")
 
 def displayCurrentCargo(frame,CurrentCargo,containerList):
     for row_index, row in enumerate(CurrentCargo):
         for col_index, value in enumerate(row):
             label = tk.Label(frame, text=value, borderwidth=1, relief="solid")
             label.grid(row=row_index, column=col_index, sticky="nsew")
-            label.bind("<Button 1>",lambda event, name=value:containerList.insert(0,name))
+            label.bind("<Button 1>",lambda event ,name=value,label = label,:[containerList.insert(0,name),darkenCell(label)])
 
 
 def myFunc(name):
