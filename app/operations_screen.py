@@ -48,10 +48,13 @@ def operations_screen(root, prevFrame):
 
     # place table in ship frame
     ship_table = Table(ship_frame, get_manifest())
+    ship_table.flash_cells((0, 0), (2, 2))
 
     # place truck in truck frame
     truck_label = tk.Label(truck_frame, text="Truck", borderwidth=1, relief="solid", width=7, height=2, font=("Arial", 12), anchor="center")
     truck_label.grid(row=0, column=0, sticky="nsew")
 
     # place current move frame in operations screen frame
-    current_move_frame = CurrentMoveFrame(operations_screen_frame, 19, 48, 2, "truck", "[03,12]", 5)
+    current_move_frame = CurrentMoveFrame(operations_screen_frame, 19, 19)
+    set_move_info(19, 48, 19, "truck", "[03,08]", 7)
+    current_move_frame.create_current_move_frame()
