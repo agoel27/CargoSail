@@ -27,6 +27,8 @@ def load_file():
             messagebox.showerror("Error", f"Could not read file: {e}")
 
         data = [[None for _ in range(12)] for _ in range(8)]
+        
+        manifest_error = False
 
         # parse lines in the format: [row,column], {weight}, name
         for line in content:
@@ -38,9 +40,10 @@ def load_file():
                 data[8 - row][col - 1] = (weight, name)
             except Exception as e:
                 messagebox.showerror("Error", f"Could not read Manifest")
+                manifest_error = True
                 break
         
-        if not e:
+        if not manifest_error:
             set_manifest(data)
 
     return ret
