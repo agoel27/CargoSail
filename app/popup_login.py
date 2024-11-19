@@ -32,9 +32,18 @@ def login_popup(root):
     login.focus()
     
     # position pop up to center of window
-    x = root.winfo_x()
-    y = root.winfo_y()
-    login.geometry("+%d+%d" %(x+275,y+250))
+    root_x = root.winfo_x()
+    root_y = root.winfo_y()
+    root_width = root.winfo_width()
+    root_height = root.winfo_height()
+    
+    login_width = 250
+    login_height = 150
+
+    # Center the popup relative to the root window
+    x = root_x + (root_width // 2) - (login_width // 2)
+    y = root_y + (root_height // 2) - (login_height // 2)
+    login.geometry(f"{login_width}x{login_height}+{x}+{y}")
     
     # prevents user from interacting w/ parent window
     login.grab_set()
@@ -48,7 +57,7 @@ def login_popup(root):
     
     # error message on top of input
     error_message = Label(login, text="")
-    error_message.grid(row=1, column=0)
+    error_message.place(relx=0.5, rely=0.15, anchor='center')
     
     # input field
     input_field = Entry(login)
@@ -57,4 +66,3 @@ def login_popup(root):
     # sign in button when pressed closes top window
     sign_in = Button(login, text="Sign in", command= lambda: [login_store(root, input_field, login, error_message)])
     sign_in.place(x=100, y=95)
-    
