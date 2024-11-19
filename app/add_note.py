@@ -1,5 +1,6 @@
 import os
 from tkinter import *
+from tkinter import messagebox
 from config import *
 
 def add_note(root):
@@ -31,6 +32,9 @@ def add_note(root):
     # https://www.geeksforgeeks.org/python-tkinter-text-widget/
     def add_note_to_log(): 
         user_input = text_box.get("1.0", "end-1c")
+        if user_input == '':
+            messagebox.showerror("Error", f"Message cannot be blank")
+            return
         user_input += '\n'
         add_logEntry(user_input)
         popup.destroy()
