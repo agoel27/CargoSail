@@ -43,6 +43,11 @@ def displayOperations(root):
     #display the ships current cargo
     displayCurrentCargo(cargoFrame,array,containerList)
 
+def login_popup():
+    print("hello")
+def darkenCell(label):
+    label.config(bg="red")
+
 def operations_screen(root,frame1):
     frame1.pack_forget()
 
@@ -51,7 +56,7 @@ def displayCurrentCargo(frame,CurrentCargo,containerList):
         for col_index, value in enumerate(row):
             label = tk.Label(frame, text=value, borderwidth=1, relief="solid")
             label.grid(row=row_index, column=col_index, sticky="nsew")
-            label.bind("<Button 1>",lambda event, name=value:containerList.insert(0,name))
+            label.bind("<Button 1>",lambda event, name=value,label=label:[containerList.insert(0,name),darkenCell(label)])
 
 
 def myFunc(name):
