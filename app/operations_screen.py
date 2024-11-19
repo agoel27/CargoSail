@@ -55,4 +55,6 @@ def operations_screen(root, prevFrame):
     truck_label.grid(row=0, column=0, sticky="nsew")
 
     # place current move frame in operations screen frame
-    current_move_frame = CurrentMoveFrame(operations_screen_frame, 19, 48, 2, "truck", "[03,12]", 5)
+    current_move_frame = CurrentMoveFrame(operations_screen_frame, 19, 19)
+    set_move_info(19, 48, 19, "truck", "[03,08]", 7)
+    current_move_frame.create_current_move_frame()
