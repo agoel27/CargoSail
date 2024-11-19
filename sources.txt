@@ -9,10 +9,11 @@ https://stackoverflow.com/questions/41946222/how-do-i-create-a-popup-window-in-t
 https://stackoverflow.com/questions/73184529/tkinter-make-my-pop-up-window-in-middle-of-the-screen
 https://www.geeksforgeeks.org/python-tkinter-text-widget/
 
-Opening Logfile:
+Opening Logfile and json:
 https://stackoverflow.com/questions/13184414/how-can-i-get-the-path-to-the-appdata-directory-in-python
 https://stackoverflow.com/questions/39983886/python-writing-and-reading-from-a-temporary-file
 https://stackoverflow.com/questions/34275782/how-to-get-desktop-location
+https://www.geeksforgeeks.org/reading-and-writing-json-to-a-file-in-python/
 
 Login:
 https://www.geeksforgeeks.org/regular-expression-python-examples/

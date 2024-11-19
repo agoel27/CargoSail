@@ -1,7 +1,7 @@
 # global functions for easy access from all files
 # to access from the app folder do: from config import *
 
-import requests
+import requests, json
 
 def set_logfile_path(path):
     global logfile_path
@@ -9,6 +9,13 @@ def set_logfile_path(path):
     
 def get_logfile_path():
     return logfile_path
+
+def set_save_file_path(path):
+    global save_file_path
+    save_file_path = path
+    
+def get_save_file_path():
+    return save_file_path
 
 def set_username(username):
     global user
@@ -62,3 +69,41 @@ def add_logEntry(message):
     with open(logfile_path, 'a') as logfile:
         logfile.write(date_and_time)
         logfile.write(message)
+        
+def write_save_file(key, entry):
+    '''
+        Give the key in the json file you want to access
+        and the entry of what you want to be there
+    '''
+    
+    if not save_file_path:
+        return
+    
+    try:
+        with open(save_file_path, 'r') as json_file:
+            data = json.load(json_file)    
+    except Exception:
+        data = {}
+        
+    data[key] = entry
+    
+    with open(save_file_path, 'w') as json_file:
+        json.dump(data, json_file, indent=4)
+            
+def read_save_file(key):
+    '''
+        Give the key in the json file you want to access 
+        and it will return whatever is saved in the file 
+    '''
+    
+    if not save_file_path:
+        return ""
+    
+    try:
+        with open(save_file_path, 'r') as json_file:
+            data = json.load(json_file)
+        entry = data.get(key)
+    except Exception:
+        entry = ""
+        
+    return entry
