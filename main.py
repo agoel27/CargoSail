@@ -1,4 +1,4 @@
-import os
+import os, json
 from app import *
 from tkinter import Tk
 from config import *
@@ -10,7 +10,7 @@ def create_root():
     root.geometry("1400x800")
     return root
 
-def open_logfile():
+def open_logfile_and_save():
     # find localappdata directory
     appdata_path = os.getenv("LOCALAPPDATA")
     
@@ -24,9 +24,21 @@ def open_logfile():
     
     logfile_path = os.path.join(cargosail_folder, 'logfile2024.txt')
     set_logfile_path(logfile_path)
+    
+    save_file_path = os.path.join(cargosail_folder, 'save_file.json')
+    set_save_file_path(save_file_path)
+    
+    # if the save file is not created yet it will create it with the fields specified here
+    if not os.path.exists(save_file_path):
+        data = {
+            "name": ""
+        }
+        
+        with open(save_file_path, 'w') as json_file:
+            json.dump(data, json_file, indent=4)
 
 root = create_root()
-open_logfile()
+open_logfile_and_save()
 login_screen(root)
 
 root.mainloop()
