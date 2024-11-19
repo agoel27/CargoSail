@@ -56,27 +56,60 @@ def display_operations(root, selection):
     
     container_list = Listbox(list_container_frame)
     container_list.grid(row=1, column=0)
+    hover_label = tk.Label(load_unload_frame, bg="yellow", text="", font=("Arial", 12), relief="solid", borderwidth=1)
 
 
     # display the ship's current cargo
-    # display_current_cargo(cargo_frame, array, container_list)
-    ship_table = Table(cargo_frame, get_manifest())
-
+    display_current_cargo(cargo_frame, get_manifest(), container_list,hover_label)
+    #ship_table = Table(cargo_frame, get_manifest())
 
 def darkenCell(label):
     label.config(bg="red")
 
+#def operations_screen(root,frame1):
+    #frame1.pack_forget()
 
-def operations_screen(root,frame1):
-    frame1.pack_forget()
 
+def display_current_cargo(frame, current_cargo, container_list,hover_label):
+    rows = len(current_cargo)
+    columns = len(current_cargo[0])
+    for i in range(rows):
+        for j in range(columns):
+            truncated_value = current_cargo[i][j][1][:7]
 
-def display_current_cargo(frame, current_cargo, container_list):
-    for row_index, row in enumerate(current_cargo):
-        for col_index, value in enumerate(row):
-            label = tk.Label(frame, text=value, borderwidth=1, relief="solid", width=10, height=3)
-            label.grid(row=row_index, column=col_index, sticky="nsew") 
-            label.bind("<Button-1>",lambda event, name=value,label=label:[container_list.insert(0,name),darkenCell(label)])
+            if truncated_value == "UNUSED":
+                cell = tk.Label(frame, borderwidth=1, relief="solid", width=7, height=2)
+            elif truncated_value == "NAN":
+                cell = tk.Label(frame, borderwidth=1, relief="solid", width=7, height=2, bg="gray")
+            else:
+                cell = tk.Label(frame, text=truncated_value, borderwidth=1, relief="solid", width=7, height=2, font=("Arial", 12), anchor="center")
+            cell.grid(row=i, column=j, sticky="nsew")
+            if not(truncated_value == "UNUSED" or truncated_value == "NAN"):
+                cell.bind("<Button 1>",lambda event, name=truncated_value,label=cell:[container_list.insert(0,name),darkenCell(label)])
+                cell.bind("<Enter>", lambda event, row=i, col=j,current_cargo=current_cargo,hover_label=hover_label:show_hover_label(event, row, col,current_cargo,hover_label))
+                cell.bind("<Leave>", hide_hover_label)
+
+def show_hover_label(event, row, col,data,hover_label):
+        """
+        show hover_label with text of hovered cell
+
+        event:  tkinter event object
+        row:    row index of hovered cell
+        col:    column index of hovered cell
+        """
+        text = data[row][col][1]
+        if text:  # only show hover_label if there's text
+            hover_label.config(text=text)
+            hover_label.place(relx=0.5, rely=0.1, anchor="c")
+
+def hide_hover_label(event,hover_label):
+        """
+        hide hover_label when mouse leaves a cell.
+        """
+        if hover_label.winfo_exists():
+            hover_label.place_forget()
+def myFunc(name):
+    print(name)
 
 
 
