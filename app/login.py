@@ -1,5 +1,4 @@
-import os
-import re
+import os, re, json
 import tkinter as tk
 from tkinter import *
 from config import *
@@ -18,13 +17,22 @@ def login_store(root, input_field, login_frame, error_message):
         
         set_username(input_field.get())
         
+        write_save_file("name", input_field.get())
+        
         # proceed to the load balance page
         load_balance(root, login_frame)
 
 def login_screen(root):
-    # create login screen frame
     login_frame = tk.Frame(root)
     login_frame.pack(expand=True)
+
+    name = read_save_file("name")
+    
+    if name:
+        set_username(name)
+        return load_balance(root, login_frame)
+    
+    # create login screen frame
     
     # message on top of input field
     message = Label(login_frame, text='Enter Name ')

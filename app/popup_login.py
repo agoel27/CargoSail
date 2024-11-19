@@ -16,10 +16,11 @@ def login_store(root, new_username, login_popup_frame, error_message):
         
         set_username(new_username.get())
         
+        write_save_file("name", new_username.get())
+        
         # exits popup return to load balance
         login_popup_frame.destroy()
      
-
 
 def login_popup(root):
     
