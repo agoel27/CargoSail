@@ -6,29 +6,22 @@ from app.login import *
 from config import *
 from app.input_valid import *
     
-def login_store(root, current_username, new_username, login_popup_frame, error_message):
+def login_store(root, new_username, login_popup_frame, error_message):
     
     validation_test = input_validation(new_username, error_message)
       
     if validation_test:
-
-        # date and time formatted
-        date = datetime.datetime.now().strftime("%B %d %G: %H:%M")
-        
-        # signing out previous name
-        entryOld = date + " "+ current_username.get() + " signs out\n" 
-        add_logEntry(entryOld)
-        
-        # signing in new name
-        entryNew = date + " "+ new_username.get() + " signs in\n" 
+        entryNew = new_username.get() + " has signed in\n" 
         add_logEntry(entryNew)
+        
+        set_username(new_username.get())
         
         # exits popup return to load balance
         login_popup_frame.destroy()
      
-        
 
-def login_popup(root, current_username):
+
+def login_popup(root):
     
     # create login popup frame
     login = Toplevel()
@@ -39,9 +32,18 @@ def login_popup(root, current_username):
     login.focus()
     
     # position pop up to center of window
-    x = root.winfo_x()
-    y = root.winfo_y()
-    login.geometry("+%d+%d" %(x+275,y+250))
+    root_x = root.winfo_x()
+    root_y = root.winfo_y()
+    root_width = root.winfo_width()
+    root_height = root.winfo_height()
+    
+    login_width = 250
+    login_height = 150
+
+    # Center the popup relative to the root window
+    x = root_x + (root_width // 2) - (login_width // 2)
+    y = root_y + (root_height // 2) - (login_height // 2)
+    login.geometry(f"{login_width}x{login_height}+{x}+{y}")
     
     # prevents user from interacting w/ parent window
     login.grab_set()
@@ -55,13 +57,12 @@ def login_popup(root, current_username):
     
     # error message on top of input
     error_message = Label(login, text="")
-    error_message.grid(row=1, column=0)
+    error_message.place(relx=0.5, rely=0.15, anchor='center')
     
     # input field
     input_field = Entry(login)
     input_field.place(relx = 0.5, rely = 0.5, anchor = 'center')
     
     # sign in button when pressed closes top window
-    sign_in = Button(login, text="Sign in", command= lambda: [login_store(root, current_username, input_field, login, error_message)])
+    sign_in = Button(login, text="Sign in", command= lambda: [login_store(root, input_field, login, error_message)])
     sign_in.place(x=100, y=95)
-    

@@ -1,10 +1,16 @@
 import tkinter as tk
 from tkinter import ttk
+#from app.load_balance_screen import *
+#from app.add_note import add_note
+import app.load_balance_screen as load_balance_screen
+from config import *
 
 class CurrentMoveFrame:
-    def __init__(self, frame, total_moves, total_minutes, current_move_number, current_move_from, current_move_to, estimated_time_for_move):
+    def __init__(self, frame, current_move_number, total_moves):
         """
         initialize CurrentMoveFrame class
+
+        USAGE: create CurrentMoveFrame obj, use set_move_info() in config.py to set data, call obj.create_current_move_frame()
         
         frame:                      frame to place the current move frame in
         total_moves:                total number of moves
@@ -15,14 +21,12 @@ class CurrentMoveFrame:
         estimated_time_for_move:    estimated time (in minutes) for the current move
         """
         self.frame = frame
-        self.total_moves = total_moves
-        self.total_minutes = total_minutes
         self.current_move_number = current_move_number
-        self.current_move_from = current_move_from
-        self.current_move_to = current_move_to
-        self.estimated_time_for_move = estimated_time_for_move
-        
-        self.create_current_move_frame()
+        self.total_moves = total_moves
+        # self.total_minutes = total_minutes
+        # self.current_move_from = current_move_from
+        # self.current_move_to = current_move_to
+        # self.estimated_time_for_move = estimated_time_for_move
 
     def create_current_move_frame(self):
         """
@@ -31,17 +35,14 @@ class CurrentMoveFrame:
         # place current move frame in parent frame
         move_info_frame = ttk.Frame(self.frame)
         move_info_frame.place(anchor="c", relx=0.25, rely=0.4)
-        
-        move_info_text = (
-            f"It will take {self.total_moves} moves and {self.total_minutes} minutes.\n"
-            f"Move {self.current_move_number}/{self.total_moves}: "
-            f"Move from {self.current_move_from} to {self.current_move_to}, "
-            f"estimated: {self.estimated_time_for_move} minutes."
-        )
 
         # place label in current move frame
-        info_label = tk.Label(move_info_frame, text=move_info_text, font=("Arial", 16), anchor="center", justify="center")
+        info_label = tk.Label(move_info_frame, text=get_move_info(), font=("Arial", 16), anchor="center", justify="center")
         info_label.pack(fill="x", pady=10)
 
-        next_button = tk.Button(move_info_frame, text="Next", font=("Arial", 16))
+        if self.current_move_number < self.total_moves:
+            next_button = tk.Button(move_info_frame, text="Next", font=("Arial", 16), padx=10, pady=10, command=lambda: self.create_current_move_frame())
+        else:
+            next_button = tk.Button(move_info_frame, text="Done", font=("Arial", 16), padx=10, pady=10, command=lambda: load_balance_screen.load_balance(self.frame.master, self.frame))
+        
         next_button.pack(pady=10)
