@@ -1,3 +1,4 @@
+#work in progress, will discuss on friday 
 class load_unload_problem:
     def __init__(self,initial_state):
         self.initial_state = initial_state
@@ -8,6 +9,7 @@ class load_unload_problem:
     def operators(self,node):
         print("hello")
 
+#priority queue implementation
 class priorityQueue:
     def __init__(self):
         self.queue = []
@@ -27,9 +29,12 @@ class priorityQueue:
                 idx = i
         node = self.queue[idx]
         self.queue.pop(idx)
-        return node
+        #returning the cost for testing purposes, will return the actual node
+        return node.get_cost()
+    def len(self):
+        return len(self.queue)
     
-
+#node class for each state 
 class Node:
     def __init__(self, current_state):
         self.state = current_state
@@ -49,6 +54,7 @@ class Node:
     
     def set_cost_h(self,cost_h):
         self.cost_h = cost_h
+    
 
     
 
@@ -67,3 +73,23 @@ def a_star(problem,queueing_func):
         #nodes = queueing_function(nodes,expand(node,problem.operators))
     #end
     print("hello")
+
+#testing that the classes are working as intended
+def main():
+    node1 = Node(1)
+    node2 = Node(2)
+    node3 = Node(3)
+    node1.set_cost_g(1)
+    node2.set_cost_g(2)
+    node3.set_cost_g(3)
+
+    p_queue = priorityQueue()
+    p_queue.push(node1)
+    p_queue.push(node2)
+    p_queue.push(node3)
+
+    for i in range(p_queue.len()):
+        print(p_queue.pop())
+    
+if __name__ == "__main__": 
+    main()
