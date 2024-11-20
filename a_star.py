@@ -18,12 +18,12 @@ class priorityQueue:
         self.queue.append(node) 
     
     def pop(self):
-        min_cost = self.queue[0].cost()
+        min_cost = self.queue[0].get_cost()
         size = len(self.queue)
         idx = 0
         for i in range(size):
-            if self.queue[i].cost() < min_cost:
-                min_cost = self.queue[i].cost()
+            if self.queue[i].get_cost() < min_cost:
+                min_cost = self.queue[i].get_cost()
                 idx = i
         node = self.queue[idx]
         self.queue.pop(idx)
@@ -37,7 +37,6 @@ class Node:
         self.children = []
         self.cost_g = 0
         self.cost_h = 0
-
     
     def getState(self):
         return self.state
