@@ -24,14 +24,18 @@ def display_operations(root, selection):
     }
     
     def update_list():
-        container_listbox.delete(0, tk.END)  # Clear existing items
+        unload_listbox.delete(0, tk.END)  # Clear existing items
         for value in container_list["Unload"]:
-            container_listbox.insert(tk.END, f"Unload: {value}")
+            unload_listbox.insert(tk.END, f"{value}")
             
+        load_listbox.delete(0, tk.END)
         for value in container_list["Load"]:
-            container_listbox.insert(tk.END, f"Load: {value}")
+            load_listbox.insert(tk.END, f"{value}")
+        
         
     def add_container(name, container_input):
+        if name == "":
+            return
         container_list["Load"].append(name)
         container_input.delete(0, tk.END)
         update_list()
@@ -49,7 +53,10 @@ def display_operations(root, selection):
     select_container_frame.place(relx=.05, rely=.25)
     
     list_container_frame = tk.Frame(load_unload_frame)
-    list_container_frame.place(relx=.80, rely=.25)
+    list_container_frame.place(relx=.80, rely=.20)
+    
+    list_container_load_frame = tk.Frame(load_unload_frame)
+    list_container_load_frame.place(relx=.80, rely=.50)
     
     cargo_frame = tk.Frame(load_unload_frame)
     cargo_frame.place(relx=.5, rely=.5, anchor='center')
@@ -70,10 +77,16 @@ def display_operations(root, selection):
     container_button = Button(select_container_frame, text="Load", bg="red", command=lambda: add_container(container_input.get(), container_input))
     container_button.grid(row=1, column=0)
     
-    container_listbox = tk.Listbox(list_container_frame, width=30, height=10)
-    container_listbox.grid(row=1, column=0, padx=10, pady=10)
+    unload_listbox = tk.Listbox(list_container_frame, width=30, height=10)
+    unload_listbox.grid(row=1, column=0, padx=10, pady=10)
+    
+    load_listbox = tk.Listbox(list_container_load_frame, width=30, height=10)
+    load_listbox.grid(row=2, column=0, padx=10, pady=10)
 
-    listbox_label = Label(list_container_frame, text="Containers to Load/Unload:", anchor="w", justify="left")
+    listbox_unload_label = Label(list_container_frame, text="Containers to Unload:", anchor="w", justify="left")
+    listbox_unload_label.grid(row=0, column=0)
+
+    listbox_label = Label(list_container_load_frame, text="Containers to Load:", anchor="w", justify="left")
     listbox_label.grid(row=0, column=0)
     
     hover_label = tk.Label(load_unload_frame, bg="yellow", text="", font=("Arial", 12), relief="solid", borderwidth=1)
