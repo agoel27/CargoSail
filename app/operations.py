@@ -52,8 +52,8 @@ def display_operations(root, selection):
     select_container_frame = tk.Frame(load_unload_frame)
     select_container_frame.place(relx=.05, rely=.25)
     
-    list_container_frame = tk.Frame(load_unload_frame)
-    list_container_frame.place(relx=.80, rely=.20)
+    list_container_unload_frame = tk.Frame(load_unload_frame)
+    list_container_unload_frame.place(relx=.80, rely=.20)
     
     list_container_load_frame = tk.Frame(load_unload_frame)
     list_container_load_frame.place(relx=.80, rely=.50)
@@ -77,20 +77,19 @@ def display_operations(root, selection):
     container_button = Button(select_container_frame, text="Load", bg="red", command=lambda: add_container(container_input.get(), container_input))
     container_button.grid(row=1, column=0)
     
-    unload_listbox = tk.Listbox(list_container_frame, width=30, height=10)
+    unload_listbox = tk.Listbox(list_container_unload_frame, width=30, height=10)
     unload_listbox.grid(row=1, column=0, padx=10, pady=10)
     
     load_listbox = tk.Listbox(list_container_load_frame, width=30, height=10)
     load_listbox.grid(row=2, column=0, padx=10, pady=10)
 
-    listbox_unload_label = Label(list_container_frame, text="Containers to Unload:", anchor="w", justify="left")
+    listbox_unload_label = Label(list_container_unload_frame, text="Containers to Unload:", anchor="w", justify="left")
     listbox_unload_label.grid(row=0, column=0)
 
-    listbox_label = Label(list_container_load_frame, text="Containers to Load:", anchor="w", justify="left")
-    listbox_label.grid(row=0, column=0)
+    listbox_load_label = Label(list_container_load_frame, text="Containers to Load:", anchor="w", justify="left")
+    listbox_load_label.grid(row=0, column=0)
     
     hover_label = tk.Label(load_unload_frame, bg="yellow", text="", font=("Arial", 12), relief="solid", borderwidth=1)
-
 
     # display the ship's current cargo
     display_current_cargo(cargo_frame, get_manifest(), container_list, hover_label, update_list)
