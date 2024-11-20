@@ -23,16 +23,19 @@ def display_operations(root, selection):
         "Load": []
     }
     
+    ordered_list = []
+    
     def update_list():
         container_listbox.delete(0, tk.END)  # Clear existing items
-        for value in container_list["Unload"]:
-            container_listbox.insert(tk.END, f"Unload: {value}")
+        for operation, value in ordered_list:
+            container_listbox.insert(tk.END, f"{operation}: {value}")
             
-        for value in container_list["Load"]:
-            container_listbox.insert(tk.END, f"Load: {value}")
         
     def add_container(name, container_input):
+        if name == '':
+            return
         container_list["Load"].append(name)
+        ordered_list.append(("Load", name))
         container_input.delete(0, tk.END)
         update_list()
     
@@ -80,27 +83,29 @@ def display_operations(root, selection):
 
 
     # display the ship's current cargo
-    display_current_cargo(cargo_frame, get_manifest(), container_list, hover_label, update_list)
+    display_current_cargo(cargo_frame, get_manifest(), container_list, hover_label, update_list, ordered_list)
     #ship_table = Table(cargo_frame, get_manifest())
 
-def darkenCell(label, container_list, name, update_list):
+def darkenCell(label, container_list, name, update_list, ordered_list):
     current_color = label.cget("bg")
     
     if current_color == "red":
         label.config(bg="SystemButtonFace")
         if name in container_list["Unload"]:
             container_list["Unload"].remove(name)
+            ordered_list.remove(("Unload", name))
             update_list()
     else:
         label.config(bg="red")
         container_list["Unload"].append(name)
+        ordered_list.append(("Unload", name))
         update_list()
 
 #def operations_screen(root,frame1):
     #frame1.pack_forget()
 
 
-def display_current_cargo(frame, current_cargo, container_list, hover_label, update_list):
+def display_current_cargo(frame, current_cargo, container_list, hover_label, update_list, ordered_list):
     rows = len(current_cargo)
     columns = len(current_cargo[0])
     for i in range(rows):
@@ -115,7 +120,7 @@ def display_current_cargo(frame, current_cargo, container_list, hover_label, upd
                 cell = tk.Label(frame, text=truncated_value, borderwidth=1, relief="solid", width=7, height=2, font=("Arial", 12), anchor="center")
             cell.grid(row=i, column=j, sticky="nsew")
             if not(truncated_value == "UNUSED" or truncated_value == "NAN"):
-                cell.bind("<Button 1>",lambda event, name=truncated_value,label=cell:[darkenCell(label, container_list, name, update_list)])
+                cell.bind("<Button 1>",lambda event, name=truncated_value,label=cell:[darkenCell(label, container_list, name, update_list, ordered_list)])
                 cell.bind("<Enter>", lambda event, row=i, col=j,current_cargo=current_cargo,hover_label=hover_label:show_hover_label(event, row, col,current_cargo,hover_label))
                 cell.bind("<Leave>", lambda event, hover_label=hover_label:hide_hover_label(event, hover_label))
 
