@@ -119,7 +119,7 @@ class Table:
                 widget = self.cell_widgets.get(cell)
                 if widget:
                     current_color = widget.cget("bg")
-                    new_color = "red" if current_color != "red" else "white"
+                    new_color = "red" if current_color != "red" else "SystemButtonFace"
                     widget.config(bg=new_color)
 
             # next flash

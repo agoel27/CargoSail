@@ -8,6 +8,8 @@ https://www.geeksforgeeks.org/python-gui-tkinter/
 https://stackoverflow.com/questions/41946222/how-do-i-create-a-popup-window-in-tkinter
 https://stackoverflow.com/questions/73184529/tkinter-make-my-pop-up-window-in-middle-of-the-screen
 https://www.geeksforgeeks.org/python-tkinter-text-widget/
+https://www.youtube.com/watch?v=wEv3BworNK8
+https://www.geeksforgeeks.org/how-to-get-selected-value-from-listbox-in-tkinter/
 
 Opening Logfile and json:
 https://stackoverflow.com/questions/13184414/how-can-i-get-the-path-to-the-appdata-directory-in-python

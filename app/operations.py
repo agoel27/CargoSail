@@ -17,6 +17,25 @@ from config import *
 def display_operations(root, selection):
     # destroys login page
     selection.pack_forget()
+    
+    container_list = {
+        "Unload": [],
+        "Load": []
+    }
+    
+    def update_list():
+        container_listbox.delete(0, tk.END)  # Clear existing items
+        for value in container_list["Unload"]:
+            container_listbox.insert(tk.END, f"Unload: {value}")
+            
+        for value in container_list["Load"]:
+            container_listbox.insert(tk.END, f"Load: {value}")
+        
+    def add_container(name, container_input):
+        container_list["Load"].append(name)
+        container_input.delete(0, tk.END)
+        update_list()
+    
 
     # parent frame of the page
     load_unload_frame = tk.Frame(root)
@@ -48,29 +67,40 @@ def display_operations(root, selection):
     container_input = tk.Entry(select_container_frame)
     container_input.grid(row=0, column=0)
     
-    container_button = Button(select_container_frame, text="Load", bg="red", command=lambda: container_list.insert(0, container_input.get()))
+    container_button = Button(select_container_frame, text="Load", bg="red", command=lambda: add_container(container_input.get(), container_input))
     container_button.grid(row=1, column=0)
     
-    container_list_label = Label(list_container_frame, text="Containers to Load/Unload:", wraplength=75, anchor="w", justify="left")
-    container_list_label.grid(row=0, column=0)
+    container_listbox = tk.Listbox(list_container_frame, width=30, height=10)
+    container_listbox.grid(row=1, column=0, padx=10, pady=10)
+
+    listbox_label = Label(list_container_frame, text="Containers to Load/Unload:", anchor="w", justify="left")
+    listbox_label.grid(row=0, column=0)
     
-    container_list = Listbox(list_container_frame)
-    container_list.grid(row=1, column=0)
     hover_label = tk.Label(load_unload_frame, bg="yellow", text="", font=("Arial", 12), relief="solid", borderwidth=1)
 
 
     # display the ship's current cargo
-    display_current_cargo(cargo_frame, get_manifest(), container_list,hover_label)
+    display_current_cargo(cargo_frame, get_manifest(), container_list, hover_label, update_list)
     #ship_table = Table(cargo_frame, get_manifest())
 
-def darkenCell(label):
-    label.config(bg="red")
+def darkenCell(label, container_list, name, update_list):
+    current_color = label.cget("bg")
+    
+    if current_color == "red":
+        label.config(bg="SystemButtonFace")
+        if name in container_list["Unload"]:
+            container_list["Unload"].remove(name)
+            update_list()
+    else:
+        label.config(bg="red")
+        container_list["Unload"].append(name)
+        update_list()
 
 #def operations_screen(root,frame1):
     #frame1.pack_forget()
 
 
-def display_current_cargo(frame, current_cargo, container_list,hover_label):
+def display_current_cargo(frame, current_cargo, container_list, hover_label, update_list):
     rows = len(current_cargo)
     columns = len(current_cargo[0])
     for i in range(rows):
@@ -85,9 +115,9 @@ def display_current_cargo(frame, current_cargo, container_list,hover_label):
                 cell = tk.Label(frame, text=truncated_value, borderwidth=1, relief="solid", width=7, height=2, font=("Arial", 12), anchor="center")
             cell.grid(row=i, column=j, sticky="nsew")
             if not(truncated_value == "UNUSED" or truncated_value == "NAN"):
-                cell.bind("<Button 1>",lambda event, name=truncated_value,label=cell:[container_list.insert(0,name),darkenCell(label)])
+                cell.bind("<Button 1>",lambda event, name=truncated_value,label=cell:[darkenCell(label, container_list, name, update_list)])
                 cell.bind("<Enter>", lambda event, row=i, col=j,current_cargo=current_cargo,hover_label=hover_label:show_hover_label(event, row, col,current_cargo,hover_label))
-                cell.bind("<Leave>", hide_hover_label)
+                cell.bind("<Leave>", lambda event, hover_label=hover_label:hide_hover_label(event, hover_label))
 
 def show_hover_label(event, row, col,data,hover_label):
         """
@@ -108,8 +138,6 @@ def hide_hover_label(event,hover_label):
         """
         if hover_label.winfo_exists():
             hover_label.place_forget()
-def myFunc(name):
-    print(name)
 
 
 
