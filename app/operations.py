@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import *
+from tkinter import messagebox
 from app.popup_login import login_popup
 from app.add_note import add_note
 from app.operations_screen import operations_screen
@@ -37,7 +38,12 @@ def display_operations(root, selection):
         ordered_list.append(("Load", name))
         container_input.delete(0, tk.END)
         update_list()
-    
+
+    def start_operation(root, load_unload_frame):
+        if len(container_list["Load"]) == 0 and len(container_list["Unload"]) == 0:
+            messagebox.showerror("Error", "Please select at least one container.")
+        else:
+            operations_screen(root, load_unload_frame)
 
     # parent frame of the page
     load_unload_frame = tk.Frame(root)
@@ -63,7 +69,7 @@ def display_operations(root, selection):
     addNoteButton = Button(load_unload_frame, text="Add Note", padx=10, pady=10, command=lambda:add_note(root))
     addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
     
-    done_button = Button(done_button_frame, text="Done", command=lambda: operations_screen(root, load_unload_frame), padx=20, pady=10)
+    done_button = Button(done_button_frame, text="Done", command=lambda: start_operation(root, load_unload_frame), padx=20, pady=10)
     done_button.pack(pady=20)
     
     container_input = tk.Entry(select_container_frame)
