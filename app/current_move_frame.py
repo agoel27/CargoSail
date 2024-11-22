@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 #from app.load_balance_screen import *
 #from app.add_note import add_note
+from tkinter import messagebox
 import app.load_balance_screen as load_balance_screen
 from config import *
 
@@ -28,6 +29,11 @@ class CurrentMoveFrame:
         # self.current_move_to = current_move_to
         # self.estimated_time_for_move = estimated_time_for_move
 
+    def finish_move(self, master_frame, frame):
+        if self.current_move_number == self.total_moves:
+            messagebox.showinfo("Reminder", "Reminder to email the manifest!")
+        load_balance_screen.load_balance(master_frame, frame)
+
     def create_current_move_frame(self):
         """
         create frame with the text displaying the move information
@@ -43,6 +49,6 @@ class CurrentMoveFrame:
         if self.current_move_number < self.total_moves:
             next_button = tk.Button(move_info_frame, text="Next", font=("Arial", 16), padx=10, pady=10, command=lambda: self.create_current_move_frame())
         else:
-            next_button = tk.Button(move_info_frame, text="Done", font=("Arial", 16), padx=10, pady=10, command=lambda: load_balance_screen.load_balance(self.frame.master, self.frame))
+            next_button = tk.Button(move_info_frame, text="Done", font=("Arial", 16), padx=10, pady=10, command=lambda: self.finish_move(self.frame.master, self.frame))
         
         next_button.pack(pady=10)

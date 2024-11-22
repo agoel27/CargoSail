@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import *
-
 from app.popup_login import login_popup
 from app.add_note import add_note
 from app.operations_screen import operations_screen
