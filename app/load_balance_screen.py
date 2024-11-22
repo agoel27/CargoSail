@@ -9,7 +9,6 @@ from app.add_note import add_note
 from config import *
 
 def load_file():
-    ret = False
     e = None
 
     file_path = filedialog.askopenfilename(
@@ -22,11 +21,11 @@ def load_file():
             # open the file and store its contents
             with open(file_path, 'r') as file:
                 content = file.readlines()
-                ret = True
 
         except Exception as exc:
             messagebox.showerror("Error", f"Could not read file: {exc}")
             e = exc
+            return False
 
         data = [[None for _ in range(12)] for _ in range(8)]
 
@@ -41,12 +40,13 @@ def load_file():
             except Exception as exc:
                 messagebox.showerror("Error", f"Could not read Manifest")
                 e = exc
-                break
+                return False
         
         if not e:
             set_manifest(data)
+            return True     # return here so make sure the file is actually read
 
-    return ret
+    return False
 
 def load_operation(root, load_balance_frame):
     if load_file():
