@@ -25,17 +25,24 @@ def display_operations(root, selection):
     
     ordered_list = []
     
+    # read from file if data is found add items else it is empty
+    ordered_list = read_save_file("ordered_list")
+    container_list = read_save_file("container_list")   
+    
     def update_list():
         container_listbox.delete(0, tk.END)  # Clear existing items
         for operation, value in ordered_list:
             container_listbox.insert(tk.END, f"{operation}: {value}")
             
+        # Update data in the save file
+        write_save_file("ordered_list", ordered_list)
+        write_save_file("container_list", container_list)  
         
     def add_container(name, container_input):
         if name == '':
             return
         container_list["Load"].append(name)
-        ordered_list.append(("Load", name))
+        ordered_list.append(("Load", name))        
         container_input.delete(0, tk.END)
         update_list()
 
@@ -44,6 +51,9 @@ def display_operations(root, selection):
             messagebox.showerror("Error", "Please select at least one container.")
         else:
             operations_screen(root, load_unload_frame)
+
+    # save current state for crash recovery
+    write_save_file("state", 1)
             
     def remove_operation(root, listbox):
         for i in reversed(listbox.curselection()):
@@ -61,7 +71,6 @@ def display_operations(root, selection):
                 container_list[ordered_list[i][0]].remove(ordered_list[i][1])
                 ordered_list.pop(i)
                 update_list()
-            
     
     # parent frame of the page
     load_unload_frame = tk.Frame(root)
@@ -107,7 +116,7 @@ def display_operations(root, selection):
     
     hover_label = tk.Label(load_unload_frame, bg="yellow", text="", font=("Arial", 12), relief="solid", borderwidth=1)
 
-
+    
     # display the ship's current cargo
     display_current_cargo(cargo_frame, get_manifest(), container_list, hover_label, update_list, ordered_list)
     #ship_table = Table(cargo_frame, get_manifest())
@@ -124,12 +133,12 @@ def darkenCell(label, container_list, name, update_list, ordered_list):
         label.config(bg="SystemButtonFace")
         if name in container_list["Unload"]:
             container_list["Unload"].remove(name)
-            ordered_list.remove(("Unload", name))
+            ordered_list.remove(["Unload", name])
             update_list()
     else:
         label.config(bg="red")
         container_list["Unload"].append(name)
-        ordered_list.append(("Unload", name))
+        ordered_list.append(["Unload", name])
         update_list()
         
 def display_current_cargo(frame, current_cargo, container_list, hover_label, update_list, ordered_list):
@@ -146,6 +155,9 @@ def display_current_cargo(frame, current_cargo, container_list, hover_label, upd
             else:
                 cell = tk.Label(frame, text=truncated_value, borderwidth=1, relief="solid", width=7, height=2, font=("Arial", 12), anchor="center")
             cell.grid(row=i, column=j, sticky="nsew")
+            
+            recover_darkenCells(cell, truncated_value, update_list)
+            
             if not(truncated_value == "UNUSED" or truncated_value == "NAN"):
                 cell.bind("<Button 1>",lambda event, name=truncated_value,label=cell:[darkenCell(label, container_list, name, update_list, ordered_list)])
                 cell.bind("<Enter>", lambda event, row=i, col=j,current_cargo=current_cargo,hover_label=hover_label:show_hover_label(event, row, col,current_cargo,hover_label))
@@ -172,7 +184,14 @@ def hide_hover_label(event,hover_label):
         if hover_label.winfo_exists():
             hover_label.place_forget()
 
-
+def recover_darkenCells(cell, truncated_value, update_list):
+        saved_list = read_save_file("ordered_list")
+        r = len(saved_list)
+        for k in range(r):
+            if truncated_value == saved_list[k][1]:
+                cell.config(bg="red")
+                update_list()
+    
 
 # display_operations(root)
 # root.geometry("800x600")

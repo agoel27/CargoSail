@@ -3,12 +3,28 @@ from app import *
 from tkinter import Tk
 from config import *
 from app.login import login_screen
+from app.operations import *
 
 def create_root():
     root = Tk()
     root.title("CargoSail Solutions")
     root.geometry("1400x800")
     return root
+
+def crash_recovery(root, state):
+    temp = Frame(root) 
+    
+    match state:
+        case 1:
+            # Go to (un)load selection screen
+            display_operations(root, temp)
+        case 2:
+            # Go to operation screen for (un)load or balance
+            print("operations for load/unload or balance")
+        case _:
+            # Default: Start at the login screen
+            login_screen(root)
+
 
 def open_logfile_and_save():
     # find localappdata directory
@@ -31,7 +47,14 @@ def open_logfile_and_save():
     # if the save file is not created yet it will create it with the fields specified here
     if not os.path.exists(save_file_path):
         data = {
-            "name": ""
+            "name": "",
+            "state" : "", # 1 = unload/load selection, 2 = operations
+            "ordered_list" : [],
+            "container_list": {
+                "Unload": [],
+                "Load": []
+            },
+            "manifest_data": []
         }
         
         with open(save_file_path, 'w') as json_file:
@@ -39,6 +62,8 @@ def open_logfile_and_save():
 
 root = create_root()
 open_logfile_and_save()
-login_screen(root)
+
+last_state = read_save_file("state")
+crash_recovery(root, last_state)
 
 root.mainloop()
