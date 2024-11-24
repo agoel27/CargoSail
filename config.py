@@ -1,7 +1,7 @@
 # global functions for easy access from all files
 # to access from the app folder do: from config import *
 
-import requests, json
+import requests, json, os
 
 def set_logfile_path(path):
     global logfile_path
@@ -27,9 +27,15 @@ def get_username():
 def set_manifest(data):
     global manifest_data
     manifest_data = data
+    write_save_file("manifest_data", data)
 
 def get_manifest():
-    return manifest_data
+    # retrieve data during runtime
+    #return manifest_data 
+    
+    # retrieve data from save file
+    return read_save_file("manifest_data")
+
 
 def set_move_info(total_moves, total_minutes, current_move_number, current_move_from, current_move_to, estimated_time_for_move):
     """
@@ -48,6 +54,10 @@ def set_move_info(total_moves, total_minutes, current_move_number, current_move_
         f"Move from {current_move_from} to {current_move_to}, "
         f"estimated: {estimated_time_for_move} minutes."
     )
+    
+    # Store changes per move - TEMP
+    # with open(get_save_file_path(), 'a') as json_file:
+    #         json.dump(move_data, json_file, indent=4)
 
 def get_move_info():
     return move_info
@@ -107,3 +117,7 @@ def read_save_file(key):
         entry = ""
         
     return entry
+
+def delete_save_file():
+    if os.path.exists(save_file_path):
+        os.remove(save_file_path)

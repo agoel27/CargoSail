@@ -7,11 +7,13 @@ from app.current_move_frame import CurrentMoveFrame
 from config import *
 
 def operations_screen(root, prevFrame):
-
     buffer_data = [[(0, "UNUSED") for _ in range(24)] for _ in range(4)]
 
     # destroys previous frame
     prevFrame.pack_forget()
+    
+    # save current state for crash recovery 
+    # write_save_file("state", 2)
 
     # create operations screen frame
     operations_screen_frame = tk.Frame(root)

@@ -49,6 +49,6 @@ class CurrentMoveFrame:
         if self.current_move_number < self.total_moves:
             next_button = tk.Button(move_info_frame, text="Next", font=("Arial", 16), padx=10, pady=10, command=lambda: self.create_current_move_frame())
         else:
-            next_button = tk.Button(move_info_frame, text="Done", font=("Arial", 16), padx=10, pady=10, command=lambda: self.finish_move(self.frame.master, self.frame))
+            next_button = tk.Button(move_info_frame, text="Done", font=("Arial", 16), padx=10, pady=10, command=lambda: [self.finish_move(self.frame.master, self.frame), delete_save_file()])
         
         next_button.pack(pady=10)
