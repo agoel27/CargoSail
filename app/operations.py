@@ -26,8 +26,10 @@ def display_operations(root, selection):
     ordered_list = []
     
     # read from file if data is found add items else it is empty
-    ordered_list = read_save_file("ordered_list")
-    container_list = read_save_file("container_list")   
+    if read_save_file("ordered_list"):
+        ordered_list = read_save_file("ordered_list")
+    if read_save_file("container_list"):
+        container_list = read_save_file("container_list")
     
     def update_list():
         container_listbox.delete(0, tk.END)  # Clear existing items
@@ -133,12 +135,12 @@ def darkenCell(label, container_list, name, update_list, ordered_list):
         label.config(bg="SystemButtonFace")
         if name in container_list["Unload"]:
             container_list["Unload"].remove(name)
-            ordered_list.remove(["Unload", name])
+            ordered_list.remove(("Unload", name))
             update_list()
     else:
         label.config(bg="red")
         container_list["Unload"].append(name)
-        ordered_list.append(["Unload", name])
+        ordered_list.append(("Unload", name))
         update_list()
         
 def display_current_cargo(frame, current_cargo, container_list, hover_label, update_list, ordered_list):
@@ -186,11 +188,12 @@ def hide_hover_label(event,hover_label):
 
 def recover_darkenCells(cell, truncated_value, update_list):
         saved_list = read_save_file("ordered_list")
-        r = len(saved_list)
-        for k in range(r):
-            if truncated_value == saved_list[k][1]:
-                cell.config(bg="red")
-                update_list()
+        if saved_list:
+            r = len(saved_list)
+            for k in range(r):
+                if truncated_value == saved_list[k][1]:
+                    cell.config(bg="red")
+                    update_list()
     
 
 # display_operations(root)
