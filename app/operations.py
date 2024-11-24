@@ -54,6 +54,23 @@ def display_operations(root, selection):
 
     # save current state for crash recovery
     write_save_file("state", 1)
+            
+    def remove_operation(root, listbox):
+        for i in reversed(listbox.curselection()):
+            if ordered_list[i][0] == 'Unload':
+                for widget in cargo_frame.winfo_children():
+                    if widget.cget("text") == ordered_list[i][1]:
+                        widget.config(bg="SystemButtonFace")
+                        break
+                
+                container_list[ordered_list[i][0]].remove(ordered_list[i][1])
+                ordered_list.pop(i)
+                update_list()
+            
+            else:
+                container_list[ordered_list[i][0]].remove(ordered_list[i][1])
+                ordered_list.pop(i)
+                update_list()
     
     # parent frame of the page
     load_unload_frame = tk.Frame(root)
@@ -85,11 +102,14 @@ def display_operations(root, selection):
     container_input = tk.Entry(select_container_frame)
     container_input.grid(row=0, column=0)
     
-    container_button = Button(select_container_frame, text="Load", bg="red", command=lambda: add_container(container_input.get(), container_input))
+    container_button = Button(select_container_frame, text="Load", command=lambda: add_container(container_input.get(), container_input))
     container_button.grid(row=1, column=0)
     
-    container_listbox = tk.Listbox(list_container_frame, width=30, height=10)
+    container_listbox = tk.Listbox(list_container_frame, width=30, height=10, selectmode=MULTIPLE)
     container_listbox.grid(row=1, column=0, padx=10, pady=10)
+    
+    container_button = Button(list_container_frame, text="Remove", command=lambda: remove_operation(root, container_listbox))
+    container_button.grid(row=2, column=0)
 
     listbox_label = Label(list_container_frame, text="Containers to Load/Unload:", anchor="w", justify="left")
     listbox_label.grid(row=0, column=0)
@@ -100,6 +120,11 @@ def display_operations(root, selection):
     # display the ship's current cargo
     display_current_cargo(cargo_frame, get_manifest(), container_list, hover_label, update_list, ordered_list)
     #ship_table = Table(cargo_frame, get_manifest())
+
+
+
+#def operations_screen(root,frame1):
+    #frame1.pack_forget()
 
 def darkenCell(label, container_list, name, update_list, ordered_list):
     current_color = label.cget("bg")
@@ -115,11 +140,7 @@ def darkenCell(label, container_list, name, update_list, ordered_list):
         container_list["Unload"].append(name)
         ordered_list.append(["Unload", name])
         update_list()
-
-#def operations_screen(root,frame1):
-    #frame1.pack_forget()
-
-
+        
 def display_current_cargo(frame, current_cargo, container_list, hover_label, update_list, ordered_list):
     rows = len(current_cargo)
     columns = len(current_cargo[0])
@@ -141,6 +162,7 @@ def display_current_cargo(frame, current_cargo, container_list, hover_label, upd
                 cell.bind("<Button 1>",lambda event, name=truncated_value,label=cell:[darkenCell(label, container_list, name, update_list, ordered_list)])
                 cell.bind("<Enter>", lambda event, row=i, col=j,current_cargo=current_cargo,hover_label=hover_label:show_hover_label(event, row, col,current_cargo,hover_label))
                 cell.bind("<Leave>", lambda event, hover_label=hover_label:hide_hover_label(event, hover_label))
+
 
 def show_hover_label(event, row, col,data,hover_label):
         """

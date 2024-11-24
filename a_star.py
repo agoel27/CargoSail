@@ -1,3 +1,6 @@
+import re
+import numpy as np
+
 #work in progress, will discuss on friday 
 class load_unload_problem:
     def __init__(self,initial_state):
@@ -56,14 +59,6 @@ class Node:
         self.cost_h = cost_h
     
 
-    
-
-
-
-
-
-
-
 def a_star(problem,queueing_func):
     #nodes = makeQueue(Node(problem.initial_state))
     #loop do
@@ -74,8 +69,40 @@ def a_star(problem,queueing_func):
     #end
     print("hello")
 
+def load_manifest(file_path):
+    matrix = np.empty((8, 12), dtype=object)
+    pattern = r"\[(\d{2},\d{2})\], \{\d+\}, (\w+|NAN)"
+    
+    with open(file_path, "r") as file:
+        content = file.read()
+    
+    # Find all matches
+    matches = re.findall(pattern, content)
+    
+    for coord, container in matches:
+        coord_tuple = tuple(map(int, coord.split(',')))  # Convert coordinate to a tuple of integers
+
+        # flip the y coordinate to match the matrix
+        coord_tuple = (matrix.shape[0] - coord_tuple[0], coord_tuple[1] - 1)
+
+        '''
+            Set the matrix value to a tuple instead of int to store the location type and node 
+        '''
+        if container == "NAN":
+            matrix[coord_tuple] = -1 # Set to -1 if container is "NAN"
+        elif container == "UNUSED":
+            matrix[coord_tuple] = 0
+        else:
+            matrix[coord_tuple] = 1
+
+    return matrix
+    
+
 #testing that the classes are working as intended
 def main():
+    manifest_path = "/Users/jerryli/Downloads/load_unload_small.txt"
+    cargo_matrix = load_manifest(manifest_path) 
+
     node1 = Node(1)
     node2 = Node(2)
     node3 = Node(3)
