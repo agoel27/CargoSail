@@ -57,7 +57,8 @@ class Node:
     
 
     
-
+def expand(node, operators, manifest):
+    
 
 
 
