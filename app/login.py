@@ -1,6 +1,7 @@
 import os, re, json
 import tkinter as tk
 from tkinter import *
+from tkinter import ttk
 from config import *
 from app.input_valid import input_validation
 from app.load_balance_screen import load_balance
@@ -23,7 +24,7 @@ def login_store(root, input_field, login_frame, error_message):
         load_balance(root, login_frame)
 
 def login_screen(root):
-    login_frame = tk.Frame(root)
+    login_frame = ttk.Frame(root)
     login_frame.pack(expand=True)
 
     name = read_save_file("name")
@@ -35,18 +36,17 @@ def login_screen(root):
     # create login screen frame
     
     # message on top of input field
-    message = Label(login_frame, text='Enter Name ')
+    message = ttk.Label(login_frame, text='Enter Name ')
     message.grid(row=0, column=0)
     
     # error message on top of input
-    error_message = Label(login_frame, text="")
+    error_message = ttk.Label(login_frame, text="")
     error_message.grid(row=1, column=0)
     
     # input field
-    input_field = Entry(login_frame)
+    input_field = ttk.Entry(login_frame)
     input_field.grid(row=3, column=0)
     
     # sign in button when pressed goes to load_balance
-    sign_in = Button(login_frame, text="Sign in", command= lambda: login_store(root, input_field, login_frame, error_message))
+    sign_in = ttk.Button(login_frame, text="Sign in", padding=(5,5), command= lambda: login_store(root, input_field, login_frame, error_message))
     sign_in.grid(row=4, column=0, padx=10, pady=10)
-    

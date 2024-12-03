@@ -1,5 +1,6 @@
 import os
 from tkinter import *
+from tkinter import ttk
 from tkinter import messagebox
 from config import *
 
@@ -13,6 +14,7 @@ def add_note(root):
     '''    
 
     popup = Toplevel(root)
+    popup.configure(bg="black")
     popup.geometry("400x180")
     popup.title("Add Note")
     
@@ -49,14 +51,14 @@ def add_note(root):
         add_logEntry(user_input)
         popup.destroy()
 
-    label = Label(popup, text="Add a Note:")
+    label = ttk.Label(popup, text="Add a Note:")
     label.pack(pady=(10,0))
 
-    error_message = Label(popup, text="", fg="red")
+    error_message = ttk.Label(popup, text="", foreground="red")
     error_message.pack(pady=(1,4))
 
     text_box = Text(popup, height=4, width=40)
     text_box.pack(pady=1)
 
-    close_button = Button(popup, text="Add Note", command=add_note_to_log, height=2, width=15)
+    close_button = ttk.Button(popup, text="Add Note", command=add_note_to_log)
     close_button.pack(pady=5)

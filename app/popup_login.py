@@ -1,6 +1,7 @@
 import re
 import datetime
 import tkinter as Tk
+from tkinter import ttk
 from tkinter import *
 from app.login import *
 from config import *
@@ -53,17 +54,17 @@ def login_popup(root):
     login.resizable(False, False)
     
     # message top of input field
-    message = Label(login, text='Enter Name: ')
-    message.place(relx = 0.4, rely = 0.35, anchor = 'center')
+    message = ttk.Label(login, text='Enter Name: ')
+    message.place(relx = 0.5, rely = 0.33, anchor = 'center')
     
     # error message on top of input
-    error_message = Label(login, text="")
+    error_message = ttk.Label(login, text="")
     error_message.place(relx=0.5, rely=0.15, anchor='center')
     
     # input field
-    input_field = Entry(login)
-    input_field.place(relx = 0.5, rely = 0.5, anchor = 'center')
+    input_field = ttk.Entry(login)
+    input_field.place(relx = 0.5, rely = 0.5, anchor='center')
     
     # sign in button when pressed closes top window
-    sign_in = Button(login, text="Sign in", command= lambda: [login_store(root, input_field, login, error_message)])
-    sign_in.place(x=100, y=95)
+    sign_in = ttk.Button(login, text="Sign in", command= lambda: [login_store(root, input_field, login, error_message)])
+    sign_in.place(relx=0.5, rely=0.7, anchor='center')

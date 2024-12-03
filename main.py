@@ -1,18 +1,20 @@
 import os, json
 from app import *
-from tkinter import Tk
+from tkinter import Tk, ttk
+from ttkthemes import ThemedTk
 from config import *
 from app.login import login_screen
 from app.operations import *
 
 def create_root():
-    root = Tk()
-    root.title("CargoSail Solutions")
+    root = ThemedTk(theme="black")
     root.geometry("1400x800")
+    root.configure(bg="black") #f5f6f7
+    root.title("CargoSail Solutions")
     return root
 
 def crash_recovery(root, state):
-    temp = Frame(root) 
+    temp = ttk.Frame(root) 
     
     match state:
         case 1:
