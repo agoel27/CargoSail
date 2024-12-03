@@ -45,6 +45,8 @@ def display_operations(root, selection):
         else:
             operations_screen(root, load_unload_frame)
 
+    def send_container_list(unload_containers):
+        get_container_list(unload_containers)
     # parent frame of the page
     load_unload_frame = tk.Frame(root)
     load_unload_frame.pack(expand=1, fill="both")
@@ -69,7 +71,7 @@ def display_operations(root, selection):
     addNoteButton = Button(load_unload_frame, text="Add Note", padx=10, pady=10, command=lambda:add_note(root))
     addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
     
-    done_button = Button(done_button_frame, text="Done", command=lambda: start_operation(root, load_unload_frame), padx=20, pady=10)
+    done_button = Button(done_button_frame, text="Done", command=lambda: [start_operation(root, load_unload_frame), send_container_list(container_list["Load"])], padx=20, pady=10)
     done_button.pack(pady=20)
     
     container_input = tk.Entry(select_container_frame)
@@ -149,7 +151,8 @@ def hide_hover_label(event,hover_label):
         if hover_label.winfo_exists():
             hover_label.place_forget()
 
-
+def get_container_list(container_list):
+    return container_list
 
 # display_operations(root)
 # root.geometry("800x600")
