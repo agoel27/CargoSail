@@ -7,9 +7,9 @@ from app.login import login_screen
 from app.operations import *
 
 def create_root():
-    root = ThemedTk(theme="black")
+    root = ThemedTk(theme="arc")
     root.geometry("1400x800")
-    root.configure(bg="black") #f5f6f7
+    root.configure(bg="#f5f6f7")
     root.title("CargoSail Solutions")
     return root
 

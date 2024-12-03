@@ -14,7 +14,7 @@ def add_note(root):
     '''    
 
     popup = Toplevel(root)
-    popup.configure(bg="black")
+    popup.configure(bg="#f5f6f7")
     popup.geometry("400x180")
     popup.title("Add Note")
     

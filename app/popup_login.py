@@ -28,6 +28,7 @@ def login_popup(root):
     # create login popup frame
     login = Toplevel()
     login.title("Login")
+    login.configure(bg="#f5f6f7")
     login.geometry("250x150") 
     
     # selects popup as active window
