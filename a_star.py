@@ -3,6 +3,7 @@
 import numpy as np
 import re 
 import copy
+
 class load_unload_problem:
     def __init__(self,initial_state):
         self.initial_state = initial_state
@@ -59,7 +60,7 @@ class Node:
     
 
     
-def expand(node, operators, containers_to_load):
+def expand(node, containers_to_load):
     children = []
     columns = len(node.state[0])
     rows = len(node.state)
@@ -104,7 +105,7 @@ def expand(node, operators, containers_to_load):
 
 def load_manifest(file_path):
     matrix = np.empty((8, 12), dtype=object)
-    pattern = r"\[(\d{2},\d{2})\], \{\d+\}, (\w+|NAN)"
+    pattern = r"\[(\d{2},\d{2})\], \{(\d+)\}, (\w+|NAN)"
     
     with open(file_path, "r") as file:
         content = file.read()
@@ -112,7 +113,7 @@ def load_manifest(file_path):
     # Find all matches
     matches = re.findall(pattern, content)
     
-    for coord, container in matches:
+    for coord,weight,container_name in matches:
         coord_tuple = tuple(map(int, coord.split(',')))  # Convert coordinate to a tuple of integers
 
         # flip the y coordinate to match the matrix
@@ -121,12 +122,7 @@ def load_manifest(file_path):
         '''
             Set the matrix value to a tuple instead of int to store the location type and node 
         '''
-        if container == "NAN":
-            matrix[coord_tuple] = -1 # Set to -1 if container is "NAN"
-        elif container == "UNUSED":
-            matrix[coord_tuple] = 0
-        else:
-            matrix[coord_tuple] = 1
+        matrix[coord_tuple] = (weight,container_name)
 
     return matrix
 
@@ -143,7 +139,7 @@ def move_container(current_state, myRow, myCol, otherRow, otherCol):
 
 def load_container(state, row, col,container):
     copy_state = copy.deepcopy(state)
-    copy_state[row][col] = (1,container.name)
+    copy_state[row][col] = (container[0],container[1])
     return copy_state
 
 
@@ -156,7 +152,7 @@ def a_star(problem,queueing_func):
     #if problem.goal_test(node.state) succeeds return node
         #nodes = queueing_function(nodes,expand(node,problem.operators))
     #end
-    print("hello")
+    print()
 
 #testing that the classes are working as intended
 def main():
@@ -168,14 +164,21 @@ def main():
     node1.set_cost_g(1)
     node2.set_cost_g(2)
     node3.set_cost_g(3)
-
+    
+    #test queue
     p_queue = priorityQueue()
     p_queue.push(node1)
     p_queue.push(node2)
     p_queue.push(node3)
-    print(cargo_matrix)
-    for i in range(p_queue.len()):
-        print(p_queue.pop())
+    
+    #test expand func
+    node1.state = cargo_matrix
+    cargo_to_load = [('0000','walmart'), ('0000','target')]
+    children = expand(node1,cargo_to_load)
+    print(len(children))
+    print(children[0].state)
+    
+    
     
 if __name__ == "__main__": 
     main()
