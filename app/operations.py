@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 from tkinter import *
 from tkinter import messagebox
 from app.popup_login import login_popup
@@ -80,48 +81,49 @@ def display_operations(root, selection):
     
 
     # parent frame of the page
-    load_unload_frame = tk.Frame(root)
+    load_unload_frame = ttk.Frame(root)
     load_unload_frame.pack(expand=1, fill="both")
     
     # create frames for visuals on screen
-    done_button_frame = tk.Frame(load_unload_frame)
+    done_button_frame = ttk.Frame(load_unload_frame)
     done_button_frame.pack(side="bottom", fill="x")
     
-    select_container_frame = tk.Frame(load_unload_frame)
+    select_container_frame = ttk.Frame(load_unload_frame)
     select_container_frame.place(relx=.05, rely=.25)
     
-    list_container_frame = tk.Frame(load_unload_frame)
+    list_container_frame = ttk.Frame(load_unload_frame)
     list_container_frame.place(relx=.80, rely=.25)
     
-    cargo_frame = tk.Frame(load_unload_frame)
+    cargo_frame = ttk.Frame(load_unload_frame)
     cargo_frame.place(relx=.5, rely=.5, anchor='center')
 
     # place and define buttons/labels/entry box etc.
-    loginButton = Button(load_unload_frame, text="Login", padx=10, pady=10, command= lambda:login_popup(root))
+    loginButton = ttk.Button(load_unload_frame, text="Login", padding=(10, 10), command= lambda:login_popup(root))
     loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
     
-    addNoteButton = Button(load_unload_frame, text="Add Note", padx=10, pady=10, command=lambda:add_note(root))
+    addNoteButton = ttk.Button(load_unload_frame, text="Add Note", padding=(10, 10), command=lambda:add_note(root))
     addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
     
-    done_button = Button(done_button_frame, text="Done", command=lambda: [start_operation(root, load_unload_frame), send_container_list(container_list["Load"])], padx=20, pady=10)
+
+    done_button = ttk.Button(done_button_frame, text="Done", padding=(20, 10), command=lambda: [start_operation(root, load_unload_frame), send_container_list(container_list["Load"])])
     done_button.pack(pady=20)
     
-    container_input = tk.Entry(select_container_frame)
+    container_input = ttk.Entry(select_container_frame)
     container_input.grid(row=0, column=0)
     
-    container_button = Button(select_container_frame, text="Load", command=lambda: add_container(container_input.get(), container_input))
+    container_button = ttk.Button(select_container_frame, text="Load", command=lambda: add_container(container_input.get(), container_input))
     container_button.grid(row=1, column=0)
     
     container_listbox = tk.Listbox(list_container_frame, width=30, height=10, selectmode=MULTIPLE)
     container_listbox.grid(row=1, column=0, padx=10, pady=10)
     
-    container_button = Button(list_container_frame, text="Remove", command=lambda: remove_operation(root, container_listbox))
+    container_button = ttk.Button(list_container_frame, text="Remove", command=lambda: remove_operation(root, container_listbox))
     container_button.grid(row=2, column=0)
 
-    listbox_label = Label(list_container_frame, text="Containers to Load/Unload:", anchor="w", justify="left")
+    listbox_label = ttk.Label(list_container_frame, text="Containers to Load/Unload:", anchor="w", justify="left")
     listbox_label.grid(row=0, column=0)
     
-    hover_label = tk.Label(load_unload_frame, bg="yellow", text="", font=("Arial", 12), relief="solid", borderwidth=1)
+    hover_label = ttk.Label(load_unload_frame, text="", font=("Arial", 12), relief="solid", borderwidth=1)
 
     
     # display the ship's current cargo
