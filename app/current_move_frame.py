@@ -43,12 +43,15 @@ class CurrentMoveFrame:
         move_info_frame.place(anchor="c", relx=0.25, rely=0.4)
 
         # place label in current move frame
-        info_label = tk.Label(move_info_frame, text=get_move_info(), font=("Arial", 16), anchor="center", justify="center")
+        info_label = ttk.Label(move_info_frame, text=get_move_info(), font=("Arial", 16), anchor="center", justify="center")
         info_label.pack(fill="x", pady=10)
+        
+        style = ttk.Style()
+        style.configure("Buttons.TButton", font=("Arial", 14), padding=(10, 10))
 
         if self.current_move_number < self.total_moves:
-            next_button = tk.Button(move_info_frame, text="Next", font=("Arial", 16), padx=10, pady=10, command=lambda: self.create_current_move_frame())
+            next_button = ttk.Button(move_info_frame, text="Next", style="Buttons.TButton", command=lambda: self.create_current_move_frame())
         else:
-            next_button = tk.Button(move_info_frame, text="Done", font=("Arial", 16), padx=10, pady=10, command=lambda: [self.finish_move(self.frame.master, self.frame), delete_save_file()])
+            next_button = ttk.Button(move_info_frame, text="Done", style="Buttons.TButton", command=lambda: [self.finish_move(self.frame.master, self.frame), delete_save_file()])
         
         next_button.pack(pady=10)
