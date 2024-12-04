@@ -60,14 +60,13 @@ class Node:
     
 
     
-def expand(node, containers_to_load):
+def expand(node, containers_to_load,containers_to_unload):
     children = []
     columns = len(node.state[0])
     rows = len(node.state)
     row_idx_of_top_container = [None] * columns    
     row_idx_of_valid_space = [None] * columns
     
-
     #find empty spaces in each column and find the index of the topmost container of each column
     for col in range(columns):
         for row in reversed(range(rows)):
@@ -87,18 +86,27 @@ def expand(node, containers_to_load):
         # skip columns with no containers
         if myRow == None:
             continue
-        # move container to the top of other valid columns
         for otherCol in range(columns):
             otherRow = row_idx_of_valid_space[otherCol]
             if otherRow != None and myCol != otherCol:
                 children.append(Node(move_container(node.state, myRow, myCol, otherRow, otherCol)))
     
-    #load each container that has to be loaded to one of the valid spots
-    for container in containers_to_load:
+    #load each container that has to be loaded to one of the valid spots and add it as a new Node to children
+    if containers_to_load: #check if load list is empty
+        for container in containers_to_load:
+            for col in range(columns):
+                valid_row = row_idx_of_valid_space[col]
+                if valid_row != None:
+                    children.append(Node(load_container(node.state,valid_row,col,container)))
+    
+    #unload a container if its one of the containers at the top of a column and append that new node to children
+    if containers_to_unload: #check if unload list is empty
         for col in range(columns):
-            valid_row = row_idx_of_valid_space[col]
-            if valid_row != None:
-                children.append(Node(load_container(node.state,valid_row,col,container)))
+            row = row_idx_of_top_container[col]
+            if node.state[row][col][1] != None:
+                for container in containers_to_unload:
+                    if container[1] == node.state[row][col][1]:
+                        children.append(Node(unload_container(node.state,row,col)))
     
     return children
             
@@ -134,7 +142,7 @@ def move_container(current_state, myRow, myCol, otherRow, otherCol):
     """
     copy_state = copy.deepcopy(current_state)
     copy_state[otherRow][otherCol] = copy_state[myRow][myCol]
-    copy_state[myRow][myCol] = (0,"UNUSED")
+    copy_state[myRow][myCol] = ('0000',"UNUSED")
     return copy_state
 
 def load_container(state, row, col,container):
@@ -142,7 +150,10 @@ def load_container(state, row, col,container):
     copy_state[row][col] = (container[0],container[1])
     return copy_state
 
-
+def unload_container(state,row,col):
+    copy_state = copy.deepcopy(state)
+    copy_state[row][col] = ('0000',"UNUSED")
+    return copy_state
 
 def a_star(problem,queueing_func):
     #nodes = makeQueue(Node(problem.initial_state))
@@ -174,7 +185,8 @@ def main():
     #test expand func
     node1.state = cargo_matrix
     cargo_to_load = [('0000','walmart'), ('0000','target')]
-    children = expand(node1,cargo_to_load)
+    cargo_to_unload = []
+    children = expand(node1,cargo_to_load,cargo_to_unload)
     print(len(children))
     print(children[0].state)
     
