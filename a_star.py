@@ -70,11 +70,11 @@ def expand(node, containers_to_load,containers_to_unload):
     rows = len(node.state)
     row_idx_of_top_container = [None] * columns    
     row_idx_of_valid_space = [None] * columns
-    
+        
     #find empty spaces in each column and find the index of the topmost container of each column
     for col in range(columns):
         for row in reversed(range(rows)):
-            if node.state[row][col][1] == "UNUSED":
+            if node.state[row][col][1]  == "UNUSED":
                 if row != rows - 1 and node.state[row+1][col][1] != "NAN":
                     row_idx_of_top_container[col] = row + 1
                 row_idx_of_valid_space[col] = row
@@ -83,6 +83,7 @@ def expand(node, containers_to_load,containers_to_unload):
                 if row == 0:
                     row_idx_of_top_container[col] = row
                 continue
+            
 
     #move container to the top of the other valid columns
     for myCol in range(columns):
@@ -146,7 +147,8 @@ def move_container(current_state, myRow, myCol, otherRow, otherCol):
     """
     copy_state = copy.deepcopy(current_state)
     copy_state[otherRow][otherCol] = copy_state[myRow][myCol]
-    copy_state[myRow][myCol] = ('0000',"UNUSED")
+    #copy_state[myRow][myCol] = ('0000',"UNUSED")
+    copy_state[myRow][myCol] = ('0000',"TEST")
     return copy_state
 
 def load_container(state, row, col,container):
@@ -168,10 +170,19 @@ def a_star(problem,queueing_func):
         #nodes = queueing_function(nodes,expand(node,problem.operators))
     #end
     print()
+    
 
-def load_manifest(file_path):
+# Used for testing purposes to debug matrix        
+def output_matrix(matrix):
+    file = open("test.txt", 'w')
+    for row in matrix:
+       file.write(" | ".join([str(x) for x in row]) + '\n')
+    file.close()
+
+    
+def load_manifest(file_path):    
     matrix = np.empty((8, 12), dtype=object)
-    pattern = r"\[(\d{2},\d{2})\], \{\d+\}, (\w+|NAN)"
+    pattern = r"\[(\d{2},\d{2})\], \{(\d+)\}, (\w+|NAN)"
     
     with open(file_path, "r") as file:
         content = file.read()
@@ -179,30 +190,24 @@ def load_manifest(file_path):
     # Find all matches
     matches = re.findall(pattern, content)
     
-    for coord, container in matches:
+    for coord, weight, container in matches:
         coord_tuple = tuple(map(int, coord.split(',')))  # Convert coordinate to a tuple of integers
 
         # flip the y coordinate to match the matrix
         coord_tuple = (matrix.shape[0] - coord_tuple[0], coord_tuple[1] - 1)
+        
+        # store weight and container to matrix
+        matrix[coord_tuple[0], coord_tuple[1]] = (weight, container)
 
-        '''
-            Set the matrix value to a tuple instead of int to store the location type and node 
-        '''
-        if container == "NAN":
-            matrix[coord_tuple] = -1 # Set to -1 if container is "NAN"
-        elif container == "UNUSED":
-            matrix[coord_tuple] = 0
-        else:
-            matrix[coord_tuple] = 1
-
+    output_matrix(matrix)
     return matrix
     
 
 #testing that the classes are working as intended
 def main():
 
-    manifest_path = "/Users/antho/Downloads/load_unload_small.txt"
-    cargo_matrix = load_manifest(manifest_path) 
+    manifest_path = "ShipCase1.txt"
+    cargo_matrix = load_manifest(manifest_path)  
     
     node1 = Node(1)
     node2 = Node(2)
@@ -219,13 +224,15 @@ def main():
     
     #test expand func
     node1.state = cargo_matrix
+
     cargo_to_load = [('0000','walmart'), ('0000','target')]
     cargo_to_unload = []
-    children = expand(node1,cargo_to_load,cargo_to_unload)
+    children = expand(node1, cargo_to_load, cargo_to_unload)
     print(len(children))
-    print(children[0].state)
-    
-    
+    print(children[1].state)
+
+    # Use this test matrix output w/ any txt file           
+    output_matrix(children[1].state)
     
 if __name__ == "__main__": 
     main()
