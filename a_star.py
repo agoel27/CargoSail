@@ -4,13 +4,31 @@ import numpy as np
 import re 
 import copy
 
-class load_unload_problem:
-    def __init__(self,initial_state):
-        self.initial_state = initial_state
-    
-    def goal_test(self):
-        print("hello")
-    
+def goal_test(load_list,unload_list,current_state):
+    #check if all the containers have been loaded/unloaded
+    loads = load_list.copy()
+    unloads = unload_list.copy()
+    len_loads = len(loads)
+    len_unloads = len(unloads)
+
+    for row in current_state:
+        for element in row:
+            if len_loads != 0:
+                if in_list(element[1],loads):
+                    loads.remove(element)
+            if len_unloads != 0:
+                if in_list(element[1],unloads):
+                    return False
+    return len(loads) == 0
+                
+
+
+def in_list(element, arr):
+    if len(arr) != 0:
+        for item in arr:
+            if element == item[1]:
+                return True
+    return False 
 
 #priority queue implementation
 class priorityQueue:
@@ -160,7 +178,7 @@ def a_star(problem,queueing_func):
     #loop do
     #if empty(nodes) then return fail
         #node = removeFront(nodes)
-    #if problem.goal_test(node.state) succeeds return node
+    #if goal_test(node.state) succeeds return node
         #nodes = queueing_function(nodes,expand(node,problem.operators))
     #end
     print()
@@ -189,11 +207,13 @@ def main():
     #test expand func
     
     node1.state = cargo_matrix
-    cargo_to_load = [('0000','walmart'), ('0000','target')]
-    cargo_to_unload = []
-    children = expand(node1,cargo_to_load,cargo_to_unload)
-    print(len(children))
-    print(children[0].state)
+    cargo_to_load = [('00000', 'Dog'), ('00000', 'Spoons')]
+    cargo_to_unload = [('00000', 'Walmart')]
+    if(goal_test(cargo_to_load,cargo_to_unload,node1.state)):
+        print("Algorithm complete!")
+    else:
+        print("state has failed the test")
+    
     
     
     
