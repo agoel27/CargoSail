@@ -167,7 +167,12 @@ def a_star(problem,queueing_func):
     #end
     print()
 
-    
+# Used for testing purposes to debug matrix        
+def output_matrix(matrix):
+    file = open("test.txt", 'w')
+    for row in matrix:
+       file.write(" | ".join([str(x) for x in row]) + '\n')
+    file.close()
 
 #testing that the classes are working as intended
 def main():
