@@ -56,8 +56,8 @@ def display_operations(root, selection):
             operations_screen(root, load_unload_frame)
 
 
-    def send_container_list(unload_containers):
-        get_container_list(unload_containers)
+    def get_container_list(container_list):
+        return container_list
 
     # save current state for crash recovery
     write_save_file("state", 1)
@@ -105,7 +105,7 @@ def display_operations(root, selection):
     addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
     
 
-    done_button = ttk.Button(done_button_frame, text="Done", padding=(20, 10), command=lambda: [start_operation(root, load_unload_frame), send_container_list(container_list["Load"])])
+    done_button = ttk.Button(done_button_frame, text="Done", padding=(20, 10), command=lambda: start_operation(root, load_unload_frame))
     done_button.pack(pady=20)
     
     container_input = ttk.Entry(select_container_frame)
@@ -193,9 +193,6 @@ def hide_hover_label(event,hover_label):
         if hover_label.winfo_exists():
             hover_label.place_forget()
 
-
-def get_container_list(container_list):
-    return container_list
 
 def recover_darkenCells(cell, truncated_value, update_list):
         saved_list = read_save_file("ordered_list")
