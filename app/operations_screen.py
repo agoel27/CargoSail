@@ -20,20 +20,6 @@ def operations_screen(root, prev_frame):
     operations_screen_frame = ttk.Frame(root)
     operations_screen_frame.pack(expand=1, fill="both")
 
-    # # create login button frame
-    # login_button_frame = tk.Frame(operations_screen_frame)
-    # login_button_frame.place(relx=1, rely=0, anchor="ne")
-
-    # # create add note frame
-    # add_note_frame = tk.Frame(operations_screen_frame)
-    # add_note_frame.place(relx=0, rely=0, anchor="nw")
-
-    # loginButton = ttk.Button(operations_screen_frame, text="Login", padding=(10,10), command= lambda:login_popup(root))
-    # loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
-
-    # addNoteButton = ttk.Button(operations_screen_frame, text="Add Note", padding=(10,10), command=lambda:add_note(root))
-    # addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
-
     # create buffer area frame
     buffer_area_frame = ttk.Frame(operations_screen_frame)
     buffer_area_frame.place(relx=0.5, rely=0.85, anchor="c") # 0.7 

@@ -63,12 +63,6 @@ def load_balance(root, prev_frame):
     loadBalance_frame = ttk.Frame(root)
     loadBalance_frame.pack(fill=tk.BOTH, expand=True)  # Only occupies remaining space below the header
 
-    # loginButton = ttk.Button(loadBalance_frame, text="Login", padding=(10,10), command= lambda:login_popup(root))
-    # loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
-
-    # addNoteButton = ttk.Button(loadBalance_frame, text="Add Note", padding=(10,10), command=lambda:add_note(root))
-    # addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
-
     loadUnloadButton = ttk.Button(loadBalance_frame, text="Load/Unload", padding=(10,10), command=lambda:load_operation(root, loadBalance_frame))
     loadUnloadButton.place(anchor="c", relx=0.4, rely=0.5)
 
