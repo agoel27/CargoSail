@@ -7,7 +7,7 @@ import app.load_balance_screen as load_balance_screen
 from config import *
 
 class CurrentMoveFrame:
-    def __init__(self, frame, current_move_number, total_moves):
+    def __init__(self, root, frame, current_move_number, total_moves):
         """
         initialize CurrentMoveFrame class
 
@@ -21,6 +21,7 @@ class CurrentMoveFrame:
         current_move_to:            the endpoint of the current move
         estimated_time_for_move:    estimated time (in minutes) for the current move
         """
+        self.root = root # keep track of the root 
         self.frame = frame
         self.current_move_number = current_move_number
         self.total_moves = total_moves
@@ -29,10 +30,10 @@ class CurrentMoveFrame:
         # self.current_move_to = current_move_to
         # self.estimated_time_for_move = estimated_time_for_move
 
-    def finish_move(self, master_frame, frame):
+    def finish_move(self, root, frame):
         if self.current_move_number == self.total_moves:
             messagebox.showinfo("Reminder", "Reminder to email the manifest!")
-        load_balance_screen.load_balance(master_frame, frame)
+        load_balance_screen.load_balance(root, frame)
 
     def create_current_move_frame(self):
         """
@@ -52,6 +53,6 @@ class CurrentMoveFrame:
         if self.current_move_number < self.total_moves:
             next_button = ttk.Button(move_info_frame, text="Next", style="Buttons.TButton", command=lambda: self.create_current_move_frame())
         else:
-            next_button = ttk.Button(move_info_frame, text="Done", style="Buttons.TButton", command=lambda: [self.finish_move(self.frame.master, self.frame), delete_save_file()])
+            next_button = ttk.Button(move_info_frame, text="Done", style="Buttons.TButton", command=lambda: [self.finish_move(self.root, self.frame), delete_save_file()])
         
         next_button.pack(pady=10)

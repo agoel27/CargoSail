@@ -28,8 +28,11 @@ def login_screen(root):
     login_frame.pack(expand=True)
 
     name = read_save_file("name")
-    
+
     if name:
+        name_label = root.nametowidget("name_label")
+        name_label.configure(text=f"Logged in: {name}")
+
         set_username(name)
         return load_balance(root, login_frame)
     

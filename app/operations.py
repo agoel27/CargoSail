@@ -15,9 +15,9 @@ from config import *
 #     ["Acura", "Toyota", "Saab"]
     
 # ]
-def display_operations(root, selection):
+def display_operations(root, prev_frame):
     # destroys login page
-    selection.pack_forget()
+    prev_frame.pack_forget()
     
     container_list = {
         "Unload": [],
@@ -83,7 +83,7 @@ def display_operations(root, selection):
     # parent frame of the page
     load_unload_frame = ttk.Frame(root)
     load_unload_frame.pack(expand=1, fill="both")
-    
+
     # create frames for visuals on screen
     done_button_frame = ttk.Frame(load_unload_frame)
     done_button_frame.pack(side="bottom", fill="x")
@@ -98,11 +98,11 @@ def display_operations(root, selection):
     cargo_frame.place(relx=.5, rely=.5, anchor='center')
 
     # place and define buttons/labels/entry box etc.
-    loginButton = ttk.Button(load_unload_frame, text="Login", padding=(10, 10), command= lambda:login_popup(root))
-    loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
+    # loginButton = ttk.Button(load_unload_frame, text="Login", padding=(10, 10), command= lambda:login_popup(root))
+    # loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
     
-    addNoteButton = ttk.Button(load_unload_frame, text="Add Note", padding=(10, 10), command=lambda:add_note(root))
-    addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
+    # addNoteButton = ttk.Button(load_unload_frame, text="Add Note", padding=(10, 10), command=lambda:add_note(root))
+    # addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
     
 
     done_button = ttk.Button(done_button_frame, text="Done", padding=(20, 10), command=lambda: start_operation(root, load_unload_frame))

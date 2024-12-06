@@ -4,6 +4,7 @@ from tkinter import Tk, ttk
 from ttkthemes import ThemedTk
 from config import *
 from app.login import login_screen
+from app.popup_login import login_popup
 from app.operations import *
 
 def create_root():
@@ -15,7 +16,7 @@ def create_root():
 
 def crash_recovery(root, state):
     temp = ttk.Frame(root) 
-    
+
     match state:
         case 1:
             # Go to (un)load selection screen
@@ -65,7 +66,30 @@ def open_logfile_and_save():
 root = create_root()
 open_logfile_and_save()
 
+# Create a persistent header frame
+# header_frame = ttk.Frame(root, name="header_frame", height=20)
+# header_frame.pack(side=tk.TOP, fill=tk.X)  # Stretch horizontally, minimal height
+# header_frame.pack_propagate(False)
+
+# Read state files
 last_state = read_save_file("state")
+name = read_save_file("name")
+
+# Add the name label 
+name_label = ttk.Label(root, name="name_label", text=f"Logged in: {name}", font=("Arial", 14))
+name_label.pack(side=tk.TOP, pady=5)  # Centered by default in the top-middle
+
 crash_recovery(root, last_state)
+
+# Add the login and note buttons to the root
+loginButton = ttk.Button(root, text="Login", padding=(10, 10), command=lambda: login_popup(root))
+loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
+
+addNoteButton = ttk.Button(root, text="Add Note", padding=(10, 10), command=lambda: add_note(root))
+addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
+
+# # Create a frame for dynamic content
+# content_frame = ttk.Frame(root)
+# content_frame.pack(fill=tk.BOTH, expand=False)
 
 root.mainloop()
