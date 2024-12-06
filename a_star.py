@@ -1,9 +1,5 @@
 
-#from app.operations import get_container_list
-import re
-import numpy as np
-
-#work in progress, will discuss on friday 
+#from app.operations import send_container_list
 import numpy as np
 import re 
 import copy
@@ -170,37 +166,7 @@ def a_star(problem,queueing_func):
         #nodes = queueing_function(nodes,expand(node,problem.operators))
     #end
     print()
-    
 
-# Used for testing purposes to debug matrix        
-def output_matrix(matrix):
-    file = open("test.txt", 'w')
-    for row in matrix:
-       file.write(" | ".join([str(x) for x in row]) + '\n')
-    file.close()
-
-    
-def load_manifest(file_path):    
-    matrix = np.empty((8, 12), dtype=object)
-    pattern = r"\[(\d{2},\d{2})\], \{(\d+)\}, (\w+|NAN)"
-    
-    with open(file_path, "r") as file:
-        content = file.read()
-    
-    # Find all matches
-    matches = re.findall(pattern, content)
-    
-    for coord, weight, container in matches:
-        coord_tuple = tuple(map(int, coord.split(',')))  # Convert coordinate to a tuple of integers
-
-        # flip the y coordinate to match the matrix
-        coord_tuple = (matrix.shape[0] - coord_tuple[0], coord_tuple[1] - 1)
-        
-        # store weight and container to matrix
-        matrix[coord_tuple[0], coord_tuple[1]] = (weight, container)
-
-    output_matrix(matrix)
-    return matrix
     
 
 #testing that the classes are working as intended
@@ -223,6 +189,7 @@ def main():
     p_queue.push(node3)
     
     #test expand func
+    
     node1.state = cargo_matrix
 
     cargo_to_load = [('0000','walmart'), ('0000','target')]
