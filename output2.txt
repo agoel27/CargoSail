@@ -1,0 +1,820 @@
+3
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'bear'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'bear'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+7
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'bear'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'bear'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+11
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'bear'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+13
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'bear'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+11
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'bear'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'bear'), (0, 'NAN'), (0, 'NAN')]
+end
+14
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'bear'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+1
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'fox'), (0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+3
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+7
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+11
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'fox'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'fox'), (0, 'NAN'), (0, 'NAN')]
+end
+12
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+3
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'rabbit'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+1
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'rabbit'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+3
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+7
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+7
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'rabbit'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'rabbit'), (0, 'NAN'), (0, 'NAN')]
+end
+10
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'elephant'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+3
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'elephant'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+1
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+3
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+7
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'elephant'), (0, 'NAN'), (0, 'NAN')]
+end
+8
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+7
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'tiger'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'tiger'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+3
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+1
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+3
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'tiger'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'tiger'), (0, 'NAN'), (0, 'NAN')]
+end
+6
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'lion'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+7
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'lion'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+3
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+1
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+3
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'lion'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'lion'), (0, 'NAN'), (0, 'NAN')]
+end
+6
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+11
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'dog'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'dog'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+7
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+3
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+1
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'UNUSED'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'dog'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'dog'), (0, 'NAN'), (0, 'NAN')]
+end
+6
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+13
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'cat'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+11
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'cat'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'cat'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+7
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'cat'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'cat'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+3
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'cat'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+1
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+5
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'cat'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+9
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'cat'), (0, 'NAN'), (0, 'NAN')]
+end
+6
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'cat'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+12
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'alien X'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+10
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'alien X'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+8
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+8
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+8
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+8
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+8
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'alien X'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+2
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'alien X'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+end
+4
+[(109, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (100, 'UNUSED'), (0, 'cat'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (1, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'dog'), (0, 'dog'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'lion'), (0, 'lion'), (0, 'lion'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'tiger'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'elephant'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'UNUSED'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'UNUSED'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'rabbit'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'UNUSED'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'fox'), (0, 'NAN'), (0, 'UNUSED'), (0, 'NAN'), (0, 'NAN')]
+[(0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'bear'), (0, 'NAN'), (0, 'alien X'), (0, 'NAN'), (0, 'NAN')]
+end

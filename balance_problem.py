@@ -87,7 +87,7 @@ def calculate_balance_heuristic(current_state):
     total_weight = 0
     num_rows = len(current_state)
     num_cols = len(current_state[0])
-    mid_col = num_cols // 2
+    mid_col = num_cols / 2
 
     # lists to store weights with their locations
     left_side_ordered_weights = []
@@ -107,7 +107,7 @@ def calculate_balance_heuristic(current_state):
             right_side_weight += current_state[row_idx][col_idx][0]
             total_weight += current_state[row_idx][col_idx][0]
     
-    # sort both lists in ascending order based on the weights
+    # sort both lists in descending order based on the weights
     left_side_ordered_weights.sort(key=lambda x: x[0], reverse=True)
     right_side_ordered_weights.sort(key=lambda x: x[0], reverse=True)
     
