@@ -17,16 +17,15 @@ def create_root():
 def crash_recovery(root, state):
     temp = ttk.Frame(root) 
 
-    match state:
-        case 1:
-            # Go to (un)load selection screen
-            display_operations(root, temp)
-        case 2:
-            # Go to operation screen for (un)load or balance
-            print("operations for load/unload or balance")
-        case _:
-            # Default: Start at the login screen
-            login_screen(root)
+    if state == 1:
+        # Go to (un)load selection screen
+        display_operations(root, temp)
+    elif state == 2:
+        # Go to operation screen for (un)load or balance
+        print("operations for load/unload or balance")
+    else:
+        # Default: Start at the login screen
+        login_screen(root)
 
 
 def open_logfile_and_save():
