@@ -67,7 +67,6 @@ class BalanceProblem:
                     left_side_weight += row[i][0]
                 else:
                     right_side_weight += row[i][0]
-        print("\n\n", left_side_weight, right_side_weight)
 
         if left_side_weight == 0 and right_side_weight == 0:
             return True
@@ -79,6 +78,62 @@ def calculate_manhattan_dist(my_row, my_col, other_row, other_col):
     delta_y = abs(my_row - other_row)
     delta_x = abs(my_col - other_col)
     return delta_y + delta_x
+
+def calculate_balance_heuristic(current_state):
+
+    heuristic_cost = 0
+    left_side_weight = 0
+    right_side_weight = 0
+    total_weight = 0
+    num_rows = len(current_state)
+    num_cols = len(current_state[0])
+    mid_col = num_cols // 2
+
+    # lists to store weights with their locations
+    left_side_ordered_weights = []
+    right_side_ordered_weights = []
+    
+    # iterate through the ship data and collect weights with locations
+    for row_idx in range(num_rows):
+        # collect weights from the left half
+        for col_idx in range(mid_col):
+            left_side_ordered_weights.append((current_state[row_idx][col_idx][0], (row_idx, col_idx)))
+            left_side_weight += current_state[row_idx][col_idx][0]
+            total_weight += current_state[row_idx][col_idx][0]
+        
+        # collect weights from the right half
+        for col_idx in range(mid_col, num_cols):
+            right_side_ordered_weights.append((current_state[row_idx][col_idx][0], (row_idx, col_idx)))
+            right_side_weight += current_state[row_idx][col_idx][0]
+            total_weight += current_state[row_idx][col_idx][0]
+    
+    # sort both lists in ascending order based on the weights
+    left_side_ordered_weights.sort(key=lambda x: x[0], reverse=True)
+    right_side_ordered_weights.sort(key=lambda x: x[0], reverse=True)
+    
+    range_min = total_weight / 2.1
+    range_max = (total_weight * 1.1) / 2.1
+
+    if left_side_weight > range_min and left_side_weight < range_max:
+        return 0
+    
+    if left_side_weight > right_side_weight:
+        heavier_side_ordered_weights = left_side_ordered_weights
+        heavier_side_weight = left_side_weight
+        lighter_side_weight = right_side_weight
+    else:
+        heavier_side_ordered_weights = right_side_ordered_weights
+        heavier_side_weight = right_side_weight
+        lighter_side_weight = left_side_weight
+    
+    for index, (weight, location) in enumerate(heavier_side_ordered_weights):
+        if weight == 0 or lighter_side_weight + weight >= range_max:
+            continue
+        lighter_side_weight += weight
+        heavier_side_weight -= weight
+        heuristic_cost += mid_col - heavier_side_ordered_weights[index][1][1] if mid_col - heavier_side_ordered_weights[index][1][1] > 0 else abs(mid_col - heavier_side_ordered_weights[index][1][1]) + 1
+    
+    return heuristic_cost
 
 def move_container(current_state, my_row, my_col, other_row, other_col):
     """
@@ -143,6 +198,7 @@ def expand_node(current_node, explored_states):
                 if tuple(map(tuple, new_state)) not in explored_states:
                     node_to_add = Node(new_state)
                     node_to_add.set_uniform_cost(current_node.uniform_cost + calculate_manhattan_dist(crane_coordinates[0], crane_coordinates[1], my_row, my_col) + calculate_manhattan_dist(my_row, my_col, other_row, other_col))
+                    node_to_add.set_heuristic_cost(calculate_balance_heuristic(node_to_add.get_state()))
                     node_to_add.set_crane_location((other_row, other_col))
                     expanded_nodes.append(node_to_add)
     
@@ -163,18 +219,10 @@ def a_star(manifest_data):
         current_node = heappop(queue)
         if problem.goal_test(current_node.get_state()):
             return current_node
-        print("Expanding Node with cost ", current_node.get_uniform_cost(), ":")
-        for row in current_node.get_state():
-            print(row)
         child_nodes = expand_node(current_node, explored_states)
         for child_node in child_nodes:
             heappush(queue, child_node)
             explored_states.add(tuple(map(tuple, child_node.get_state())))
-        print("\n\nNodes in frontier:\n")
-        for node in queue:
-            print("\nCost: ", node.get_uniform_cost())
-            for row in node.get_state():
-                print(row)
     return 0
 
 example_ship_data = [
@@ -199,3 +247,9 @@ solution_node = a_star(example_manifest_data)
 
 for row in solution_node.data:
     print(row)
+
+# array = [
+#     [12, 2, 0, 8],
+#     [3, 8, 2, 45],
+#     [9, 8, 1, 4]
+# ]
