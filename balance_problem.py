@@ -201,6 +201,7 @@ def expand_node(current_node, explored_states):
                     node_to_add.set_heuristic_cost(calculate_balance_heuristic(node_to_add.get_state()))
                     node_to_add.set_crane_location((other_row, other_col))
                     expanded_nodes.append(node_to_add)
+
     
     current_node.add_children(expanded_nodes)
     return expanded_nodes
@@ -219,14 +220,27 @@ def a_star(manifest_data):
         current_node = heappop(queue)
         if problem.goal_test(current_node.get_state()):
             return current_node
+        print("--------------------------------------------------")
+        print("\nExpanding Node:\n")
+        for row in current_node.get_state():
+            print(row)
+        print("Uniform  Cost: ", current_node.get_uniform_cost())
+        print("Heuristic Cost: ", current_node.get_heuristic_cost(), "\n")
         child_nodes = expand_node(current_node, explored_states)
         for child_node in child_nodes:
             heappush(queue, child_node)
             explored_states.add(tuple(map(tuple, child_node.get_state())))
+
+        print("\nNodes in Frontier:\n")
+        for node in queue:
+            for row in node.get_state():
+                print(row)
+            print("Uniform  Cost: ", node.get_uniform_cost())
+            print("Heuristic Cost: ", node.get_heuristic_cost(), "\n")
     return 0
 
 example_ship_data = [
-    [(109, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),   (0, "UNUSED"),   (0, "UNUSED"),   (100, "UNUSED"), (0, "cat"),      (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),  (1, "NAN")],
+    [(0, "UNUSED"),   (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),   (0, "UNUSED"),   (0, "UNUSED"),   (0, "UNUSED"),   (0, "cat"),      (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),  (0, "NAN")],
     [(0, "UNUSED"),   (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),   (0, "UNUSED"),   (0, "UNUSED"),   (0, "dog"),      (0, "dog"),      (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),  (0, "NAN")],
     [(0, "UNUSED"),   (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),   (0, "UNUSED"),   (0, "lion"),     (0, "lion"),     (0, "lion"),     (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),  (0, "NAN")],
     [(0, "UNUSED"),   (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),   (0, "tiger"),    (0, "tiger"),    (0, "tiger"),    (0, "tiger"),    (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),  (0, "NAN")],
