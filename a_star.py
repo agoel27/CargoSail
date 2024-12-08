@@ -21,7 +21,37 @@ def goal_test(load_list,unload_list,current_state):
                     return False
     return len(loads) == 0
                 
+def calc_hueristic_cost(node,containers_to_unload,row_idx_of_top_container):
+    cols = len(node.state[0])
+    rows = len(node.state)
+    unload_containers = 0 
+    shortest_distance = 10000 #big number so the first distance becomes the min
 
+    #count the amount of containers that are at the top of the columns and need to be unloaded
+    for col in range(cols):
+        for row in range(rows):
+            if row_idx_of_top_container[col] != None:
+                if in_list(node.state[row_idx_of_top_container[col], col],containers_to_unload):
+                    unload_containers += 1
+    
+    #find smallest distance between last loaded container and container to unload in the state
+    if node.last_loaded_container_location != None:
+        for row in range(rows):
+            for col in range(cols):
+                if in_list(node.state[row][col],containers_to_unload):
+                    distance = manhattan_distance((row,col), node.last_loaded_container_location)
+                    if distance < shortest_distance:
+                        shortest_distance = distance
+        return shortest_distance + unload_containers
+    return unload_containers 
+
+
+def manhattan_distance(point1, point2):
+    distance = 0
+    for i in range(len(point1)):
+        distance += abs(point1[i] - point2[i])
+
+    return distance
 
 def in_list(element, arr):
     if len(arr) != 0:
@@ -63,6 +93,7 @@ class Node:
         self.children = []
         self.cost_g = 0
         self.cost_h = 0
+        self.last_loaded_container_location = None
     
     def getState(self):
         return self.state
@@ -75,6 +106,7 @@ class Node:
     
     def set_cost_h(self,cost_h):
         self.cost_h = cost_h
+    
     
 
     
@@ -107,7 +139,10 @@ def expand(node, containers_to_load,containers_to_unload):
         for otherCol in range(columns):
             otherRow = row_idx_of_valid_space[otherCol]
             if otherRow != None and myCol != otherCol:
-                children.append(Node(move_container(node.state, myRow, myCol, otherRow, otherCol)))
+                #add func calls to calculate cost of node
+                child = Node(move_container(node.state, myRow, myCol, otherRow, otherCol))
+                child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,row_idx_of_top_container))
+                children.append(child)
     
     #load each container that has to be loaded to one of the valid spots and add it as a new Node to children
     if containers_to_load: #check if load list is empty
@@ -115,16 +150,21 @@ def expand(node, containers_to_load,containers_to_unload):
             for col in range(columns):
                 valid_row = row_idx_of_valid_space[col]
                 if valid_row != None:
-                    children.append(Node(load_container(node.state,valid_row,col,container)))
+                    child = Node(load_container(node.state,valid_row,col,container))
+                    child.last_loaded_container_location = (valid_row,col)
+                    child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,row_idx_of_top_container))
+                    children.append(child)
     
     #unload a container if its one of the containers at the top of a column and append that new node to children
     if containers_to_unload: #check if unload list is empty
         for col in range(columns):
             row = row_idx_of_top_container[col]
-            if node.state[row][col][1] != None:
+            if row != None:
                 for container in containers_to_unload:
                     if container[1] == node.state[row][col][1]:
-                        children.append(Node(unload_container(node.state,row,col)))
+                        child = Node(unload_container(node.state,row,col))
+                        child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,row_idx_of_top_container))
+                        children.append(child)
     
     return children
             
@@ -191,28 +231,17 @@ def main():
     manifest_path = "/Users/antho/Downloads/load_unload_small.txt"
     cargo_matrix = load_manifest(manifest_path) 
     
-    node1 = Node(1)
-    node2 = Node(2)
-    node3 = Node(3)
-    node1.set_cost_g(1)
-    node2.set_cost_g(2)
-    node3.set_cost_g(3)
-    
-    #test queue
-    p_queue = priorityQueue()
-    p_queue.push(node1)
-    p_queue.push(node2)
-    p_queue.push(node3)
     
     #test expand func
     
-    node1.state = cargo_matrix
+    node1 = Node(cargo_matrix)
     cargo_to_load = [('00000', 'Dog'), ('00000', 'Spoons')]
     cargo_to_unload = [('00000', 'Walmart')]
-    if(goal_test(cargo_to_load,cargo_to_unload,node1.state)):
-        print("Algorithm complete!")
-    else:
-        print("state has failed the test")
+    children = expand(node1,cargo_to_load,cargo_to_unload)
+    print(len(children))
+    print(children[0].get_cost())
+    
+
     
     
     
