@@ -164,8 +164,15 @@ def a_star(problem,queueing_func):
         #nodes = queueing_function(nodes,expand(node,problem.operators))
     #end
     print()
-
     
+def manhattan_distance(cur_coord, new_coord):
+    return abs(cur_coord[0]-new_coord[0]) + abs(cur_coord[1]-new_coord[1])
+
+# Used for testing purposes to debug matrix
+# Note: send output to a file to view better        
+def output_matrix(matrix):
+    for row in matrix:
+       print(" | ".join([str(x) for x in row]))
 
 #testing that the classes are working as intended
 def main():
