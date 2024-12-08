@@ -6,6 +6,7 @@ from app.add_note import add_note
 from app.table import Table
 from app.current_move_frame import CurrentMoveFrame
 from config import *
+from balance_problem import a_star, get_balance_operations_info
 
 def operations_screen(root, prev_frame):
     buffer_data = [[(0, "UNUSED") for _ in range(24)] for _ in range(4)]
@@ -37,15 +38,17 @@ def operations_screen(root, prev_frame):
 
     # place table in ship frame
     ship_table = Table(ship_frame, get_manifest())
-    ship_table.flash_cells((0, 0), (2, 2))
 
     # place truck in truck frame
     truck_label = tk.Label(truck_frame, text="Truck", borderwidth=1, relief="solid", height=2, width=7, font=("Arial", 12), anchor="center")
     truck_label.grid(row=0, column=0, sticky="nsew")
 
+    solution_node = a_star(get_manifest())
+    total_minutes, total_moves, balance_operations_list, manifest_data_of_solution_path = get_balance_operations_info(solution_node)
+
     # place current move frame in operations screen frame
-    current_move_frame = CurrentMoveFrame(root, operations_screen_frame, 19, 19)
-    set_move_info(19, 48, 19, "truck", "[03,08]", 7)
-    current_move_frame.create_current_move_frame()
+    current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, balance_operations_list)
+
+    current_move_frame.create_current_move_frame(1, ship_table, manifest_data_of_solution_path)
 
     

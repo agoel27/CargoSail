@@ -1,4 +1,5 @@
 import copy
+from collections import deque
 from heapq import heappop, heappush
 
 class Node:
@@ -9,6 +10,7 @@ class Node:
         self.uniform_cost = 0
         self.heuristic_cost = 0
         self.crane_location = (-1, 0)
+        self.balance_operation_info = (None, None)
 
     def __lt__(self, other):
         return self.uniform_cost + self.heuristic_cost < other.uniform_cost + other.heuristic_cost
@@ -19,14 +21,33 @@ class Node:
     def get_crane_location(self):
         return self.crane_location
     
+    def get_balance_operation_info(self):
+        return self.balance_operation_info
+    
     def get_uniform_cost(self):
         return self.uniform_cost
 
     def get_heuristic_cost(self):
         return self.heuristic_cost
     
+    def get_solution_length_and_path(self, solution_node):
+
+        path_length = 0
+        current_node = solution_node
+        solution_stack = deque()
+
+        while(current_node.parent):
+            solution_stack.append(current_node)
+            path_length += 1
+            current_node = current_node.parent
+
+        return path_length, solution_stack
+    
     def set_crane_location(self, coordinates):
         self.crane_location = coordinates
+
+    def set_balance_operation_info(self, balance_operation_info):
+        self.balance_operation_info = balance_operation_info
 
     def set_uniform_cost(self, uniform_cost):
         self.uniform_cost = uniform_cost
@@ -87,7 +108,7 @@ def calculate_balance_heuristic(current_state):
     total_weight = 0
     num_rows = len(current_state)
     num_cols = len(current_state[0])
-    mid_col = num_cols / 2
+    mid_col = num_cols // 2
 
     # lists to store weights with their locations
     left_side_ordered_weights = []
@@ -196,10 +217,13 @@ def expand_node(current_node, explored_states):
             if other_row != None and my_col != other_col:
                 new_state = move_container(current_state, my_row, my_col, other_row, other_col)
                 if tuple(map(tuple, new_state)) not in explored_states:
+                    location_from = "["+ str(my_row) + "," + str(my_col) + "]"
+                    location_to = "["+ str(other_row) + "," + str(other_col) + "]"
                     node_to_add = Node(new_state)
                     node_to_add.set_uniform_cost(current_node.uniform_cost + calculate_manhattan_dist(crane_coordinates[0], crane_coordinates[1], my_row, my_col) + calculate_manhattan_dist(my_row, my_col, other_row, other_col))
                     node_to_add.set_heuristic_cost(calculate_balance_heuristic(node_to_add.get_state()))
                     node_to_add.set_crane_location((other_row, other_col))
+                    node_to_add.set_balance_operation_info((location_from, location_to))
                     expanded_nodes.append(node_to_add)
 
     
@@ -237,33 +261,26 @@ def a_star(manifest_data):
                 print(row)
             print("Uniform  Cost: ", node.get_uniform_cost())
             print("Heuristic Cost: ", node.get_heuristic_cost(), "\n")
-    return 0
+    return None
 
-example_ship_data = [
-    [(0, "UNUSED"),   (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),   (0, "UNUSED"),   (0, "UNUSED"),   (0, "UNUSED"),   (0, "cat"),      (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),  (0, "NAN")],
-    [(0, "UNUSED"),   (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),   (0, "UNUSED"),   (0, "UNUSED"),   (0, "dog"),      (0, "dog"),      (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),  (0, "NAN")],
-    [(0, "UNUSED"),   (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),   (0, "UNUSED"),   (0, "lion"),     (0, "lion"),     (0, "lion"),     (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),  (0, "NAN")],
-    [(0, "UNUSED"),   (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),   (0, "tiger"),    (0, "tiger"),    (0, "tiger"),    (0, "tiger"),    (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"),  (0, "NAN")],
-    [(0, "UNUSED"),   (0, "UNUSED"), (0, "UNUSED"), (0, "elephant"), (0, "elephant"), (0, "elephant"), (0, "elephant"), (0, "elephant"), (0, "UNUSED"), (0, "UNUSED"), (0, "alien X"), (0, "NAN")],
-    [(0, "UNUSED"),   (0, "UNUSED"), (0, "rabbit"), (0, "rabbit"),   (0, "rabbit"),   (0, "rabbit"),   (0, "rabbit"),   (0, "rabbit"),   (0, "NAN"),    (0, "UNUSED"), (0, "NAN"),     (0, "NAN")],
-    [(0, "UNUSED"),   (0, "fox"),    (0, "fox"),    (0, "fox"),      (0, "fox"),      (0, "fox"),      (0, "fox"),      (0, "fox"),      (0, "NAN"),    (0, "UNUSED"), (0, "NAN"),     (0, "NAN")],
-    [(0, "bear"),     (0, "bear"),   (0, "bear"),   (0, "bear"),     (0, "bear"),     (0, "bear"),     (0, "bear"),     (0, "bear"),     (0, "NAN"),    (0, "UNUSED"), (0, "NAN"),     (0, "NAN")]
-]
+def get_balance_operations_info(solution_node):
 
-example_manifest_data = [
-    [(0, "UNUSED"), (0, "UNUSED"), (50, "DOG"), (0, "UNUSED")],
-    [(0, "UNUSED"), (0, "UNUSED"), (50, "DOG"), (0, "NAN")],
-    [(0, "UNUSED"), (1, "CAT"), (0, "NAN"), (0, "NAN")],
-    [(0, "UNUSED"), (110, "CAT"), (0, "NAN"), (0, "NAN")]
-]
+    total_minutes = solution_node.get_uniform_cost()
+    total_moves, solution_path = solution_node.get_solution_length_and_path(solution_node)
+    balance_operations_list = []
+    manifest_list = []
 
-solution_node = a_star(example_manifest_data)
+    print("--------------------------------------------------")
+    print("\nSolution Path:\n")
+    for _ in range(len(solution_path)):
+        current_node = solution_path.pop()
+        balance_operation_info = current_node.get_balance_operation_info()
+        balance_operations_list.append(balance_operation_info)
+        manifest_list.append(current_node.get_state())
+        print("Move from [", balance_operation_info[0], "] to [", balance_operation_info[1], "]")
+        for row in current_node.get_state():
+            print(row)
+        print()
 
-for row in solution_node.data:
-    print(row)
 
-# array = [
-#     [12, 2, 0, 8],
-#     [3, 8, 2, 45],
-#     [9, 8, 1, 4]
-# ]
+    return total_minutes, total_moves, balance_operations_list, manifest_list
