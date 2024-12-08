@@ -34,7 +34,7 @@ def get_manifest():
     #return manifest_data 
     
     # retrieve data from save file
-    return read_save_file("manifest_data")
+    return [[tuple(item) for item in row] for row in read_save_file("manifest_data")]
 
 
 def set_move_info(total_moves, total_minutes, current_move_number, current_move_from, current_move_to, estimated_time_for_move):
