@@ -115,7 +115,6 @@ def read_save_file(key):
         entry = data.get(key)
     except Exception:
         entry = ""
-        
     return entry
 
 def delete_save_file():

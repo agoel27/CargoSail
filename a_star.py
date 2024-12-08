@@ -192,8 +192,8 @@ def main():
     cargo_to_load = [('0000','walmart'), ('0000','target')]
     cargo_to_unload = []
     children = expand(node1,cargo_to_load,cargo_to_unload)
-    print(len(children))
-    print(children[0].state)
+    # print(len(children))
+    # print(children[0].state)
     
     
     

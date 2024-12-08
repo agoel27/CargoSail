@@ -244,23 +244,23 @@ def a_star(manifest_data):
         current_node = heappop(queue)
         if problem.goal_test(current_node.get_state()):
             return current_node
-        print("--------------------------------------------------")
-        print("\nExpanding Node:\n")
-        for row in current_node.get_state():
-            print(row)
-        print("Uniform  Cost: ", current_node.get_uniform_cost())
-        print("Heuristic Cost: ", current_node.get_heuristic_cost(), "\n")
+        # print("--------------------------------------------------")
+        # print("\nExpanding Node:\n")
+        # for row in current_node.get_state():
+        #     print(row)
+        # print("Uniform  Cost: ", current_node.get_uniform_cost())
+        # print("Heuristic Cost: ", current_node.get_heuristic_cost(), "\n")
         child_nodes = expand_node(current_node, explored_states)
         for child_node in child_nodes:
             heappush(queue, child_node)
             explored_states.add(tuple(map(tuple, child_node.get_state())))
 
-        print("\nNodes in Frontier:\n")
-        for node in queue:
-            for row in node.get_state():
-                print(row)
-            print("Uniform  Cost: ", node.get_uniform_cost())
-            print("Heuristic Cost: ", node.get_heuristic_cost(), "\n")
+        # print("\nNodes in Frontier:\n")
+        # for node in queue:
+        #     for row in node.get_state():
+        #         print(row)
+        #     print("Uniform  Cost: ", node.get_uniform_cost())
+        #     print("Heuristic Cost: ", node.get_heuristic_cost(), "\n")
     return None
 
 def get_balance_operations_info(solution_node):
@@ -277,10 +277,10 @@ def get_balance_operations_info(solution_node):
         balance_operation_info = current_node.get_balance_operation_info()
         balance_operations_list.append(balance_operation_info)
         manifest_list.append(current_node.get_state())
-        print("Move from [", balance_operation_info[0], "] to [", balance_operation_info[1], "]")
-        for row in current_node.get_state():
-            print(row)
-        print()
+        # print("Move from [", balance_operation_info[0], "] to [", balance_operation_info[1], "]")
+        # for row in current_node.get_state():
+        #     print(row)
+        # print()
 
 
     return total_minutes, total_moves, balance_operations_list, manifest_list
