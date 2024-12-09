@@ -231,7 +231,7 @@ def a_star(cargo,containers_to_load,containers_to_unload):
 
     while(nodes):
         current_node = nodes.pop()
-        if goal_test(current_node):
+        if goal_test(containers_to_load, containers_to_unload,current_node):
             print("Goal reached! all the containers have been loaded/unloaded")
             return current_node
         children = expand(current_node,containers_to_load,containers_to_unload)

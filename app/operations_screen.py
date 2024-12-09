@@ -23,15 +23,15 @@ def operations_screen(root, prev_frame):
 
     # create buffer area frame
     buffer_area_frame = ttk.Frame(operations_screen_frame)
-    buffer_area_frame.place(relx=0.5, rely=0.85, anchor="c") # 0.7 
+    buffer_area_frame.place(relx=0.5, rely=0.85, anchor="center") # 0.7 
 
     # create ship frame
     ship_frame = ttk.Frame(operations_screen_frame)
-    ship_frame.place(relx=0.75, rely=0.5, anchor="c") # 0.5 
+    ship_frame.place(relx=0.75, rely=0.5, anchor="center") # 0.5 
 
     # create truck frame
     truck_frame = ttk.Frame(operations_screen_frame)
-    truck_frame.place(relx=0.25, rely=0.5, anchor="c") # 0.64
+    truck_frame.place(relx=0.25, rely=0.5, anchor="center") # 0.64
 
     # place table in buffer area frame
     buffer_area_table = Table(buffer_area_frame, buffer_data)
