@@ -69,4 +69,4 @@ def load_balance(root, prev_frame):
     balanceButton = ttk.Button(loadBalance_frame, text="Balance", padding=(10,10), command=lambda:balance_operation(root, loadBalance_frame))
     balanceButton.place(anchor="c", relx=0.6, rely=0.5)
     
-    
+    reposition_buttons(root)

@@ -20,6 +20,9 @@ def login_store(root, input_field, login_frame, error_message):
         
         write_save_file("name", input_field.get())
         
+        name_label = root.nametowidget("name_label")
+        name_label.configure(text=f"Logged in: {input_field.get()}")
+        
         # proceed to the load balance page
         load_balance(root, login_frame)
 

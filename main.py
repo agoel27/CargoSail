@@ -75,12 +75,6 @@ name_label.pack(side=tk.TOP, pady=5)  # Centered by default in the top-middle
 
 crash_recovery(root, last_state)
 
-# Add the login and note buttons to the root
-loginButton = ttk.Button(root, text="Login", padding=(10, 10), command=lambda: login_popup(root))
-loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
-
-addNoteButton = ttk.Button(root, text="Add Note", padding=(10, 10), command=lambda: add_note(root))
-addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
-
+reposition_buttons(root)
 
 root.mainloop()
