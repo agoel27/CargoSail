@@ -14,10 +14,11 @@ class Table:
         self.columns = len(data[0])
         self.data = data
         self.cell_widgets = {}
+        self.is_flashing = False
+        self.flash_cells_to_flash = None  # Store cells to flash
 
         # label for hovering over cell
         self.hover_label = tk.Label(frame.master, bg="yellow", text="", font=("Arial", 12), relief="solid", borderwidth=1)
-        #self.hover_label.place_forget()  # hide the hover_label
         
         self.create_table()
 
@@ -106,16 +107,26 @@ class Table:
 
     def flash_cells(self, cell1, cell2):
         """
-        flash the background of two cells red twice per second.
+        flash the background of two cells red indefinitely until stopped.
 
         cell1: tuple (row, column) of first cell
         cell2: tuple (row, column) of second cell
         """
-        def toggle_flash(count=4):
-            if count == 0:
+        # Store the cells to flash
+        self.flash_cells_to_flash = (cell1, cell2)
+        self.is_flashing = True
+
+        def toggle_flash():
+            # Check if flashing is still active
+            if not self.is_flashing:
+                # Reset cells to default background when stopped
+                for cell in self.flash_cells_to_flash:
+                    widget = self.cell_widgets.get(cell)
+                    if widget:
+                        widget.config(bg="SystemButtonFace")
                 return  # stop flashing
 
-            for cell in (cell1, cell2):
+            for cell in self.flash_cells_to_flash:
                 widget = self.cell_widgets.get(cell)
                 if widget:
                     current_color = widget.cget("bg")
@@ -123,6 +134,20 @@ class Table:
                     widget.config(bg=new_color)
 
             # next flash
-            self.frame.after(500, toggle_flash, count - 1)
+            self.frame.after(500, toggle_flash)
 
         toggle_flash()
+
+    def stop_flashing(self):
+        """
+        Stop the flashing of cells
+        """
+        self.is_flashing = False
+
+    def start_flashing(self):
+        """
+        Resume flashing of previously selected cells
+        """
+        if self.flash_cells_to_flash:
+            self.is_flashing = True
+            self.flash_cells(*self.flash_cells_to_flash)

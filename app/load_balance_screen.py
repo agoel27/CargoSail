@@ -1,4 +1,4 @@
-import tkinter as Tk
+import tkinter as tk
 from tkinter import *
 from tkinter import filedialog, messagebox, ttk
 from app.popup_login import login_popup    
@@ -56,26 +56,17 @@ def balance_operation(root, load_balance_frame):
         operations_screen(root, load_balance_frame)
 
 
-def load_balance(root, login_frame):
-    
+def load_balance(root, prev_frame):
     # destroys login page
-    login_frame.pack_forget()
-
+    prev_frame.pack_forget()
     # frame for load/unload and balance buttons to have them centered
     loadBalance_frame = ttk.Frame(root)
-    loadBalance_frame.place(relx=0, rely=0, relwidth=1, relheight=1)
-
-    loginButton = ttk.Button(loadBalance_frame, text="Login", padding=(10,10), command= lambda:login_popup(root))
-    loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
-
-    addNoteButton = ttk.Button(loadBalance_frame, text="Add Note", padding=(10,10), command=lambda:add_note(root))
-    addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
+    loadBalance_frame.pack(fill=tk.BOTH, expand=True)  # Only occupies remaining space below the header
 
     loadUnloadButton = ttk.Button(loadBalance_frame, text="Load/Unload", padding=(10,10), command=lambda:load_operation(root, loadBalance_frame))
     loadUnloadButton.place(anchor="c", relx=0.4, rely=0.5)
 
     balanceButton = ttk.Button(loadBalance_frame, text="Balance", padding=(10,10), command=lambda:balance_operation(root, loadBalance_frame))
     balanceButton.place(anchor="c", relx=0.6, rely=0.5)
-    
     
     

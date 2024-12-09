@@ -221,6 +221,7 @@ def unload_container(state,row,col):
     #if goal_test(node.state) succeeds return node
         #nodes = queueing_function(nodes,expand(node,problem.operators))
     #end
+
     
 
 def a_star(cargo,containers_to_load,containers_to_unload):
@@ -254,7 +255,7 @@ def main():
     
     
 
-    
+  
     
     
     

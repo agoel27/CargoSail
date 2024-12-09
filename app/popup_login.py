@@ -18,13 +18,16 @@ def login_store(root, new_username, login_popup_frame, error_message):
         set_username(new_username.get())
         
         write_save_file("name", new_username.get())
+
+        # update the current name label
+        name_label = root.nametowidget("name_label")
+        name_label.configure(text=f"Logged in: {new_username.get()}")
         
         # exits popup return to load balance
         login_popup_frame.destroy()
      
 
 def login_popup(root):
-    
     # create login popup frame
     login = Toplevel()
     login.title("Login")

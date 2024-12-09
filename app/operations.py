@@ -15,10 +15,18 @@ from config import *
 #     ["Acura", "Toyota", "Saab"]
     
 # ]
-def display_operations(root, selection):
+
+def get_weight(container_name):
+    for row in get_manifest():
+        for col in row:
+            if col[1] == container_name:
+                return col[0]
+    return 0
+
+def display_operations(root, prev_frame):
     # destroys login page
-    selection.pack_forget()
-    
+    prev_frame.pack_forget()
+
     container_list = {
         "Unload": [],
         "Load": []
@@ -44,7 +52,10 @@ def display_operations(root, selection):
     def add_container(name, container_input):
         if name == '':
             return
-        container_list["Load"].append(name)
+        # get the weight
+        weight = get_weight(name)
+        # add the contaienr name and weight
+        container_list["Load"].append((name, weight))
         ordered_list.append(("Load", name))        
         container_input.delete(0, tk.END)
         update_list()
@@ -70,20 +81,16 @@ def display_operations(root, selection):
                         widget.config(bg="SystemButtonFace")
                         break
                 
-                container_list[ordered_list[i][0]].remove(ordered_list[i][1])
-                ordered_list.pop(i)
-                update_list()
-            
-            else:
-                container_list[ordered_list[i][0]].remove(ordered_list[i][1])
-                ordered_list.pop(i)
-                update_list()
+            weight = get_weight(ordered_list[i][1])
+            container_list[ordered_list[i][0]].remove([ordered_list[i][1], weight])
+            ordered_list.pop(i)
+            update_list()
     
 
     # parent frame of the page
     load_unload_frame = ttk.Frame(root)
     load_unload_frame.pack(expand=1, fill="both")
-    
+
     # create frames for visuals on screen
     done_button_frame = ttk.Frame(load_unload_frame)
     done_button_frame.pack(side="bottom", fill="x")
@@ -96,14 +103,6 @@ def display_operations(root, selection):
     
     cargo_frame = ttk.Frame(load_unload_frame)
     cargo_frame.place(relx=.5, rely=.5, anchor='center')
-
-    # place and define buttons/labels/entry box etc.
-    loginButton = ttk.Button(load_unload_frame, text="Login", padding=(10, 10), command= lambda:login_popup(root))
-    loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
-    
-    addNoteButton = ttk.Button(load_unload_frame, text="Add Note", padding=(10, 10), command=lambda:add_note(root))
-    addNoteButton.place(anchor="nw", relx=0, rely=0, x=5, y=5)
-    
 
     done_button = ttk.Button(done_button_frame, text="Done", padding=(20, 10), command=lambda: start_operation(root, load_unload_frame))
     done_button.pack(pady=20)
@@ -146,7 +145,10 @@ def darkenCell(label, container_list, name, update_list, ordered_list):
             update_list()
     else:
         label.config(bg="red")
-        container_list["Unload"].append(name)
+        # get the weight
+        weight = get_weight(name)
+        # add the container name and weight
+        container_list["Unload"].append((name, weight))
         ordered_list.append(("Unload", name))
         update_list()
         
