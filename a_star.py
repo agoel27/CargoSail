@@ -213,7 +213,7 @@ def unload_container(state,row,col):
     copy_state[row][col] = ('0000',"UNUSED")
     return copy_state
 
-def a_star(problem,queueing_func):
+#def a_star(problem,queueing_func):
     #nodes = makeQueue(Node(problem.initial_state))
     #loop do
     #if empty(nodes) then return fail
@@ -221,25 +221,37 @@ def a_star(problem,queueing_func):
     #if goal_test(node.state) succeeds return node
         #nodes = queueing_function(nodes,expand(node,problem.operators))
     #end
-    print()
-
     
+
+def a_star(cargo,containers_to_load,containers_to_unload):
+    nodes = priorityQueue()
+    initial_state = Node(cargo)
+    nodes.push(initial_state)
+
+    while(nodes):
+        current_node = nodes.pop()
+        if goal_test(current_node):
+            print("Goal reached! all the containers have been loaded/unloaded")
+            return current_node
+        children = expand(current_node,containers_to_load,containers_to_unload)
+        for child in children:
+            nodes.push(child)
+    
+def output_matrix(matrix):
+    file = open("test.txt", 'w')
+    for row in matrix:
+       file.write(" | ".join([str(x) for x in row]) + '\n')
+    file.close()
 
 #testing that the classes are working as intended
 def main():
 
     manifest_path = "/Users/antho/Downloads/load_unload_small.txt"
-    cargo_matrix = load_manifest(manifest_path) 
+    cargo_matrix = load_manifest(manifest_path)
+    output_matrix(cargo_matrix)
     
     
-    #test expand func
     
-    node1 = Node(cargo_matrix)
-    cargo_to_load = [('00000', 'Dog'), ('00000', 'Spoons')]
-    cargo_to_unload = [('00000', 'Walmart')]
-    children = expand(node1,cargo_to_load,cargo_to_unload)
-    print(len(children))
-    print(children[0].get_cost())
     
 
     
