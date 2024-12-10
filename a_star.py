@@ -114,7 +114,7 @@ class Node:
         return self.cost_g
 
     def get_operation_info(self):
-        return self.balance_operation_info
+        return self.operation_info
 
     def get_solution_length_and_path(self, solution_node):
 
@@ -129,8 +129,8 @@ class Node:
 
         return path_length, solution_stack
     
-    def set_operation_info(self, balance_operation_info):
-        self.balance_operation_info = balance_operation_info
+    def set_operation_info(self, operation_info):
+        self.operation_info = operation_info
     
     def add_children(self, children):
         for child in children:
@@ -336,6 +336,8 @@ def main():
     unload = []
     goal_node = a_star_load_unload(cargo_matrix,load,unload)
     output_matrix(goal_node.state)
+   
+    print(get_operations_info(goal_node))
    
     
 
