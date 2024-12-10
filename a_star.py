@@ -6,44 +6,43 @@ import copy
 
 def goal_test(load_list,unload_list,current_state):
     #check if all the containers have been loaded/unloaded
-    loads = load_list.copy()
-    unloads = unload_list.copy()
-    len_loads = len(loads)
-    len_unloads = len(unloads)
+    loads = copy.deepcopy(load_list)
+    unloads = copy.deepcopy(unload_list)
+    load_count = 0
 
     for row in current_state:
         for element in row:
-            if len_loads != 0:
-                if in_list(element[1],loads):
-                    loads.remove(element)
-            if len_unloads != 0:
-                if in_list(element[1],unloads):
-                    return False
-    return len(loads) == 0
+            if len(loads) != 0:
+                if in_list(element,load_list):
+                    load_count += 1
+            if len(unloads) != 0:
+                if in_list(element,unloads):
+                    return False           
+    return load_count == len(loads)
                 
-def calc_hueristic_cost(node,containers_to_unload,row_idx_of_top_container):
+def calc_hueristic_cost(node,containers_to_unload,containers_to_load_count,row_idx_of_top_container):
     cols = len(node.state[0])
     rows = len(node.state)
-    unload_containers = 0 
+    unload_containers = len(containers_to_unload) 
     shortest_distance = 10000 #big number so the first distance becomes the min
 
     #count the amount of containers that are at the top of the columns and need to be unloaded
     for col in range(cols):
         for row in range(rows):
             if row_idx_of_top_container[col] != None:
-                if in_list(node.state[row_idx_of_top_container[col], col],containers_to_unload):
-                    unload_containers += 1
-    
+                if in_list(node.state[row_idx_of_top_container[col]][col],containers_to_unload):
+                    unload_containers -= 1
+                    
     #find smallest distance between last loaded container and container to unload in the state
-    if node.last_loaded_container_location != None:
+    if node.last_loaded_container_location != None and containers_to_unload:
         for row in range(rows):
             for col in range(cols):
                 if in_list(node.state[row][col],containers_to_unload):
                     distance = manhattan_distance((row,col), node.last_loaded_container_location)
                     if distance < shortest_distance:
                         shortest_distance = distance
-        return shortest_distance + unload_containers
-    return unload_containers 
+        return shortest_distance + unload_containers + (containers_to_load_count *2)
+    return unload_containers + (containers_to_load_count *2)
 
 
 def manhattan_distance(point1, point2):
@@ -56,7 +55,7 @@ def manhattan_distance(point1, point2):
 def in_list(element, arr):
     if len(arr) != 0:
         for item in arr:
-            if element == item[1]:
+            if element[0] == item[0] and element[1] == item[1]:
                 return True
     return False 
 
@@ -81,19 +80,23 @@ class priorityQueue:
         node = self.queue[idx]
         self.queue.pop(idx)
         #returning the cost for testing purposes, will return the actual node
-        return node.get_cost()
+        return node
+    
     def len(self):
         return len(self.queue)
     
 #node class for each state 
 class Node:
-    def __init__(self, current_state):
+    def __init__(self, current_state,load_list,unload_list):
         self.state = current_state
         self.parent = None
         self.children = []
         self.cost_g = 0
         self.cost_h = 0
         self.last_loaded_container_location = None
+        self.load_list = load_list
+        self.unload_list = unload_list
+        self.crane_location = (-1,0)
     
     def getState(self):
         return self.state
@@ -106,16 +109,19 @@ class Node:
     
     def set_cost_h(self,cost_h):
         self.cost_h = cost_h
+    def get_cost_g(self):
+        return self.cost_g
     
     
 
     
-def expand(node, containers_to_load,containers_to_unload):
+def expand(node, containers_to_load,containers_to_unload,explored_states):
     children = []
     columns = len(node.state[0])
     rows = len(node.state)
     row_idx_of_top_container = [None] * columns    
     row_idx_of_valid_space = [None] * columns
+    crane_cords = node.crane_location
     
     #find empty spaces in each column and find the index of the topmost container of each column
     for col in range(columns):
@@ -140,31 +146,49 @@ def expand(node, containers_to_load,containers_to_unload):
             otherRow = row_idx_of_valid_space[otherCol]
             if otherRow != None and myCol != otherCol:
                 #add func calls to calculate cost of node
-                child = Node(move_container(node.state, myRow, myCol, otherRow, otherCol))
-                child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,row_idx_of_top_container))
-                children.append(child)
+                new_state = move_container(node.state, myRow, myCol, otherRow, otherCol)
+                if tuple(map(tuple, new_state)) not in explored_states:
+                    child = Node(new_state,copy.deepcopy(containers_to_load),copy.deepcopy(containers_to_unload))
+                    child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,len(containers_to_load),row_idx_of_top_container))
+                    child.set_cost_g(manhattan_distance((myRow,myCol),(otherRow,otherCol)) + manhattan_distance((crane_cords[0],crane_cords[1]),(myRow,myCol)) + node.get_cost_g())
+                    child.crane_location = (otherRow,otherCol)
+                    children.append(child)
     
     #load each container that has to be loaded to one of the valid spots and add it as a new Node to children
     if containers_to_load: #check if load list is empty
-        for container in containers_to_load:
-            for col in range(columns):
-                valid_row = row_idx_of_valid_space[col]
-                if valid_row != None:
-                    child = Node(load_container(node.state,valid_row,col,container))
-                    child.last_loaded_container_location = (valid_row,col)
-                    child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,row_idx_of_top_container))
-                    children.append(child)
+        for col in range(columns):
+            valid_row = row_idx_of_valid_space[col]
+            if valid_row != None:
+                #temp_list_load = containers_to_load.copy()
+                for container in containers_to_load:
+                    temp_list_load = copy.deepcopy(containers_to_load)
+                    temp_list_load.remove(container)
+                    new_state = load_container(node.state,valid_row,col,container)
+                    if tuple(map(tuple,new_state)) not in explored_states:
+                        child = Node(new_state,temp_list_load,copy.deepcopy(containers_to_unload))
+                        child.last_loaded_container_location = (valid_row,col)
+                        child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,len(temp_list_load),row_idx_of_top_container))
+                        child.set_cost_g(manhattan_distance((valid_row,col),(-1,0)) +manhattan_distance((crane_cords[0],crane_cords[1]),(valid_row,col))+ 2 + node.get_cost_g())
+                        child.crane_location = (valid_row,col)
+                        children.append(child)
     
     #unload a container if its one of the containers at the top of a column and append that new node to children
     if containers_to_unload: #check if unload list is empty
         for col in range(columns):
             row = row_idx_of_top_container[col]
             if row != None:
+                #temp_list_unload = containers_to_unload.copy()
                 for container in containers_to_unload:
                     if container[1] == node.state[row][col][1]:
-                        child = Node(unload_container(node.state,row,col))
-                        child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,row_idx_of_top_container))
-                        children.append(child)
+                        temp_list_unload = copy.deepcopy(containers_to_unload)
+                        temp_list_unload.remove(container)
+                        new_state = unload_container(node.state,row,col)
+                        if tuple(map(tuple,new_state)) not in explored_states:
+                            child = Node(new_state,copy.deepcopy(containers_to_load),len(containers_to_load),temp_list_unload)
+                            child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,row_idx_of_top_container))
+                            child.set_cost_g(manhattan_distance((row,col),(-1,0)) + manhattan_distance((crane_cords[0],crane_cords[1]),(row,col))+ 2 + node.get_cost_g())
+                            child.crane_location = (-1,0)
+                            children.append(child)
     
     return children
             
@@ -200,7 +224,7 @@ def move_container(current_state, myRow, myCol, otherRow, otherCol):
     """
     copy_state = copy.deepcopy(current_state)
     copy_state[otherRow][otherCol] = copy_state[myRow][myCol]
-    copy_state[myRow][myCol] = ('0000',"UNUSED")
+    copy_state[myRow][myCol] = (0,"UNUSED")
     return copy_state
 
 def load_container(state, row, col,container):
@@ -210,7 +234,7 @@ def load_container(state, row, col,container):
 
 def unload_container(state,row,col):
     copy_state = copy.deepcopy(state)
-    copy_state[row][col] = ('0000',"UNUSED")
+    copy_state[row][col] = (0,"UNUSED")
     return copy_state
 
 #def a_star(problem,queueing_func):
@@ -226,20 +250,25 @@ def unload_container(state,row,col):
 
 def a_star(cargo,containers_to_load,containers_to_unload):
     nodes = priorityQueue()
-    initial_state = Node(cargo)
-    nodes.push(initial_state)
+    initial_node = Node(cargo,containers_to_load,containers_to_unload)
+    nodes.push(initial_node)
+    explored_states = set()
+    explored_states.add(tuple(map(tuple,initial_node.state)))
 
     while(nodes):
         current_node = nodes.pop()
-        if goal_test(current_node):
+        if goal_test(current_node.load_list, current_node.unload_list ,current_node.state):
             print("Goal reached! all the containers have been loaded/unloaded")
             return current_node
-        children = expand(current_node,containers_to_load,containers_to_unload)
+        else:
+            print("not the goal node, expanding child node")
+        children = expand(current_node,current_node.load_list,current_node.unload_list,explored_states)
         for child in children:
+            explored_states.add(tuple(map(tuple,child.state)))
             nodes.push(child)
     
 def output_matrix(matrix):
-    file = open("test.txt", 'w')
+    file = open("test2.txt", 'w')
     for row in matrix:
        file.write(" | ".join([str(x) for x in row]) + '\n')
     file.close()
@@ -249,7 +278,16 @@ def main():
 
     manifest_path = "/Users/antho/Downloads/load_unload_small.txt"
     cargo_matrix = load_manifest(manifest_path)
-    output_matrix(cargo_matrix)
+    load = [(210,'walmart')]
+    unload = []
+    goal_node = a_star(cargo_matrix,load,unload)
+    output_matrix(goal_node.state)
+   
+    
+
+    
+
+
     
     
     

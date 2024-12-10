@@ -43,6 +43,8 @@ def operations_screen(root, prev_frame):
     truck_label = tk.Label(truck_frame, text="Truck", borderwidth=1, relief="solid", height=2, width=7, font=("Arial", 12), anchor="center")
     truck_label.grid(row=0, column=0, sticky="nsew")
 
+    #this is for balancing
+    #----------------------------------------------------------------------------------------------
     solution_node = a_star(get_manifest())
     total_minutes, total_moves, balance_operations_list, manifest_data_of_solution_path = get_balance_operations_info(solution_node)
 
@@ -50,5 +52,12 @@ def operations_screen(root, prev_frame):
     current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, balance_operations_list)
 
     current_move_frame.create_current_move_frame(1, ship_table, manifest_data_of_solution_path)
+
+    #---------------------------------------------------------------------------------------------
+    #this will be for load/unload
+    #---------------------------------------------------------------------------------------------
+    #create var to tell operations if its a load/unload or a balance operation
+
+
     
     reposition_buttons(root)
