@@ -22,7 +22,7 @@ def goal_test(load_list,unload_list,current_state):
 def calc_hueristic_cost(node,containers_to_unload,containers_to_load_count,row_idx_of_top_container):
     cols = len(node.state[0])
     rows = len(node.state)
-    unload_containers = len(containers_to_unload) 
+    unload_containers_cost = 0 
     shortest_distance = 10000 #big number so the first distance becomes the min
 
     #count the amount of containers that are at the top of the columns and need to be unloaded
@@ -33,6 +33,10 @@ def calc_hueristic_cost(node,containers_to_unload,containers_to_load_count,row_i
     #                 unload_containers -= 1
                     
     #find smallest distance between last loaded container and container to unload in the state
+
+    for container in containers_to_unload:
+        unload_containers_cost += manhattan_distance((-1, 0), container[2])
+
     if node.last_loaded_container_location != None and containers_to_unload:
         for row in range(rows):
             for col in range(cols):
@@ -40,8 +44,8 @@ def calc_hueristic_cost(node,containers_to_unload,containers_to_load_count,row_i
                     distance = manhattan_distance((row,col), node.last_loaded_container_location)
                     if distance < shortest_distance:
                         shortest_distance = distance
-        return shortest_distance + (2 * unload_containers) + (containers_to_load_count *2)
-    return (2 * unload_containers) + (containers_to_load_count *2)
+        return shortest_distance + unload_containers_cost + (containers_to_load_count * 2)
+    return unload_containers_cost + (containers_to_load_count *2)
 
 
 def manhattan_distance(point1, point2):
@@ -176,6 +180,9 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
                 if tuple(map(tuple, new_state)) not in explored_states:
                     location_from = "["+ str(myRow) + "," + str(myCol) + "]"
                     location_to = "["+ str(otherRow) + "," + str(otherCol) + "]"
+                    for i in range(len(containers_to_unload)):
+                        if containers_to_unload[i][0] ==  new_state[otherRow][otherCol][0] and containers_to_unload[i][1] ==  new_state[otherRow][otherCol][1]:
+                            containers_to_unload[i][2] = (otherRow, otherCol)
                     child = Node(new_state,copy.deepcopy(containers_to_load),copy.deepcopy(containers_to_unload))
                     child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,len(containers_to_load),row_idx_of_top_container))
                     child.set_cost_g(manhattan_distance((myRow,myCol),(otherRow,otherCol)) + manhattan_distance((crane_cords[0],crane_cords[1]),(myRow,myCol)) + node.get_cost_g())
@@ -219,7 +226,7 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
                             location_from = "["+ str(row) + "," + str(col) + "]"
                             location_to = "[truck]"
                             child = Node(new_state,copy.deepcopy(containers_to_load),temp_list_unload)
-                            child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,len(containers_to_load), row_idx_of_top_container))
+                            child.set_cost_h(calc_hueristic_cost(child,temp_list_unload,len(containers_to_load), row_idx_of_top_container))
                             child.set_cost_g(manhattan_distance((row,col),(-1,0)) + manhattan_distance((crane_cords[0],crane_cords[1]),(row,col))+ 2 + node.get_cost_g())
                             child.crane_location = (-1,0)
                             child.set_operation_info((location_from,location_to))
