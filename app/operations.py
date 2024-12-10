@@ -184,7 +184,7 @@ def display_current_cargo(frame, current_cargo, container_list, hover_label, upd
             recover_darkenCells(cell, truncated_value, update_list)
             
             if not(truncated_value == "UNUSED" or truncated_value == "NAN"):
-                cell.bind("<Button 1>",lambda event, name=current_cargo[i][j][1],label=cell:[darkenCell(label, container_list, name, update_list, ordered_list, (i, j))])
+                cell.bind("<Button 1>",lambda event, name=current_cargo[i][j][1],label=cell, row=i, col=j:[darkenCell(label, container_list, name, update_list, ordered_list, (row, col))])
                 cell.bind("<Enter>", lambda event, row=i, col=j,current_cargo=current_cargo,hover_label=hover_label:show_hover_label(event, row, col,current_cargo,hover_label))
                 cell.bind("<Leave>", lambda event, hover_label=hover_label:hide_hover_label(event, hover_label))
 
