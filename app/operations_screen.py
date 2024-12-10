@@ -23,15 +23,15 @@ def operations_screen(root, prev_frame):
 
     # create buffer area frame
     buffer_area_frame = ttk.Frame(operations_screen_frame)
-    buffer_area_frame.place(relx=0.5, rely=0.85, anchor="center") # 0.7 
+    buffer_area_frame.place(relx=0.5, rely=0.85, anchor="c") # 0.7 
 
     # create ship frame
     ship_frame = ttk.Frame(operations_screen_frame)
-    ship_frame.place(relx=0.75, rely=0.5, anchor="center") # 0.5 
+    ship_frame.place(relx=0.75, rely=0.5, anchor="c") # 0.5 
 
     # create truck frame
     truck_frame = ttk.Frame(operations_screen_frame)
-    truck_frame.place(relx=0.25, rely=0.5, anchor="center") # 0.64
+    truck_frame.place(relx=0.25, rely=0.5, anchor="c") # 0.64
 
     # place table in buffer area frame
     buffer_area_table = Table(buffer_area_frame, buffer_data)
@@ -43,6 +43,8 @@ def operations_screen(root, prev_frame):
     truck_label = tk.Label(truck_frame, text="Truck", borderwidth=1, relief="solid", height=2, width=7, font=("Arial", 12), anchor="center")
     truck_label.grid(row=0, column=0, sticky="nsew")
 
+    #this is for balancing
+    #----------------------------------------------------------------------------------------------
     solution_node = a_star(get_manifest())
     total_minutes, total_moves, balance_operations_list, manifest_data_of_solution_path = get_balance_operations_info(solution_node)
 
@@ -50,5 +52,9 @@ def operations_screen(root, prev_frame):
     current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, balance_operations_list)
 
     current_move_frame.create_current_move_frame(1, ship_table, manifest_data_of_solution_path)
+    #---------------------------------------------------------------------------------------------
+    #this will be for load/unload
+    #---------------------------------------------------------------------------------------------
+    #create var to tell operations if its a load/unload or a balance operation
 
     
