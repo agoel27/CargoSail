@@ -200,6 +200,7 @@ def hide_hover_label(event,hover_label):
 
 
 def recover_darkenCells(cell, truncated_value, update_list):
+        update_list()
         saved_list = read_save_file("ordered_list")
         if saved_list:
             r = len(saved_list)

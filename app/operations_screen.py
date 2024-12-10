@@ -32,7 +32,7 @@ def operations_screen(root, prev_frame, is_balance):
 
     # create truck frame
     truck_frame = ttk.Frame(operations_screen_frame)
-    truck_frame.place(relx=0.25, rely=0.5, anchor="c") # 0.64
+    truck_frame.place(relx=0.25, rely=0.65, anchor="c") # 0.64
 
     # place truck in truck frame
     truck_label = tk.Label(truck_frame, text="Truck", borderwidth=1, relief="solid", height=2, width=7, font=("Arial", 12), anchor="center")
