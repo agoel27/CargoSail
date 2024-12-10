@@ -1,8 +1,7 @@
-
-#from app.operations import send_container_list
 import numpy as np
 import re 
 import copy
+from collections import deque
 
 def goal_test(load_list,unload_list,current_state):
     #check if all the containers have been loaded/unloaded
@@ -97,6 +96,7 @@ class Node:
         self.load_list = load_list
         self.unload_list = unload_list
         self.crane_location = (-1,0)
+        self.operation_info = (None, None)
     
     def getState(self):
         return self.state
@@ -109,8 +109,34 @@ class Node:
     
     def set_cost_h(self,cost_h):
         self.cost_h = cost_h
+    
     def get_cost_g(self):
         return self.cost_g
+
+    def get_operation_info(self):
+        return self.balance_operation_info
+
+    def get_solution_length_and_path(self, solution_node):
+
+        path_length = 0
+        current_node = solution_node
+        solution_stack = deque()
+
+        while(current_node.parent):
+            solution_stack.append(current_node)
+            path_length += 1
+            current_node = current_node.parent
+
+        return path_length, solution_stack
+    
+    def set_operation_info(self, balance_operation_info):
+        self.balance_operation_info = balance_operation_info
+    
+    def add_children(self, children):
+        for child in children:
+            self.children.append(child)
+            child.parent = self
+
     
     
 
@@ -148,10 +174,13 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
                 #add func calls to calculate cost of node
                 new_state = move_container(node.state, myRow, myCol, otherRow, otherCol)
                 if tuple(map(tuple, new_state)) not in explored_states:
+                    location_from = "["+ str(myRow) + "," + str(myCol) + "]"
+                    location_to = "["+ str(otherRow) + "," + str(otherCol) + "]"
                     child = Node(new_state,copy.deepcopy(containers_to_load),copy.deepcopy(containers_to_unload))
                     child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,len(containers_to_load),row_idx_of_top_container))
                     child.set_cost_g(manhattan_distance((myRow,myCol),(otherRow,otherCol)) + manhattan_distance((crane_cords[0],crane_cords[1]),(myRow,myCol)) + node.get_cost_g())
                     child.crane_location = (otherRow,otherCol)
+                    child.set_operation_info = ((location_from),(location_to))
                     children.append(child)
     
     #load each container that has to be loaded to one of the valid spots and add it as a new Node to children
@@ -165,11 +194,14 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
                     temp_list_load.remove(container)
                     new_state = load_container(node.state,valid_row,col,container)
                     if tuple(map(tuple,new_state)) not in explored_states:
+                        location_from = "[truck]"
+                        location_to = "["+ str(valid_row) + "," + str(col) + "]"
                         child = Node(new_state,temp_list_load,copy.deepcopy(containers_to_unload))
                         child.last_loaded_container_location = (valid_row,col)
                         child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,len(temp_list_load),row_idx_of_top_container))
                         child.set_cost_g(manhattan_distance((valid_row,col),(-1,0)) +manhattan_distance((crane_cords[0],crane_cords[1]),(valid_row,col))+ 2 + node.get_cost_g())
                         child.crane_location = (valid_row,col)
+                        child.set_operation_info = ((location_from),(location_to))
                         children.append(child)
     
     #unload a container if its one of the containers at the top of a column and append that new node to children
@@ -184,12 +216,15 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
                         temp_list_unload.remove(container)
                         new_state = unload_container(node.state,row,col)
                         if tuple(map(tuple,new_state)) not in explored_states:
+                            location_from = "["+ str(row) + "," + str(col) + "]"
+                            location_to = "[truck]"
                             child = Node(new_state,copy.deepcopy(containers_to_load),len(containers_to_load),temp_list_unload)
                             child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,row_idx_of_top_container))
                             child.set_cost_g(manhattan_distance((row,col),(-1,0)) + manhattan_distance((crane_cords[0],crane_cords[1]),(row,col))+ 2 + node.get_cost_g())
                             child.crane_location = (-1,0)
+                            child.set_operation_info = ((location_from),(location_to))
                             children.append(child)
-    
+    node.add_children(children)
     return children
             
 
@@ -248,7 +283,7 @@ def unload_container(state,row,col):
 
     
 
-def a_star(cargo,containers_to_load,containers_to_unload):
+def a_star_load_unload(cargo,containers_to_load,containers_to_unload):
     nodes = priorityQueue()
     initial_node = Node(cargo,containers_to_load,containers_to_unload)
     nodes.push(initial_node)
@@ -266,7 +301,26 @@ def a_star(cargo,containers_to_load,containers_to_unload):
         for child in children:
             explored_states.add(tuple(map(tuple,child.state)))
             nodes.push(child)
-    
+
+def get_operations_info(solution_node):
+
+    total_minutes = solution_node.cost_g
+    total_moves, solution_path = solution_node.get_solution_length_and_path(solution_node)
+    operations_list = []
+    manifest_list = []
+
+    print("--------------------------------------------------")
+    print("\nSolution Path:\n")
+    for _ in range(len(solution_path)):
+        current_node = solution_path.pop()
+        operation_info = current_node.get_operation_info()
+        operations_list.append(operation_info)
+        manifest_list.append(current_node.state)
+        
+
+
+    return total_minutes, total_moves, operations_list, manifest_list
+
 def output_matrix(matrix):
     file = open("test2.txt", 'w')
     for row in matrix:
@@ -280,7 +334,7 @@ def main():
     cargo_matrix = load_manifest(manifest_path)
     load = [(210,'walmart')]
     unload = []
-    goal_node = a_star(cargo_matrix,load,unload)
+    goal_node = a_star_load_unload(cargo_matrix,load,unload)
     output_matrix(goal_node.state)
    
     

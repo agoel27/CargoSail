@@ -53,7 +53,7 @@ def load_operation(root, load_balance_frame):
         
 def balance_operation(root, load_balance_frame):
     if load_file():
-        operations_screen(root, load_balance_frame)
+        operations_screen(root, load_balance_frame,True)
 
 
 def load_balance(root, prev_frame):

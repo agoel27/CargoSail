@@ -7,8 +7,9 @@ from app.table import Table
 from app.current_move_frame import CurrentMoveFrame
 from config import *
 from balance_problem import a_star, get_balance_operations_info
+from a_star import a_star_load_unload, get_operations_info
 
-def operations_screen(root, prev_frame):
+def operations_screen(root, prev_frame, is_balance):
     buffer_data = [[(0, "UNUSED") for _ in range(24)] for _ in range(4)]
 
     # destroys previous frame
@@ -45,16 +46,29 @@ def operations_screen(root, prev_frame):
 
     #this is for balancing
     #----------------------------------------------------------------------------------------------
-    solution_node = a_star(get_manifest())
-    total_minutes, total_moves, balance_operations_list, manifest_data_of_solution_path = get_balance_operations_info(solution_node)
+    if is_balance:
+        solution_node = a_star(get_manifest())
+        total_minutes, total_moves, balance_operations_list, manifest_data_of_solution_path = get_balance_operations_info(solution_node)
 
-    # place current move frame in operations screen frame
-    current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, balance_operations_list)
+        # place current move frame in operations screen frame
+        current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, balance_operations_list)
 
-    current_move_frame.create_current_move_frame(1, ship_table, manifest_data_of_solution_path)
-
+        current_move_frame.create_current_move_frame(1, ship_table, manifest_data_of_solution_path)
+    else:
     #---------------------------------------------------------------------------------------------
     #this will be for load/unload
+        if read_save_file("container_list"):
+            container_list = read_save_file("container_list")
+        unload_list = container_list["Unload"]
+        load_list = container_list["Load"]
+        print(unload_list)
+        print(load_list)
+        solution_node = a_star_load_unload(get_manifest(),load_list,unload_list)
+        print(solution_node.parent)
+        total_minutes, total_moves, operations_list, manifest_data_of_solution_path = get_operations_info(solution_node)
+        
+        current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, operations_list)
+        current_move_frame.create_current_move_frame(1, ship_table, manifest_data_of_solution_path)
     #---------------------------------------------------------------------------------------------
     #create var to tell operations if its a load/unload or a balance operation
 
