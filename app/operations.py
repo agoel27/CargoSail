@@ -47,7 +47,7 @@ def display_operations(root, prev_frame):
             
         # Update data in the save file
         write_save_file("ordered_list", ordered_list)
-        write_save_file("container_list", container_list)  
+        write_save_file("container_list", container_list)
         
     def add_container(name, container_input):
         if name == '':
@@ -75,14 +75,25 @@ def display_operations(root, prev_frame):
             
     def remove_operation(root, listbox):
         for i in reversed(listbox.curselection()):
+            operation, name = ordered_list[i]
+            
             if ordered_list[i][0] == 'Unload':
                 for widget in cargo_frame.winfo_children():
-                    if widget.cget("text") == ordered_list[i][1]:
+                    if widget.cget("text") == ordered_list[i][1][:7]:
                         widget.config(bg="SystemButtonFace")
                         break
-                
+            
+            location = None
             weight = get_weight(ordered_list[i][1])
-            container_list[ordered_list[i][0]].remove([weight,ordered_list[i][1]])
+
+            for container in container_list[operation]:
+                if container[0] == weight and container[1] == name:
+                    location = container[2]
+                    break
+            
+            if location is not None:
+                container_list[ordered_list[i][0]].remove([weight,ordered_list[i][1], location])
+            
             ordered_list.pop(i)
             update_list()
     
@@ -142,7 +153,7 @@ def darkenCell(label, container_list, name, update_list, ordered_list, unload_co
     if current_color == "red":
         label.config(bg="SystemButtonFace")
         weight = get_weight(name)
-        if [weight,name] in container_list["Unload"]:
+        if [weight, name, unload_container_location] in container_list["Unload"]:
             container_list["Unload"].remove([weight, name, unload_container_location])
             ordered_list.remove(["Unload", name])
             update_list()
