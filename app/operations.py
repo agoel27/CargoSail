@@ -56,7 +56,7 @@ def display_operations(root, prev_frame):
         weight = get_weight(name)
         # add the contaienr name and weight
         container_list["Load"].append([weight,name])
-        ordered_list.append(["Load", name])        
+        ordered_list.append(["Load", name])
         container_input.delete(0, tk.END)
         update_list()
 
@@ -204,15 +204,6 @@ def recover_darkenCells(cell, truncated_value, update_list):
         if saved_list:
             r = len(saved_list)
             for k in range(r):
-                if truncated_value == saved_list[k][1]:
+                if truncated_value == saved_list[k][1][:7]:
                     cell.config(bg="red")
                     update_list()
-    
-
-
-# display_operations(root)
-# root.geometry("800x600")
-# root.mainloop()
-
-
-
