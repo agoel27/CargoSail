@@ -39,8 +39,14 @@ class CurrentMoveFrame:
         """
         self.current_move_number = current_move_number
         set_move_info(self.total_moves, self.total_minutes, current_move_number, self.operations_list[current_move_number-1][0], self.operations_list[current_move_number-1][1], 7)
-        my_row, my_col = map(int, self.operations_list[current_move_number-1][0][1:-1].split(","))
-        other_row, other_col = map(int, self.operations_list[current_move_number-1][1][1:-1].split(","))
+        if(self.operations_list[current_move_number-1][0] != "[truck]"):
+            my_row, my_col = map(int, self.operations_list[current_move_number-1][0][1:-1].split(","))
+        else:
+            my_row, my_col = -1, -1
+        if(self.operations_list[current_move_number-1][1] != "[truck]"):
+            other_row, other_col = map(int, self.operations_list[current_move_number-1][1][1:-1].split(","))
+        else:
+            my_row, my_col = -1, -1
         table.start_flashing()
         table.flash_cells((my_row, my_col), (other_row, other_col))
 

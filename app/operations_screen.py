@@ -34,15 +34,15 @@ def operations_screen(root, prev_frame, is_balance):
     truck_frame = ttk.Frame(operations_screen_frame)
     truck_frame.place(relx=0.25, rely=0.5, anchor="c") # 0.64
 
-    # place table in buffer area frame
-    buffer_area_table = Table(buffer_area_frame, buffer_data)
-
-    # place table in ship frame
-    ship_table = Table(ship_frame, get_manifest())
-
     # place truck in truck frame
     truck_label = tk.Label(truck_frame, text="Truck", borderwidth=1, relief="solid", height=2, width=7, font=("Arial", 12), anchor="center")
     truck_label.grid(row=0, column=0, sticky="nsew")
+
+    # place table in buffer area frame
+    buffer_area_table = Table(buffer_area_frame, buffer_data, truck_label)
+
+    # place table in ship frame
+    ship_table = Table(ship_frame, get_manifest(), truck_label)
 
     #this is for balancing
     #----------------------------------------------------------------------------------------------
@@ -64,7 +64,6 @@ def operations_screen(root, prev_frame, is_balance):
         print(unload_list)
         print(load_list)
         solution_node = a_star_load_unload(get_manifest(),load_list,unload_list)
-        print(solution_node.parent)
         total_minutes, total_moves, operations_list, manifest_data_of_solution_path = get_operations_info(solution_node)
         
         current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, operations_list)

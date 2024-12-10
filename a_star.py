@@ -180,7 +180,7 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
                     child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,len(containers_to_load),row_idx_of_top_container))
                     child.set_cost_g(manhattan_distance((myRow,myCol),(otherRow,otherCol)) + manhattan_distance((crane_cords[0],crane_cords[1]),(myRow,myCol)) + node.get_cost_g())
                     child.crane_location = (otherRow,otherCol)
-                    child.set_operation_info = ((location_from),(location_to))
+                    child.set_operation_info((location_from,location_to))
                     children.append(child)
     
     #load each container that has to be loaded to one of the valid spots and add it as a new Node to children
@@ -201,7 +201,7 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
                         child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,len(temp_list_load),row_idx_of_top_container))
                         child.set_cost_g(manhattan_distance((valid_row,col),(-1,0)) +manhattan_distance((crane_cords[0],crane_cords[1]),(valid_row,col))+ 2 + node.get_cost_g())
                         child.crane_location = (valid_row,col)
-                        child.set_operation_info = ((location_from),(location_to))
+                        child.set_operation_info((location_from,location_to))
                         children.append(child)
     
     #unload a container if its one of the containers at the top of a column and append that new node to children
@@ -218,11 +218,11 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
                         if tuple(map(tuple,new_state)) not in explored_states:
                             location_from = "["+ str(row) + "," + str(col) + "]"
                             location_to = "[truck]"
-                            child = Node(new_state,copy.deepcopy(containers_to_load),len(containers_to_load),temp_list_unload)
-                            child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,row_idx_of_top_container))
+                            child = Node(new_state,copy.deepcopy(containers_to_load),temp_list_unload)
+                            child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,len(containers_to_load), row_idx_of_top_container))
                             child.set_cost_g(manhattan_distance((row,col),(-1,0)) + manhattan_distance((crane_cords[0],crane_cords[1]),(row,col))+ 2 + node.get_cost_g())
                             child.crane_location = (-1,0)
-                            child.set_operation_info = ((location_from),(location_to))
+                            child.set_operation_info((location_from,location_to))
                             children.append(child)
     node.add_children(children)
     return children
@@ -304,7 +304,7 @@ def a_star_load_unload(cargo,containers_to_load,containers_to_unload):
 
 def get_operations_info(solution_node):
 
-    total_minutes = solution_node.cost_g
+    total_minutes = solution_node.get_cost_g()
     total_moves, solution_path = solution_node.get_solution_length_and_path(solution_node)
     operations_list = []
     manifest_list = []
@@ -316,9 +316,7 @@ def get_operations_info(solution_node):
         operation_info = current_node.get_operation_info()
         operations_list.append(operation_info)
         manifest_list.append(current_node.state)
-        
-
-
+    
     return total_minutes, total_moves, operations_list, manifest_list
 
 def output_matrix(matrix):
