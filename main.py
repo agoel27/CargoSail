@@ -22,7 +22,7 @@ def crash_recovery(root, state):
         display_operations(root, temp)
     elif state == 2:
         # Go to operation screen for (un)load or balance
-        print("operations for load/unload or balance")
+        operations_screen(root, temp)
     else:
         # Default: Start at the login screen
         login_screen(root)
@@ -51,6 +51,9 @@ def open_logfile_and_save():
         data = {
             "name": "",
             "state" : "", # 1 = unload/load selection, 2 = operations
+            "operation" : "", # load_unload or balance
+            "total_moves" : "" ,
+            "total_minutes" : "",
             "ordered_list" : [],
             "container_list": {
                 "Unload": [],

@@ -7,6 +7,7 @@ from app.table import Table
 from app.current_move_frame import CurrentMoveFrame
 from config import *
 from balance_problem import a_star, get_balance_operations_info
+from a_star import a_starlu, get_load_unload_operations_info
 
 def operations_screen(root, prev_frame):
     buffer_data = [[(0, "UNUSED") for _ in range(24)] for _ in range(4)]
@@ -15,7 +16,7 @@ def operations_screen(root, prev_frame):
     prev_frame.pack_forget()
     
     # save current state for crash recovery 
-    # write_save_file("state", 2)
+    write_save_file("state", 2)
 
     # create operations screen frame
     operations_screen_frame = ttk.Frame(root)
@@ -45,16 +46,25 @@ def operations_screen(root, prev_frame):
 
     #this is for balancing
     #----------------------------------------------------------------------------------------------
-    solution_node = a_star(get_manifest())
-    total_minutes, total_moves, balance_operations_list, manifest_data_of_solution_path = get_balance_operations_info(solution_node)
+    
+    if(read_save_file("operation") == "balance"):
+        solution_node = a_star(get_manifest())
+        total_minutes, total_moves, balance_operations_list, manifest_data_of_solution_path = get_balance_operations_info(solution_node)
 
-    # place current move frame in operations screen frame
-    current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, balance_operations_list)
+        # place current move frame in operations screen frame
+        current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, balance_operations_list)
 
-    current_move_frame.create_current_move_frame(1, ship_table, manifest_data_of_solution_path)
-
+        current_move_frame.create_current_move_frame(1, ship_table, manifest_data_of_solution_path)
+        
+        write_save_file("total_moves", total_moves)
+        write_save_file("total_minutes", total_minutes) 
+        write_save_file("balance_operations_list", balance_operations_list)
+        write_save_file("manifest_data_of_solution_path", manifest_data_of_solution_path)
+        print("balance")
     #---------------------------------------------------------------------------------------------
     #this will be for load/unload
+    if(read_save_file("operation") == "load_unload"):
+        print("load_unload")
     #---------------------------------------------------------------------------------------------
     #create var to tell operations if its a load/unload or a balance operation
 
