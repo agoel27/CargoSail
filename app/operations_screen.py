@@ -52,9 +52,12 @@ def operations_screen(root, prev_frame):
     current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, balance_operations_list)
 
     current_move_frame.create_current_move_frame(1, ship_table, manifest_data_of_solution_path)
+
     #---------------------------------------------------------------------------------------------
     #this will be for load/unload
     #---------------------------------------------------------------------------------------------
     #create var to tell operations if its a load/unload or a balance operation
 
+
     
+    reposition_buttons(root)

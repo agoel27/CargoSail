@@ -55,8 +55,8 @@ def display_operations(root, prev_frame):
         # get the weight
         weight = get_weight(name)
         # add the contaienr name and weight
-        container_list["Load"].append((name, weight))
-        ordered_list.append(("Load", name))        
+        container_list["Load"].append([name, weight])
+        ordered_list.append(["Load", name])        
         container_input.delete(0, tk.END)
         update_list()
 
@@ -103,6 +103,8 @@ def display_operations(root, prev_frame):
     
     cargo_frame = ttk.Frame(load_unload_frame)
     cargo_frame.place(relx=.5, rely=.5, anchor='center')
+    
+    reposition_buttons(root)
 
     done_button = ttk.Button(done_button_frame, text="Done", padding=(20, 10), command=lambda: start_operation(root, load_unload_frame))
     done_button.pack(pady=20)
@@ -139,17 +141,18 @@ def darkenCell(label, container_list, name, update_list, ordered_list):
     
     if current_color == "red":
         label.config(bg="SystemButtonFace")
-        if name in container_list["Unload"]:
-            container_list["Unload"].remove(name)
-            ordered_list.remove(("Unload", name))
+        weight = get_weight(name)
+        if [name, weight] in container_list["Unload"]:
+            container_list["Unload"].remove([name, weight])
+            ordered_list.remove(["Unload", name])
             update_list()
     else:
         label.config(bg="red")
         # get the weight
         weight = get_weight(name)
         # add the container name and weight
-        container_list["Unload"].append((name, weight))
-        ordered_list.append(("Unload", name))
+        container_list["Unload"].append([name, weight])
+        ordered_list.append(["Unload", name])
         update_list()
         
 def display_current_cargo(frame, current_cargo, container_list, hover_label, update_list, ordered_list):
