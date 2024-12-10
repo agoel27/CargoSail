@@ -1,6 +1,7 @@
 import copy
 from collections import deque
 from heapq import heappop, heappush
+from itertools import chain, combinations
 
 class Node:
     def __init__(self, data):
@@ -67,12 +68,16 @@ class BalanceProblem:
         Initialize the balance problem with the initial state
         """
         self.initial_state = initial_state
+        self.sift_goal_state = [[(0, "UNUSED")] * 12 for _ in range(8)]
 
     def get_initial_state(self):
         """
         Return the initial state which represents the ship's incoming manifest
         """
         return self.initial_state
+    
+    def get_sift_goal_state(self):
+        return self.sift_goal_state
 
     def goal_test(self, current_state):
         """
@@ -94,6 +99,63 @@ class BalanceProblem:
         if left_side_weight == 0 or right_side_weight == 0:
             return False
         return max(left_side_weight, right_side_weight) / min(left_side_weight, right_side_weight) < 1.1
+    
+    def is_balancable(self):
+        left_side_weights = []
+        right_side_weights = []
+        
+        for row in self.initial_state:
+            for i in range(len(row)):
+                if row[i][1] != "UNUSED" and row[i][1] != "NAN":
+                    if i  < (len(row) / 2):
+                        left_side_weights.append(row[i][0])
+                    else:
+                        right_side_weights.append(row[i][0])
+        
+        if len(left_side_weights) == 0 and len(right_side_weights) == 0:
+            return True
+        
+        all_weights = left_side_weights + right_side_weights
+        for subset in chain.from_iterable(combinations(all_weights, r) for r in range(1, (len(all_weights) // 2) + 1)):
+            left_weights = list(subset)
+
+            right_weights = all_weights.copy()
+            for weight in left_weights:
+                right_weights.remove(weight)
+
+            left_sum = sum(left_weights)
+            right_sum = sum(right_weights)
+
+            if min(left_sum, right_sum) > 0 and max(left_sum, right_sum) / min(left_sum, right_sum) < 1.1:
+                return True
+            
+        return False
+    
+    def set_sift_goal_state(self):
+        valid_entries = [(weight, name) for row in self.initial_state for weight, name in row if name != "UNUSED" and name != "NAN"]
+        sorted_entries = sorted(valid_entries, key=lambda x: x[0], reverse=True)
+
+        num_cols = len(self.initial_state[0])
+        for row in reversed(range(len(self.initial_state))):
+            left_ctr = 0
+            right_ctr = 0
+            for col in range(num_cols):
+                if col%2 == 0:
+                    left_ctr += 1
+                    col = num_cols // 2 - left_ctr
+                else:
+                    col = num_cols // 2 + right_ctr
+                    right_ctr += 1
+
+                if sorted_entries and self.initial_state[row][col][1] != "NAN":
+                    self.sift_goal_state[row][col] = sorted_entries.pop(0)
+                elif self.initial_state[row][col][1] == "NAN":
+                    self.sift_goal_state[row][col] = (0, "NAN")
+    
+    def sift_goal_test(self, current_state):
+        if current_state == self.sift_goal_state:
+            return True
+        return False
 
 def calculate_manhattan_dist(my_row, my_col, other_row, other_col):
     delta_y = abs(my_row - other_row)
@@ -156,6 +218,25 @@ def calculate_balance_heuristic(current_state):
     
     return heuristic_cost
 
+def calculate_sift_heuristic(current_state, problem):
+    heuristic_cost = 0
+    goal_state_copy = copy.deepcopy(problem.get_sift_goal_state())
+
+    def get_location(value, state):
+        for row in range(len(state)):
+            for col in range(len(state[0])):
+                if value == state[row][col]:
+                    return row, col
+    
+    for my_row in range(len(current_state)):
+        for my_col in range(len(current_state[0])):
+            if current_state[my_row][my_col][1] != "UNUSED" and current_state[my_row][my_col][1] != "NAN":
+                other_row, other_col = get_location(current_state[my_row][my_col], goal_state_copy)
+                heuristic_cost += calculate_manhattan_dist(my_row, my_col, other_row, other_col)
+                goal_state_copy[other_row][other_col] = (0, "UNUSED")
+    
+    return heuristic_cost
+
 def move_container(current_state, my_row, my_col, other_row, other_col):
     """
     Move the container from (my_row, my_col) to (other_row, other_col)
@@ -165,7 +246,7 @@ def move_container(current_state, my_row, my_col, other_row, other_col):
     copy_state[my_row][my_col] = (0, "UNUSED")
     return copy_state
 
-def expand_node(current_node, explored_states):
+def expand_node(current_node, explored_states, is_sift, problem):
     """
     Expand the current state by generating all possible new states where
     every top container is moved to the top of every other vaild column
@@ -221,7 +302,10 @@ def expand_node(current_node, explored_states):
                     location_to = "["+ str(other_row) + "," + str(other_col) + "]"
                     node_to_add = Node(new_state)
                     node_to_add.set_uniform_cost(current_node.uniform_cost + calculate_manhattan_dist(crane_coordinates[0], crane_coordinates[1], my_row, my_col) + calculate_manhattan_dist(my_row, my_col, other_row, other_col))
-                    node_to_add.set_heuristic_cost(calculate_balance_heuristic(node_to_add.get_state()))
+                    if not is_sift:
+                        node_to_add.set_heuristic_cost(calculate_balance_heuristic(node_to_add.get_state()))
+                    else:
+                        node_to_add.set_heuristic_cost(calculate_sift_heuristic(node_to_add.get_state(), problem))
                     node_to_add.set_crane_location((other_row, other_col))
                     node_to_add.set_balance_operation_info((location_from, location_to))
                     expanded_nodes.append(node_to_add)
@@ -231,9 +315,14 @@ def expand_node(current_node, explored_states):
     return expanded_nodes
 
 def a_star(manifest_data):
+    is_sift = False
     problem = BalanceProblem(manifest_data)
     initial_state = problem.get_initial_state()
 
+    if(not problem.is_balancable()):
+        is_sift = True
+        problem.set_sift_goal_state()
+    
     queue = []
     heappush(queue, Node(initial_state))
 
@@ -242,7 +331,9 @@ def a_star(manifest_data):
 
     while(queue):
         current_node = heappop(queue)
-        if problem.goal_test(current_node.get_state()):
+        if not is_sift and problem.goal_test(current_node.get_state()):
+            return current_node
+        if is_sift and problem.sift_goal_test(current_node.get_state()):
             return current_node
         # print("--------------------------------------------------")
         # print("\nExpanding Node:\n")
@@ -250,7 +341,7 @@ def a_star(manifest_data):
         #     print(row)
         # print("Uniform  Cost: ", current_node.get_uniform_cost())
         # print("Heuristic Cost: ", current_node.get_heuristic_cost(), "\n")
-        child_nodes = expand_node(current_node, explored_states)
+        child_nodes = expand_node(current_node, explored_states, is_sift, problem)
         for child_node in child_nodes:
             heappush(queue, child_node)
             explored_states.add(tuple(map(tuple, child_node.get_state())))
@@ -270,8 +361,8 @@ def get_balance_operations_info(solution_node):
     balance_operations_list = []
     manifest_list = []
 
-    print("--------------------------------------------------")
-    print("\nSolution Path:\n")
+    # print("--------------------------------------------------")
+    # print("\nSolution Path:\n")
     for _ in range(len(solution_path)):
         current_node = solution_path.pop()
         balance_operation_info = current_node.get_balance_operation_info()
@@ -284,3 +375,19 @@ def get_balance_operations_info(solution_node):
 
 
     return total_minutes, total_moves, balance_operations_list, manifest_list
+
+# example = [
+#     [(0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED")],
+#     [(0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED")],
+#     [(0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED")],
+#     [(0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (70, "LionKi"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED")],
+#     [(0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (40, "LionKi"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED")],
+#     [(0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (60, "LionKi"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED")],
+#     [(20, "LionKi"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (70, "LionKi"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED")],
+#     [(30, "LionKi"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (999999, "LionKi"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED"), (0, "UNUSED")]
+# ]
+
+# solution_node = a_star(example)
+
+# for row in solution_node.get_state():
+#     print(row)
