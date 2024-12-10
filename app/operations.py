@@ -55,7 +55,7 @@ def display_operations(root, prev_frame):
         # get the weight
         weight = get_weight(name)
         # add the contaienr name and weight
-        container_list["Load"].append([name, weight])
+        container_list["Load"].append([weight,name])
         ordered_list.append(["Load", name])        
         container_input.delete(0, tk.END)
         update_list()
@@ -64,7 +64,7 @@ def display_operations(root, prev_frame):
         if len(container_list["Load"]) == 0 and len(container_list["Unload"]) == 0:
             messagebox.showerror("Error", "Please select at least one container.")
         else:
-            operations_screen(root, load_unload_frame)
+            operations_screen(root, load_unload_frame, False)
 
 
     def get_container_list(container_list):
@@ -82,7 +82,7 @@ def display_operations(root, prev_frame):
                         break
                 
             weight = get_weight(ordered_list[i][1])
-            container_list[ordered_list[i][0]].remove([ordered_list[i][1], weight])
+            container_list[ordered_list[i][0]].remove([weight,ordered_list[i][1]])
             ordered_list.pop(i)
             update_list()
     
@@ -142,8 +142,8 @@ def darkenCell(label, container_list, name, update_list, ordered_list):
     if current_color == "red":
         label.config(bg="SystemButtonFace")
         weight = get_weight(name)
-        if [name, weight] in container_list["Unload"]:
-            container_list["Unload"].remove([name, weight])
+        if [weight,name] in container_list["Unload"]:
+            container_list["Unload"].remove([weight,name])
             ordered_list.remove(["Unload", name])
             update_list()
     else:
@@ -151,7 +151,7 @@ def darkenCell(label, container_list, name, update_list, ordered_list):
         # get the weight
         weight = get_weight(name)
         # add the container name and weight
-        container_list["Unload"].append([name, weight])
+        container_list["Unload"].append([weight,name])
         ordered_list.append(["Unload", name])
         update_list()
         
@@ -173,7 +173,7 @@ def display_current_cargo(frame, current_cargo, container_list, hover_label, upd
             recover_darkenCells(cell, truncated_value, update_list)
             
             if not(truncated_value == "UNUSED" or truncated_value == "NAN"):
-                cell.bind("<Button 1>",lambda event, name=truncated_value,label=cell:[darkenCell(label, container_list, name, update_list, ordered_list)])
+                cell.bind("<Button 1>",lambda event, name=current_cargo[i][j][1],label=cell:[darkenCell(label, container_list, name, update_list, ordered_list)])
                 cell.bind("<Enter>", lambda event, row=i, col=j,current_cargo=current_cargo,hover_label=hover_label:show_hover_label(event, row, col,current_cargo,hover_label))
                 cell.bind("<Leave>", lambda event, hover_label=hover_label:hide_hover_label(event, hover_label))
 
