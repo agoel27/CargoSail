@@ -136,14 +136,14 @@ def display_operations(root, prev_frame):
 #def operations_screen(root,frame1):
     #frame1.pack_forget()
 
-def darkenCell(label, container_list, name, update_list, ordered_list):
+def darkenCell(label, container_list, name, update_list, ordered_list, unload_container_location):
     current_color = label.cget("bg")
     
     if current_color == "red":
         label.config(bg="SystemButtonFace")
         weight = get_weight(name)
         if [weight,name] in container_list["Unload"]:
-            container_list["Unload"].remove([weight,name])
+            container_list["Unload"].remove([weight, name, unload_container_location])
             ordered_list.remove(["Unload", name])
             update_list()
     else:
@@ -151,7 +151,7 @@ def darkenCell(label, container_list, name, update_list, ordered_list):
         # get the weight
         weight = get_weight(name)
         # add the container name and weight
-        container_list["Unload"].append([weight,name])
+        container_list["Unload"].append([weight, name, unload_container_location])
         ordered_list.append(["Unload", name])
         update_list()
         
@@ -173,7 +173,7 @@ def display_current_cargo(frame, current_cargo, container_list, hover_label, upd
             recover_darkenCells(cell, truncated_value, update_list)
             
             if not(truncated_value == "UNUSED" or truncated_value == "NAN"):
-                cell.bind("<Button 1>",lambda event, name=current_cargo[i][j][1],label=cell:[darkenCell(label, container_list, name, update_list, ordered_list)])
+                cell.bind("<Button 1>",lambda event, name=current_cargo[i][j][1],label=cell:[darkenCell(label, container_list, name, update_list, ordered_list, (i, j))])
                 cell.bind("<Enter>", lambda event, row=i, col=j,current_cargo=current_cargo,hover_label=hover_label:show_hover_label(event, row, col,current_cargo,hover_label))
                 cell.bind("<Leave>", lambda event, hover_label=hover_label:hide_hover_label(event, hover_label))
 
