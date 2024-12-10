@@ -26,11 +26,11 @@ def calc_hueristic_cost(node,containers_to_unload,containers_to_load_count,row_i
     shortest_distance = 10000 #big number so the first distance becomes the min
 
     #count the amount of containers that are at the top of the columns and need to be unloaded
-    for col in range(cols):
-        for row in range(rows):
-            if row_idx_of_top_container[col] != None:
-                if in_list(node.state[row_idx_of_top_container[col]][col],containers_to_unload):
-                    unload_containers -= 1
+    # for col in range(cols):
+    #     for row in range(rows):
+    #         if row_idx_of_top_container[col] != None:
+    #             if in_list(node.state[row_idx_of_top_container[col]][col],containers_to_unload):
+    #                 unload_containers -= 1
                     
     #find smallest distance between last loaded container and container to unload in the state
     if node.last_loaded_container_location != None and containers_to_unload:
@@ -40,8 +40,8 @@ def calc_hueristic_cost(node,containers_to_unload,containers_to_load_count,row_i
                     distance = manhattan_distance((row,col), node.last_loaded_container_location)
                     if distance < shortest_distance:
                         shortest_distance = distance
-        return shortest_distance + unload_containers + (containers_to_load_count *2)
-    return unload_containers + (containers_to_load_count *2)
+        return shortest_distance + (2 * unload_containers) + (containers_to_load_count *2)
+    return (2 * unload_containers) + (containers_to_load_count *2)
 
 
 def manhattan_distance(point1, point2):

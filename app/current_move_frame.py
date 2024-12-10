@@ -46,7 +46,7 @@ class CurrentMoveFrame:
         if(self.operations_list[current_move_number-1][1] != "[truck]"):
             other_row, other_col = map(int, self.operations_list[current_move_number-1][1][1:-1].split(","))
         else:
-            my_row, my_col = -1, -1
+            other_row, other_col = -1, -1
         table.start_flashing()
         table.flash_cells((my_row, my_col), (other_row, other_col))
 
