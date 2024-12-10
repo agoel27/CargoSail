@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 
 class Table:
-    def __init__(self, frame, data):
+    def __init__(self, frame, data, truck_label):
         """
         initialize table class
 
@@ -16,6 +16,7 @@ class Table:
         self.cell_widgets = {}
         self.is_flashing = False
         self.flash_cells_to_flash = None  # Store cells to flash
+        self.truck_label = truck_label
 
         # label for hovering over cell
         self.hover_label = tk.Label(frame.master, bg="yellow", text="", font=("Arial", 12), relief="solid", borderwidth=1)
@@ -52,6 +53,8 @@ class Table:
                 cell.bind("<Leave>", self.hide_hover_label)
 
                 self.cell_widgets[(i, j)] = cell
+
+        self.cell_widgets[(-1, -1)] = self.truck_label
 
         # make uniform rows and columns
         for i in range(self.rows):

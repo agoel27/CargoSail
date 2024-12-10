@@ -9,7 +9,7 @@ from app.operations import *
 
 def create_root():
     root = ThemedTk(theme="arc")
-    root.geometry("1400x800")
+    root.geometry("1550x800")
     root.configure(bg="#f5f6f7")
     root.title("CargoSail Solutions")
     return root
