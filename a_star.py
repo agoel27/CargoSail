@@ -302,8 +302,6 @@ def a_star_load_unload(cargo,containers_to_load,containers_to_unload):
         if goal_test(current_node.load_list, current_node.unload_list ,current_node.state):
             print("Goal reached! all the containers have been loaded/unloaded")
             return current_node
-        else:
-            print("not the goal node, expanding child node")
         children = expand(current_node,current_node.load_list,current_node.unload_list,explored_states)
         for child in children:
             explored_states.add(tuple(map(tuple,child.state)))

@@ -88,12 +88,15 @@ def display_operations(root, prev_frame):
 
             for container in container_list[operation]:
                 if container[0] == weight and container[1] == name:
-                    location = container[2]
+                    if len(container) > 2:
+                        location = container[2]
                     break
             
             if location is not None:
                 container_list[ordered_list[i][0]].remove([weight,ordered_list[i][1], location])
-            
+            else:
+                container_list[ordered_list[i][0]].remove([weight,ordered_list[i][1]])
+                
             ordered_list.pop(i)
             update_list()
     
@@ -153,16 +156,19 @@ def darkenCell(label, container_list, name, update_list, ordered_list, unload_co
     if current_color == "red":
         label.config(bg="SystemButtonFace")
         weight = get_weight(name)
-        if [weight, name, unload_container_location] in container_list["Unload"]:
-            container_list["Unload"].remove([weight, name, unload_container_location])
+        temp_location = [unload_container_location[0], unload_container_location[1]]
+        
+        if [weight, name, temp_location] in container_list["Unload"]:
+            container_list["Unload"].remove([weight, name, temp_location])
             ordered_list.remove(["Unload", name])
             update_list()
     else:
         label.config(bg="red")
         # get the weight
         weight = get_weight(name)
+        temp_location = [unload_container_location[0], unload_container_location[1]]
         # add the container name and weight
-        container_list["Unload"].append([weight, name, unload_container_location])
+        container_list["Unload"].append([weight, name, temp_location])
         ordered_list.append(["Unload", name])
         update_list()
         
