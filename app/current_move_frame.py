@@ -5,6 +5,7 @@ from tkinter import ttk
 from tkinter import messagebox
 import app.load_balance_screen as load_balance_screen
 from config import *
+import json
 
 class CurrentMoveFrame:
     def __init__(self, root, frame, total_moves, total_minutes, operations_list):
@@ -27,16 +28,21 @@ class CurrentMoveFrame:
         self.total_moves = total_moves
         self.total_minutes = total_minutes
         self.operations_list = operations_list
+        self.saved = 0
 
     def finish_move(self, root, frame):
+        
         if self.current_move_number == self.total_moves:
+            write_save_file("move_number", 0)
             messagebox.showinfo("Reminder", "Reminder to email the manifest!")
         load_balance_screen.load_balance(root, frame)
+        
 
     def create_current_move_frame(self, current_move_number, table, manifest_data_of_solution_path):
         """
         create frame with the text displaying the move information
-        """
+        """ 
+
         self.current_move_number = current_move_number
         set_move_info(self.total_moves, self.total_minutes, current_move_number, self.operations_list[current_move_number-1][0], self.operations_list[current_move_number-1][1], 7)
         if(self.operations_list[current_move_number-1][0] != "[truck]"):
@@ -66,9 +72,16 @@ class CurrentMoveFrame:
         style = ttk.Style()
         style.configure("Buttons.TButton", font=("Arial", 14), padding=(10, 10))
 
+        # Recover from save file until current_move reaches to saved move
+        if self.current_move_number < int(read_save_file("move_number") or 0):
+            self.create_current_move_frame(current_move_number+1, table, manifest_data_of_solution_path)
+        
         if self.current_move_number < self.total_moves:
-            next_button = ttk.Button(move_info_frame, text="Next", style="Buttons.TButton", command=lambda: self.create_current_move_frame(current_move_number+1, table, manifest_data_of_solution_path))
+            next_button = ttk.Button(move_info_frame, text="Next", style="Buttons.TButton", command=lambda: [self.create_current_move_frame(current_move_number+1, table, manifest_data_of_solution_path), save(current_move_number)])
         else:
-            next_button = ttk.Button(move_info_frame, text="Done", style="Buttons.TButton", command=lambda: [self.finish_move(self.root, self.frame), delete_save_file()])
+            next_button = ttk.Button(move_info_frame, text="Done", style="Buttons.TButton", command=lambda: [self.finish_move(self.root, self.frame), clear_save_file()])
         
         next_button.pack(pady=10)
+        
+        def save(current_move_number):
+            write_save_file("move_number", current_move_number+1)

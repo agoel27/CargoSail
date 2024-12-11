@@ -64,7 +64,7 @@ def display_operations(root, prev_frame):
         if len(container_list["Load"]) == 0 and len(container_list["Unload"]) == 0:
             messagebox.showerror("Error", "Please select at least one container.")
         else:
-            operations_screen(root, load_unload_frame, False)
+            operations_screen(root, load_unload_frame)
 
 
     def get_container_list(container_list):

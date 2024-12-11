@@ -120,7 +120,13 @@ def read_save_file(key):
 
 def delete_save_file():
     if os.path.exists(save_file_path):
-        os.remove(save_file_path)
+        os.remove(save_file_path)      
+        
+def clear_save_file():
+    name = read_save_file("name")
+    delete_save_file()
+    write_save_file("name", name)    
+    
 
 def reposition_buttons(root):
     loginButton = ttk.Button(root, text="Login", padding=(10, 10), command=lambda: login_popup(root))
