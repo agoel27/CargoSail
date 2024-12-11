@@ -23,6 +23,7 @@ def get_weight(container_name):
                 return col[0]
     return 0
 
+
 def display_operations(root, prev_frame):
     # destroys login page
     prev_frame.pack_forget()
@@ -49,16 +50,66 @@ def display_operations(root, prev_frame):
         write_save_file("ordered_list", ordered_list)
         write_save_file("container_list", container_list)
         
-    def add_container(name, container_input):
+    def weight_popup(name, container_input):
+        # create login popup frame
+        weight_popup = Toplevel()
+        weight_popup.title("Enter Weight")
+        weight_popup.configure(bg="#f5f6f7")
+        weight_popup.geometry("250x150") 
+        
+        # selects popup as active window
+        weight_popup.focus()
+        
+        # position pop up to center of window
+        root_x = root.winfo_x()
+        root_y = root.winfo_y()
+        root_width = root.winfo_width()
+        root_height = root.winfo_height()
+        
+        weight_width = 250
+        weight_height = 150
+
+        # Center the popup relative to the root window
+        x = root_x + (root_width // 2) - (weight_width // 2)
+        y = root_y + (root_height // 2) - (weight_height // 2)
+        weight_popup.geometry(f"{weight_width}x{weight_height}+{x}+{y}")
+        
+        # prevents user from interacting w/ parent window
+        weight_popup.grab_set()
+        
+        # prevents resizing window
+        weight_popup.resizable(False, False)
+        
+        # message top of input field
+        message = ttk.Label(weight_popup, text=f'Enter {name} Weight: ')
+        message.place(relx = 0.5, rely = 0.33, anchor = 'center')
+        
+        # error message on top of input
+        error_message = ttk.Label(weight_popup, text="")
+        error_message.place(relx=0.5, rely=0.15, anchor='center')
+        
+        # input field
+        input_field = ttk.Entry(weight_popup)
+        input_field.place(relx = 0.5, rely = 0.5, anchor='center')
+        
+        # sign in button when pressed closes top window
+        done_button = ttk.Button(weight_popup, text="Done", command= lambda: store_weight(weight_popup, name, input_field, container_input))
+        done_button.place(relx=0.5, rely=0.7, anchor='center')
+
+    def store_weight(popup_frame, name, weight, container_input):
         if name == '':
             return
         # get the weight
         weight = get_weight(name)
+
         # add the contaienr name and weight
         container_list["Load"].append([weight,name])
         ordered_list.append(["Load", name])
         container_input.delete(0, tk.END)
         update_list()
+
+        # exit out the popup 
+        popup_frame.destroy()
 
     def start_operation(root, load_unload_frame):
         if len(container_list["Load"]) == 0 and len(container_list["Unload"]) == 0:
@@ -126,7 +177,7 @@ def display_operations(root, prev_frame):
     container_input = ttk.Entry(select_container_frame)
     container_input.grid(row=0, column=0)
     
-    container_button = ttk.Button(select_container_frame, text="Load", command=lambda: add_container(container_input.get(), container_input))
+    container_button = ttk.Button(select_container_frame, text="Load", command=lambda: weight_popup(container_input.get(), container_input))
     container_button.grid(row=1, column=0)
     
     container_listbox = tk.Listbox(list_container_frame, width=30, height=10, selectmode=MULTIPLE)
