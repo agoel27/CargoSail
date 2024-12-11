@@ -1,13 +1,13 @@
 import tkinter as tk
 from tkinter import *
 from tkinter import ttk
-from app.popup_login import login_popup
-from app.add_note import add_note
 from app.table import Table
 from app.current_move_frame import CurrentMoveFrame
-from config import *
+from config import read_save_file, write_save_file, get_manifest, reposition_buttons
 from balance_problem import a_star, get_balance_operations_info
 from a_star import a_star_load_unload, get_operations_info
+from app.popup_login import login_popup
+from app.add_note import add_note
 
 def operations_screen(root, prev_frame):
     buffer_data = [[(0, "UNUSED") for _ in range(24)] for _ in range(4)]
@@ -84,4 +84,4 @@ def operations_screen(root, prev_frame):
 
 
     
-    reposition_buttons(root)
+    reposition_buttons(root, login_popup=login_popup, add_note=add_note)

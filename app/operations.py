@@ -2,11 +2,11 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import *
 from tkinter import messagebox
-from app.popup_login import login_popup
-from app.add_note import add_note
 from app.operations_screen import operations_screen
 from app.table import Table
-from config import *
+from config import read_save_file, write_save_file, get_manifest, reposition_buttons
+from app.popup_login import login_popup
+from app.add_note import add_note
 
 # root = tk.Tk()
 # array = [
@@ -118,7 +118,7 @@ def display_operations(root, prev_frame):
     cargo_frame = ttk.Frame(load_unload_frame)
     cargo_frame.place(relx=.5, rely=.5, anchor='center')
     
-    reposition_buttons(root)
+    reposition_buttons(root, login_popup=login_popup, add_note=add_note)
 
     done_button = ttk.Button(done_button_frame, text="Done", padding=(20, 10), command=lambda: start_operation(root, load_unload_frame))
     done_button.pack(pady=20)

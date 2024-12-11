@@ -1,5 +1,3 @@
-import re
-import datetime
 import tkinter as Tk
 from tkinter import ttk
 from tkinter import *

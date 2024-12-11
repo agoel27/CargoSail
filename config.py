@@ -127,8 +127,8 @@ def clear_save_file():
     delete_save_file()
     write_save_file("name", name)    
     
-
-def reposition_buttons(root):
+# pass in login popup and add note as arguments to avoid circular import 
+def reposition_buttons(root, login_popup, add_note):
     loginButton = ttk.Button(root, text="Login", padding=(10, 10), command=lambda: login_popup(root))
     loginButton.place(anchor="ne", relx=1, rely=0, x=-5, y=5)
 

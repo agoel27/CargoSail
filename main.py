@@ -2,11 +2,12 @@ import os, json
 from app import *
 from tkinter import Tk, ttk
 from ttkthemes import ThemedTk
-from config import *
+from config import read_save_file
 from app.login import login_screen
-from app.popup_login import login_popup
 from app.operations import *
 from app.current_move_frame import *
+from app.popup_login import login_popup
+from app.add_note import add_note
 
 def create_root():
     root = ThemedTk(theme="arc")
@@ -79,6 +80,6 @@ name_label.pack(side=tk.TOP, pady=5)  # Centered by default in the top-middle
 
 crash_recovery(root, last_state)
 
-reposition_buttons(root)
+reposition_buttons(root, login_popup=login_popup, add_note=add_note)
 
 root.mainloop()

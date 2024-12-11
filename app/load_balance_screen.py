@@ -1,11 +1,11 @@
 import tkinter as tk
 from tkinter import *
 from tkinter import filedialog, messagebox, ttk
-from app.popup_login import login_popup    
 from app.operations import display_operations
 from app.operations_screen import operations_screen
-from app.add_note import add_note
 from config import *
+from app.popup_login import login_popup
+from app.add_note import add_note
 
 def load_file():
     e = None
@@ -71,4 +71,4 @@ def load_balance(root, prev_frame):
     balanceButton = ttk.Button(loadBalance_frame, text="Balance", padding=(10,10), command=lambda:balance_operation(root, loadBalance_frame))
     balanceButton.place(anchor="c", relx=0.6, rely=0.5)
     
-    reposition_buttons(root)
+    reposition_buttons(root, login_popup=login_popup, add_note=add_note)
