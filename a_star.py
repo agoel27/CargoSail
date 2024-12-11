@@ -172,6 +172,34 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
         # skip columns with no containers
         if myRow == None:
             continue
+        
+        # check if the current container is an unload, if so then skip
+        # logic behind this is we dont want it to waste time putting the container in another spot if it should just be unloaded
+        skip_column = False
+        for container in containers_to_unload:
+            if (node.state[myRow][myCol][0] == container[0] and node.state[myRow][myCol][1] == container[1]):
+                skip_column = True
+                break
+        if skip_column:
+            continue
+        
+        # check if there are any containers below the top one that are unloads
+        # if there arent any, skip
+        # logic is we dont want to move a container for no reason
+        container_below_needs_unloading = False
+        for row_below in range(myRow + 1, rows):  # Iterate through rows below myRow
+            below_container = node.state[row_below][myCol]
+            for container in containers_to_unload:
+                if below_container[0] == container[0] and below_container[1] == container[1]:
+                    container_below_needs_unloading = True
+                    break
+            if container_below_needs_unloading:
+                break
+
+        # Only proceed if a container below needs unloading
+        if not container_below_needs_unloading:
+            continue
+            
         for otherCol in range(columns):
             otherRow = row_idx_of_valid_space[otherCol]
             if otherRow != None and myCol != otherCol:
