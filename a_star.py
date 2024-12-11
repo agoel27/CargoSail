@@ -220,9 +220,15 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
     
     #load each container that has to be loaded to one of the valid spots and add it as a new Node to children
     if containers_to_load: #check if load list is empty
+        col_counter = 0
         for col in range(columns):
             valid_row = row_idx_of_valid_space[col]
+                        
             if valid_row != None:
+                if col_counter > 3:
+                    break
+                
+                col_counter += 1 # only allow first 3 available cols to be added as a child
                 #temp_list_load = containers_to_load.copy()
                 for container in containers_to_load:
                     temp_list_load = copy.deepcopy(containers_to_load)
