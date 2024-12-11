@@ -16,6 +16,15 @@ from app.add_note import add_note
     
 # ]
 
+def is_number(input):
+    if input == "": 
+        return True
+    try:
+        float(input) 
+        return True
+    except ValueError:
+        return False
+
 def get_weight(container_name):
     for row in get_manifest():
         for col in row:
@@ -89,25 +98,23 @@ def display_operations(root, prev_frame):
         error_message.place(relx=0.5, rely=0.15, anchor='center')
         
         # input field
-        input_field = ttk.Entry(weight_popup)
+        input_field = ttk.Entry(weight_popup, validate="key", validatecommand=(weight_popup.register(is_number), "%P"))
         input_field.place(relx = 0.5, rely = 0.5, anchor='center')
-        
+
         # sign in button when pressed closes top window
-        done_button = ttk.Button(weight_popup, text="Done", command= lambda: store_weight(weight_popup, name, input_field, container_input))
+        done_button = ttk.Button(weight_popup, text="Done", command= lambda: store_weight(weight_popup, name, input_field.get(), container_input))
         done_button.place(relx=0.5, rely=0.7, anchor='center')
 
     def store_weight(popup_frame, name, weight, container_input):
         if name == '':
             return
-        # get the weight
-        weight = get_weight(name)
 
         # add the contaienr name and weight
-        container_list["Load"].append([weight,name])
+        container_list["Load"].append([float(weight),name])
         ordered_list.append(["Load", name])
         container_input.delete(0, tk.END)
         update_list()
-
+        
         # exit out the popup 
         popup_frame.destroy()
 

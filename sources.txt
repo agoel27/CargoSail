@@ -29,3 +29,6 @@ https://worldtimeapi.org/
 TTK:
 https://docs.python.org/3/library/tkinter.ttk.html
 https://ttkthemes.readthedocs.io/en/latest/themes.html
+
+# Entry Validation 
+https://www.pythontutorial.net/tkinter/tkinter-validation/
