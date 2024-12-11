@@ -49,11 +49,13 @@ def load_file():
 
 def load_operation(root, load_balance_frame):
     if load_file():
+        write_save_file("operation", "load_unload")
         display_operations(root, load_balance_frame)
         
 def balance_operation(root, load_balance_frame):
     if load_file():
-        operations_screen(root, load_balance_frame,True)
+        write_save_file("operation", "balance")    
+        operations_screen(root, load_balance_frame)
 
 
 def load_balance(root, prev_frame):

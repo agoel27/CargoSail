@@ -6,6 +6,7 @@ from config import *
 from app.login import login_screen
 from app.popup_login import login_popup
 from app.operations import *
+from app.current_move_frame import *
 
 def create_root():
     root = ThemedTk(theme="arc")
@@ -22,7 +23,8 @@ def crash_recovery(root, state):
         display_operations(root, temp)
     elif state == 2:
         # Go to operation screen for (un)load or balance
-        print("operations for load/unload or balance")
+        operations_screen(root, temp)
+        
     else:
         # Default: Start at the login screen
         login_screen(root)
@@ -51,6 +53,8 @@ def open_logfile_and_save():
         data = {
             "name": "",
             "state" : "", # 1 = unload/load selection, 2 = operations
+            "operation" : "", # load_unload or balance
+            "move_number" : "",
             "ordered_list" : [],
             "container_list": {
                 "Unload": [],
