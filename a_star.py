@@ -46,6 +46,11 @@ def calc_hueristic_cost(node,containers_to_unload,containers_to_load_count,row_i
     #                     shortest_distance = distance
     #     return shortest_distance + unload_containers_cost + (containers_to_load_count * 2)
     # return unload_containers_cost + (containers_to_load_count *2)
+    
+    h = 0
+    
+    
+    
     return 0
         
 
@@ -222,15 +227,23 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
     
     #load each container that has to be loaded to one of the valid spots and add it as a new Node to children
     if containers_to_load: #check if load list is empty
-        col_counter = 0
+        lowest_col = 0
+        lowest_val = 10000
         for col in range(columns):
             valid_row = row_idx_of_valid_space[col]
-                        
-            if valid_row != None:
-                if col_counter > 3:
-                    break
+            
+            if valid_row is not None:
+                distance = manhattan_distance((valid_row, col), (-1, 0))
+                if distance < lowest_val:
+                    lowest_val = distance
+                    lowest_col = col
                 
-                col_counter += 1 # only allow first 3 available cols to be added as a child
+        for col in range(columns):
+            if col != lowest_col:
+                continue
+            valid_row = row_idx_of_valid_space[col]
+            
+            if valid_row is not None:
                 #temp_list_load = containers_to_load.copy()
                 for container in containers_to_load:
                     temp_list_load = copy.deepcopy(containers_to_load)
@@ -242,7 +255,7 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
                         child = Node(new_state,temp_list_load,copy.deepcopy(containers_to_unload))
                         child.last_loaded_container_location = (valid_row,col)
                         child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,len(temp_list_load),row_idx_of_top_container))
-                        child.set_cost_g(manhattan_distance((valid_row,col),(-1,0))*2 + manhattan_distance((crane_cords[0],crane_cords[1]),(-1,0)) + 2 + node.get_cost_g())
+                        child.set_cost_g(manhattan_distance((valid_row,col),(-1,0)) + manhattan_distance((crane_cords[0],crane_cords[1]),(-1,0)) + 4 + node.get_cost_g())
                         child.crane_location = (valid_row,col)
                         child.set_operation_info((location_from,location_to))
                         children.append(child)
@@ -262,8 +275,8 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
                             location_from = "["+ str(row) + "," + str(col) + "]"
                             location_to = "[truck]"
                             child = Node(new_state,copy.deepcopy(containers_to_load),temp_list_unload)
-                            child.set_cost_h(calc_hueristic_cost(child,temp_list_unload,len(containers_to_load), row_idx_of_top_container))
-                            child.set_cost_g(manhattan_distance((row,col),(-1,0)) + manhattan_distance((crane_cords[0],crane_cords[1]),(row,col)) + 2 + node.get_cost_g())
+                            child.set_cost_h(calc_hueristic_cost(child,temp_list_unload,len(containers_to_load), row_idx_of_top_container, ))
+                            child.set_cost_g(manhattan_distance((row,col),(-1,0)) + manhattan_distance((crane_cords[0],crane_cords[1]),(row,col)) + 4 + node.get_cost_g())
                             child.crane_location = (-1,0)
                             child.set_operation_info((location_from,location_to))
                             children.append(child)
