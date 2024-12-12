@@ -16,7 +16,7 @@ def goal_test(load_list,unload_list,current_state):
                     load_count += 1
             if len(unloads) != 0:
                 if in_list(element,unloads):
-                    return False           
+                    return False
     return load_count == len(loads)
                 
 def calc_hueristic_cost(node,containers_to_unload,containers_to_load_count,row_idx_of_top_container, last_operation, cur_operation, move_coord, crane_cords):

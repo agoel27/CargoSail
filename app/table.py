@@ -41,9 +41,9 @@ class Table:
                 truncated_value = self.data[i][j][1][:7]
 
                 if truncated_value == "UNUSED":
-                    cell = tk.Label(self.frame, borderwidth=1, relief="solid", width=7, height=2)
+                    cell = tk.Label(self.frame, borderwidth=1, relief="solid", width=9, height=2)
                 elif truncated_value == "NAN":
-                    cell = tk.Label(self.frame, borderwidth=1, relief="solid", width=7, height=2, bg="gray")
+                    cell = tk.Label(self.frame, borderwidth=1, relief="solid", width=9, height=2, bg="gray")
                 else:
                     cell = tk.Label(self.frame, text=truncated_value, borderwidth=1, relief="solid", width=7, height=2, font=("Arial", 12), anchor="center")
                 cell.grid(row=i, column=j, sticky="nsew")
@@ -69,8 +69,8 @@ class Table:
         new_data: 2D list containing new table data
         """
         if len(new_data) == self.rows and len(new_data[0]) == self.columns:
-            self.data = new_data
             self.create_table()  # update table UI
+            self.data = new_data
         else:
             print("Error: The data dimensions do not match the table size.")
 

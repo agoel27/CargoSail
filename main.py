@@ -12,6 +12,7 @@ from app.add_note import add_note
 def create_root():
     root = ThemedTk(theme="arc")
     root.geometry("1550x800")
+    root.state('zoomed')
     root.configure(bg="#f5f6f7")
     root.title("CargoSail Solutions")
     return root
@@ -52,7 +53,7 @@ def open_logfile_and_save():
     set_save_file_path(save_file_path)
     
     if read_save_file('manifest_name'):
-        outbound_manifest_path = os.path.join(desktop_path, file_name)
+        outbound_manifest_path = os.path.join(desktop_path, read_save_file('manifest_name'))
         set_outbound_manifest_path(outbound_manifest_path)
 
     # if the save file is not created yet it will create it with the fields specified here
@@ -86,7 +87,5 @@ name_label = ttk.Label(root, name="name_label", text=f"Logged in: {name}", font=
 name_label.pack(side=tk.TOP, pady=5)  # Centered by default in the top-middle
 
 crash_recovery(root, last_state)
-
-reposition_buttons(root, login_popup=login_popup, add_note=add_note)
 
 root.mainloop()

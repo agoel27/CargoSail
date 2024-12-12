@@ -11,6 +11,7 @@ https://www.geeksforgeeks.org/python-tkinter-text-widget/
 https://www.youtube.com/watch?v=wEv3BworNK8
 https://www.geeksforgeeks.org/how-to-get-selected-value-from-listbox-in-tkinter/
 https://stackoverflow.com/questions/51489073/refer-to-tkinter-widget-by-its-instance/51492947#51492947
+https://stackoverflow.com/questions/15981000/tkinter-python-maximize-window
 
 Opening Logfile and json:
 https://stackoverflow.com/questions/13184414/how-can-i-get-the-path-to-the-appdata-directory-in-python

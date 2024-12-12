@@ -249,9 +249,9 @@ def display_current_cargo(frame, current_cargo, container_list, hover_label, upd
             truncated_value = current_cargo[i][j][1][:7]
 
             if truncated_value == "UNUSED":
-                cell = tk.Label(frame, borderwidth=1, relief="solid", width=7, height=2)
+                cell = tk.Label(frame, borderwidth=1, relief="solid", width=9, height=2)
             elif truncated_value == "NAN":
-                cell = tk.Label(frame, borderwidth=1, relief="solid", width=7, height=2, bg="gray")
+                cell = tk.Label(frame, borderwidth=1, relief="solid", width=9, height=2, bg="gray")
             else:
                 cell = tk.Label(frame, text=truncated_value, borderwidth=1, relief="solid", width=7, height=2, font=("Arial", 12), anchor="center")
             cell.grid(row=i, column=j, sticky="nsew")
