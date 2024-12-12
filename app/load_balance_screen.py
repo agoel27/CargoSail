@@ -27,6 +27,14 @@ def load_file():
             return False
 
         data = [[None for _ in range(12)] for _ in range(8)]
+        
+        desktop_path = os.path.normpath(os.path.expanduser("~/Desktop"))
+        file_name = os.path.splitext(os.path.basename(file_path))[0]
+        file_name += 'OUTBOUND.txt'
+        write_save_file('manifest_name', file_name)
+        
+        outbound_manifest_path = os.path.join(desktop_path, file_name)
+        set_outbound_manifest_path(outbound_manifest_path)
 
         # parse lines in the format: [row,column], {weight}, name
         for line in content:

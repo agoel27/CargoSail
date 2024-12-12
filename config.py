@@ -52,7 +52,9 @@ def write_manifest(data):
                     f.write(f"{index}, {weight}, {container}\n")
     except Exception:
         try:
-            with open("Desktop", 'w+'):
+            new_desktop = os.path.splitext(os.path.basename(outbound_manifest_path))[0] + '.txt'
+            new_desktop = os.path.join('C:\\Users\\Public\\Desktop', new_desktop)
+            with open(new_desktop, 'w+') as f:
                 for row_idx in reversed(range(len(data))):
                     row = data[row_idx]
                     for col_idx in range(len(row)):
@@ -62,7 +64,23 @@ def write_manifest(data):
                         container = item[1] 
                         f.write(f"{index}, {weight}, {container}\n")
         except Exception:
-            pass
+            try:
+                appdata_path = os.getenv("LOCALAPPDATA")
+                cargosail_folder = os.path.join(appdata_path, 'CargoSail')
+                new_desktop = os.path.splitext(os.path.basename(outbound_manifest_path))[0] + '.txt'
+                new_desktop = os.path.join(cargosail_folder, new_desktop)
+                with open(new_desktop, 'w+') as f:
+                    for row_idx in reversed(range(len(data))):
+                        row = data[row_idx]
+                        for col_idx in range(len(row)):
+                            item = row[col_idx]
+                            index = f"[{len(data) - row_idx :02d},{col_idx + 1:02d}]" # indexed from reverse so subtract the row length
+                            weight = f"{{{int(item[0]):05d}}}"
+                            container = item[1] 
+                            f.write(f"{index}, {weight}, {container}\n")
+            except Exception:
+                pass
+            
 
 def set_move_info(total_moves, total_minutes, current_move_number, current_move_from, current_move_to, estimated_time_for_move):
     """
