@@ -238,7 +238,7 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
                     child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,len(containers_to_load), col,row_idx_of_top_container, 'Load', 'Move', (otherRow, otherCol), (crane_cords[0],crane_cords[1])))
                     child.set_cost_g(manhattan_distance((myRow,myCol),(otherRow,otherCol)) + manhattan_distance((crane_cords[0],crane_cords[1]),(myRow,myCol)) + node.get_cost_g())
                     child.crane_location = (otherRow,otherCol)
-                    child.set_operation_info((location_from,location_to))
+                    child.set_operation_info((location_from,location_to, manhattan_distance((myRow,myCol),(otherRow,otherCol)) + manhattan_distance((crane_cords[0],crane_cords[1]),(myRow,myCol))))
                     children.append(child)
     
     #load each container that has to be loaded to one of the valid spots and add it as a new Node to children
@@ -276,7 +276,7 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
                         child.set_cost_h(calc_hueristic_cost(child,containers_to_unload,len(temp_list_load), col, row_idx_of_top_container, last_operation, 'Load', (valid_row,col), (crane_cords[0],crane_cords[1])) + node.get_cost_h())
                         child.set_cost_g(manhattan_distance((valid_row,col),(-1,0)) + manhattan_distance((crane_cords[0],crane_cords[1]),(-1,0)) + 4 + node.get_cost_g())
                         child.crane_location = (valid_row,col)
-                        child.set_operation_info((location_from,location_to))
+                        child.set_operation_info((location_from,location_to,manhattan_distance((valid_row,col),(-1,0)) + manhattan_distance((crane_cords[0],crane_cords[1]),(-1,0)) + 4))
                         children.append(child)
     
     #unload a container if its one of the containers at the top of a column and append that new node to children
@@ -300,7 +300,7 @@ def expand(node, containers_to_load,containers_to_unload,explored_states):
                             child.set_cost_h(calc_hueristic_cost(child,temp_list_unload,len(containers_to_load), col, row_idx_of_top_container, last_operation, 'Unload', (-1, -1), (crane_cords[0],crane_cords[1])) + node.get_cost_h())
                             child.set_cost_g(manhattan_distance((row,col),(-1,0)) + manhattan_distance((crane_cords[0],crane_cords[1]),(row,col)) + 4 + node.get_cost_g())
                             child.crane_location = (-1,0)
-                            child.set_operation_info((location_from,location_to))
+                            child.set_operation_info((location_from,location_to, manhattan_distance((row,col),(-1,0)) + manhattan_distance((crane_cords[0],crane_cords[1]),(row,col)) + 4))
                             children.append(child)
     node.add_children(children)
     return children

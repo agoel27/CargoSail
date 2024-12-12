@@ -80,7 +80,7 @@ class CurrentMoveFrame:
         log_entry_string = ""
         input_field = None
         self.current_move_number = current_move_number
-        set_move_info(self.total_moves, self.total_minutes, current_move_number, self.operations_list[current_move_number-1][0], self.operations_list[current_move_number-1][1], 7)
+        set_move_info(self.total_moves, self.total_minutes, current_move_number, self.operations_list[current_move_number-1][0], self.operations_list[current_move_number-1][1], self.operations_list[current_move_number-1][2])
         # if origin is not truck so UNLOAD or balance
         if(self.operations_list[current_move_number-1][0] != "[truck]"):
             spacer = ttk.Frame(move_info_frame, height=41)  # Height determines the blank space

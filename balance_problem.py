@@ -307,7 +307,7 @@ def expand_node(current_node, explored_states, is_sift, problem):
                     else:
                         node_to_add.set_heuristic_cost(calculate_sift_heuristic(node_to_add.get_state(), problem))
                     node_to_add.set_crane_location((other_row, other_col))
-                    node_to_add.set_balance_operation_info((location_from, location_to))
+                    node_to_add.set_balance_operation_info((location_from, location_to, calculate_manhattan_dist(crane_coordinates[0], crane_coordinates[1], my_row, my_col) + calculate_manhattan_dist(my_row, my_col, other_row, other_col)))
                     expanded_nodes.append(node_to_add)
 
     
