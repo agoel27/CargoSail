@@ -86,7 +86,7 @@ class CurrentMoveFrame:
         else:
             my_row, my_col = -1, -1
         # if destination is not truck so LOAD
-        if(self.operations_list[current_move_number-1][1] != "[truck]"):
+        if(self.operations_list[current_move_number-1][1] != "[truck]") and (self.operations_list[current_move_number-1][0] == "[truck]"):
             other_row, other_col = map(int, self.operations_list[current_move_number-1][1][1:-1].split(","))
 
             # get the weight of the laod container
@@ -100,7 +100,8 @@ class CurrentMoveFrame:
             # input field
             input_field = ttk.Entry(move_info_frame, validate="key", validatecommand=(self.root.register(self.is_number), "%P"))
             input_field.pack(side="top", pady=10)
-
+        elif(self.operations_list[current_move_number-1][1] != "[truck]") and (self.operations_list[current_move_number-1][0] != "[truck]"):
+            other_row, other_col = map(int, self.operations_list[current_move_number-1][1][1:-1].split(","))
         else:
             other_row, other_col = -1, -1
         
