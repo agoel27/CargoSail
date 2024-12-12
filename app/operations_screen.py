@@ -8,6 +8,7 @@ from balance_problem import a_star, get_balance_operations_info
 from a_star import a_star_load_unload, get_operations_info
 from app.popup_login import login_popup
 from app.add_note import add_note
+import time
 
 def operations_screen(root, prev_frame):
     buffer_data = [[(0, "UNUSED") for _ in range(24)] for _ in range(4)]
@@ -72,9 +73,15 @@ def operations_screen(root, prev_frame):
             container_list = read_save_file("container_list")
         unload_list = container_list["Unload"]
         load_list = container_list["Load"]
-        print(unload_list)
-        print(load_list)
+        
+        start_time = time.time()
+        
         solution_node = a_star_load_unload(get_manifest(),load_list,unload_list)
+        
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        print(f"total time: {elapsed_time}")
+        
         total_minutes, total_moves, operations_list, manifest_data_of_solution_path = get_operations_info(solution_node)
         
         current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, operations_list)
