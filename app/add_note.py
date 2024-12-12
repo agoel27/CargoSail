@@ -47,7 +47,6 @@ def add_note(root):
         elif len(user_input) > 2000:
             error_message.config(text="Error: Message cannot exceed 2000 characters", fg="red")
             return
-        user_input += '\n'
         add_logEntry(user_input)
         popup.destroy()
 
