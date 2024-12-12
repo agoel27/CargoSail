@@ -37,12 +37,15 @@ def load_file():
         set_outbound_manifest_path(outbound_manifest_path)
 
         # parse lines in the format: [row,column], {weight}, name
+        container_count = 0
         for line in content:
             try:
                 parts = line.strip().split(", ")
                 row, col = map(int, parts[0][1:-1].split(","))
                 weight = int(parts[1][1:-1])
                 name = parts[2]
+                if name != 'UNUSED' and name != 'NAN':
+                    container_count += 1
                 data[8 - row][col - 1] = (weight, name)
             except Exception as exc:
                 messagebox.showerror("Error", f"Could not read Manifest")
@@ -50,6 +53,8 @@ def load_file():
                 return False
         
         if not e:
+            log_string = f'Manifest {file_name} opened, there are {container_count} containers on the ship.'
+            add_logEntry(log_string)
             set_manifest(data)
             return True     # return here so make sure the file is actually read
 
@@ -62,7 +67,8 @@ def load_operation(root, load_balance_frame):
         
 def balance_operation(root, load_balance_frame):
     if load_file():
-        write_save_file("operation", "balance")    
+        write_save_file("operation", "balance")
+        add_logEntry('Starting balance operation for the ship.')
         operations_screen(root, load_balance_frame)
 
 

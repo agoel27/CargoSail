@@ -52,8 +52,8 @@ def display_operations(root, prev_frame):
         write_save_file("container_list", container_list)
         
     def add_container(name, container_input):
-        if name == '':
-            return
+        if name == '' or name == 'NAN' or name == 'UNUSED':
+            return messagebox.showerror("Error", "Please input a valid container name.")
         # get the weight
         weight = get_weight(name)
         # add the contaienr name and weight

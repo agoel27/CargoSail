@@ -10,7 +10,7 @@ def login_store(root, new_username, login_popup_frame, error_message):
     validation_test = input_validation(new_username, error_message)
       
     if validation_test:
-        entryNew = new_username.get() + " has signed in\n" 
+        entryNew = new_username.get() + " has signed in" 
         add_logEntry(entryNew)
         
         set_username(new_username.get())

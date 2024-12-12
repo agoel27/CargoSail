@@ -34,6 +34,10 @@ def set_outbound_manifest_path(path):
     global outbound_manifest_path
     outbound_manifest_path = path
 
+def get_outbound_manifest_name():
+    file_name = os.path.basename(outbound_manifest_path)
+    return file_name
+
 # retrieve data from save file
 def get_manifest():
     return [[tuple(item) for item in row] for row in read_save_file("manifest_data")]
@@ -122,6 +126,7 @@ def add_logEntry(message):
     
     logfile_path =  get_logfile_path()
     with open(logfile_path, 'a') as logfile:
+        logfile.write('\n')
         logfile.write(date_and_time)
         logfile.write(message)
         

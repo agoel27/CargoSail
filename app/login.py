@@ -11,9 +11,9 @@ def login_store(root, input_field, login_frame, error_message):
     validation_test = input_validation(input_field, error_message)
       
     if validation_test:
-        entry = input_field.get() + " has signed in\n" 
+        entry = input_field.get() + " has signed in" 
         
-         # signing in new name
+        # signing in new name
         add_logEntry(entry)
         
         set_username(input_field.get())

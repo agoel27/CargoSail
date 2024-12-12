@@ -62,7 +62,7 @@ def operations_screen(root, prev_frame):
         total_minutes, total_moves, balance_operations_list, manifest_data_of_solution_path = get_balance_operations_info(solution_node)
         
         # place current move frame in operations screen frame
-        current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, balance_operations_list)
+        current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, balance_operations_list, 'balance')
         
         current_move_frame.create_current_move_frame(1, ship_table, manifest_data_of_solution_path)
         
@@ -84,7 +84,7 @@ def operations_screen(root, prev_frame):
         
         total_minutes, total_moves, operations_list, manifest_data_of_solution_path = get_operations_info(solution_node)
         
-        current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, operations_list)
+        current_move_frame = CurrentMoveFrame(root, operations_screen_frame, total_moves, total_minutes, operations_list, 'load/unload')
         current_move_frame.create_current_move_frame(1, ship_table, manifest_data_of_solution_path)
     else:
         print("Error: operations_screen.py")
