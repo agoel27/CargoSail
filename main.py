@@ -49,6 +49,9 @@ def open_logfile_and_save():
     save_file_path = os.path.join(cargosail_folder, 'save_file.json')
     set_save_file_path(save_file_path)
     
+    outbound_manifest_path = os.path.join(cargosail_folder, 'outbound_manifest.txt')
+    set_outbound_manifest_path(outbound_manifest_path)
+
     # if the save file is not created yet it will create it with the fields specified here
     if not os.path.exists(save_file_path):
         data = {

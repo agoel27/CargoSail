@@ -30,8 +30,10 @@ class CurrentMoveFrame:
         self.operations_list = operations_list
         self.saved = 0
 
-    def finish_move(self, root, frame):
-        
+    def finish_move(self, root, frame, table):
+        # save the new manifest
+        write_manifest(table.data)
+
         if self.current_move_number == self.total_moves:
             write_save_file("move_number", 0)
             messagebox.showinfo("Reminder", "Reminder to email the manifest!")
@@ -42,6 +44,8 @@ class CurrentMoveFrame:
         """
         create frame with the text displaying the move information
         """ 
+        if current_move_number == 1:
+            table.set_data(get_manifest())
 
         self.current_move_number = current_move_number
         set_move_info(self.total_moves, self.total_minutes, current_move_number, self.operations_list[current_move_number-1][0], self.operations_list[current_move_number-1][1], 7)
@@ -53,13 +57,13 @@ class CurrentMoveFrame:
             other_row, other_col = map(int, self.operations_list[current_move_number-1][1][1:-1].split(","))
         else:
             other_row, other_col = -1, -1
+        
+        # UI cue
         table.start_flashing()
         table.flash_cells((my_row, my_col), (other_row, other_col))
 
-        if current_move_number == 1:
-            table.set_data(get_manifest())
-        else:
-            table.set_data(manifest_data_of_solution_path[current_move_number-2])
+        # Update the table object
+        table.set_data(manifest_data_of_solution_path[current_move_number-1])
        
         # place current move frame in parent frame
         move_info_frame = ttk.Frame(self.frame)
@@ -79,7 +83,7 @@ class CurrentMoveFrame:
         if self.current_move_number < self.total_moves:
             next_button = ttk.Button(move_info_frame, text="Next", style="Buttons.TButton", command=lambda: [self.create_current_move_frame(current_move_number+1, table, manifest_data_of_solution_path), save(current_move_number)])
         else:
-            next_button = ttk.Button(move_info_frame, text="Done", style="Buttons.TButton", command=lambda: [self.finish_move(self.root, self.frame), clear_save_file()])
+            next_button = ttk.Button(move_info_frame, text="Done", style="Buttons.TButton", command=lambda: [self.finish_move(self.root, self.frame, table), clear_save_file()])
         
         next_button.pack(pady=10)
         
