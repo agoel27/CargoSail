@@ -58,9 +58,11 @@ def calc_hueristic_cost(node,containers_to_unload,containers_to_load_count,row_i
         
     if len(containers_to_unload) > 0 and containers_to_load_count > 0:
         h -= 2
+    elif len(containers_to_unload) > 0 or containers_to_load_count > 0:
+        h -= 5
     
     return h
-        
+
 
 
 def manhattan_distance(point1, point2):

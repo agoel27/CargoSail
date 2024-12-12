@@ -59,6 +59,17 @@ def display_operations(root, prev_frame):
         write_save_file("ordered_list", ordered_list)
         write_save_file("container_list", container_list)
         
+    def add_container(name, container_input):
+        if name == '':
+            return
+        # get the weight
+        weight = get_weight(name)
+        # add the contaienr name and weight
+        container_list["Load"].append([weight,name])
+        ordered_list.append(["Load", name])
+        container_input.delete(0, tk.END)
+        update_list()
+        
     def weight_popup(name, container_input):
         # create login popup frame
         weight_popup = Toplevel()
@@ -184,7 +195,7 @@ def display_operations(root, prev_frame):
     container_input = ttk.Entry(select_container_frame)
     container_input.grid(row=0, column=0)
     
-    container_button = ttk.Button(select_container_frame, text="Load", command=lambda: weight_popup(container_input.get(), container_input))
+    container_button = ttk.Button(select_container_frame, text="Load", command=lambda: add_container(container_input.get(), container_input))
     container_button.grid(row=1, column=0)
     
     container_listbox = tk.Listbox(list_container_frame, width=30, height=10, selectmode=MULTIPLE)

@@ -36,7 +36,7 @@ class CurrentMoveFrame:
 
         if self.current_move_number == self.total_moves:
             write_save_file("move_number", 0)
-            messagebox.showinfo("Reminder", "Reminder to email the manifest!")
+            messagebox.showinfo("Reminder", "Outbound Manifest written to Desktop. Reminder to email the manifest!")
         load_balance_screen.load_balance(root, frame)
         
 
@@ -46,6 +46,8 @@ class CurrentMoveFrame:
         """ 
         if current_move_number == 1:
             table.set_data(get_manifest())
+            
+        
 
         self.current_move_number = current_move_number
         set_move_info(self.total_moves, self.total_minutes, current_move_number, self.operations_list[current_move_number-1][0], self.operations_list[current_move_number-1][1], 7)
@@ -75,6 +77,7 @@ class CurrentMoveFrame:
         
         style = ttk.Style()
         style.configure("Buttons.TButton", font=("Arial", 14), padding=(10, 10))
+        
 
         # Recover from save file until current_move reaches to saved move
         if self.current_move_number < int(read_save_file("move_number") or 0):
@@ -85,7 +88,7 @@ class CurrentMoveFrame:
         else:
             next_button = ttk.Button(move_info_frame, text="Done", style="Buttons.TButton", command=lambda: [self.finish_move(self.root, self.frame, table), clear_save_file()])
         
-        next_button.pack(pady=10)
+        next_button.pack(side="bottom", pady=10)
         
         def save(current_move_number):
             write_save_file("move_number", current_move_number+1)

@@ -38,6 +38,8 @@ def open_logfile_and_save():
     # if local app data directory cant be found, get desktop
     if appdata_path is None:
         appdata_path = os.path.normpath(os.path.expanduser("~/Desktop"))
+        
+    desktop_path = os.path.normpath(os.path.expanduser("~/Desktop"))
     
     # create CargoSail folder on either localappdata or desktop
     cargosail_folder = os.path.join(appdata_path, 'CargoSail')
@@ -49,7 +51,7 @@ def open_logfile_and_save():
     save_file_path = os.path.join(cargosail_folder, 'save_file.json')
     set_save_file_path(save_file_path)
     
-    outbound_manifest_path = os.path.join(cargosail_folder, 'outbound_manifest.txt')
+    outbound_manifest_path = os.path.join(desktop_path, 'outbound_manifest.txt')
     set_outbound_manifest_path(outbound_manifest_path)
 
     # if the save file is not created yet it will create it with the fields specified here
