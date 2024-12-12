@@ -30,13 +30,25 @@ def set_manifest(data):
     manifest_data = data
     write_save_file("manifest_data", data)
 
+def set_outbound_manifest_path(path):
+    global outbound_manifest_path
+    outbound_manifest_path = path
+
+# retrieve data from save file
 def get_manifest():
-    # retrieve data during runtime
-    #return manifest_data 
-    
-    # retrieve data from save file
     return [[tuple(item) for item in row] for row in read_save_file("manifest_data")]
 
+# write to a new manifest file
+def write_manifest(data):
+    with open(outbound_manifest_path, 'w') as f:
+        for row_idx in reversed(range(len(data))):
+            row = data[row_idx]
+            for col_idx in range(len(row)):
+                item = row[col_idx]
+                index = f"[{len(data) - row_idx :02d},{col_idx + 1:02d}]" # indexed from reverse so subtract the row length
+                weight = f"{{{int(item[0]):05d}}}"
+                container = item[1] 
+                f.write(f"{index}, {weight}, {container}\n")
 
 def set_move_info(total_moves, total_minutes, current_move_number, current_move_from, current_move_to, estimated_time_for_move):
     """

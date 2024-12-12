@@ -52,6 +52,8 @@ def operations_screen(root, prev_frame):
     # place table in ship frame
     ship_table = Table(ship_frame, get_manifest(), truck_label)
 
+    print("ship table data: ", ship_table.data)
+
     #this is for balancing
     #----------------------------------------------------------------------------------------------
     if read_save_file("operation") == "balance":
