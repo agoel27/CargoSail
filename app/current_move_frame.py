@@ -43,11 +43,15 @@ class CurrentMoveFrame:
     # helper
     def store_weight(self, weight, container_name, row, col, table):
         if container_name == "":
+            print("skipping")
             return
-        table.data[row][col][0] = (int(weight), container_name)
+        print("storing weight")
+        table.data[row][col] = (int(weight.get()), container_name)
+        print(table.data)
 
     def finish_move(self, root, frame, table):
         # save the new manifest
+        print(table.data)
         write_manifest(table.data)
 
         if self.current_move_number == self.total_moves:
@@ -70,6 +74,7 @@ class CurrentMoveFrame:
         print("operation list currenet move: ", self.operations_list[current_move_number-1][0][1:-1].split(","))
 
         container_name = ""
+        input_field = None
         self.current_move_number = current_move_number
         set_move_info(self.total_moves, self.total_minutes, current_move_number, self.operations_list[current_move_number-1][0], self.operations_list[current_move_number-1][1], 7)
         # if origin is not truck so UNLOAD
@@ -126,11 +131,13 @@ class CurrentMoveFrame:
                     input_field.destroy()
                 elif child.winfo_name() == 'messgae':
                     message.destroy()
-            next_button = ttk.Button(move_info_frame, text="Next", style="Buttons.TButton", command=lambda: [self.create_current_move_frame(current_move_number+1, table, manifest_data_of_solution_path), 
-                                                                                                             save(current_move_number),
-                                                                                                             self.store_weight(input_field.get(), container_name, other_row, other_col, table)])
+            next_button = ttk.Button(move_info_frame, text="Next", style="Buttons.TButton", command=lambda: [self.store_weight(input_field, container_name, other_row, other_col, table),
+                                                                                                             self.create_current_move_frame(current_move_number+1, table, manifest_data_of_solution_path), 
+                                                                                                             save(current_move_number)])
         else:
-            next_button = ttk.Button(move_info_frame, text="Done", style="Buttons.TButton", command=lambda: [self.finish_move(self.root, self.frame, table), clear_save_file()])
+            next_button = ttk.Button(move_info_frame, text="Done", style="Buttons.TButton", command=lambda: [self.store_weight(input_field, container_name, other_row, other_col, table),
+                                                                                                             self.finish_move(self.root, self.frame, table), 
+                                                                                                             clear_save_file()])
         
         next_button.pack(side="bottom", pady=10)
         
