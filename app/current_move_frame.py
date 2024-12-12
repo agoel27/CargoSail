@@ -43,10 +43,9 @@ class CurrentMoveFrame:
         
     # helper
     def store_weight(self, weight, container_name, row, col, table):
-        if container_name == "":
-            print("skipping")
+        if container_name == "" or weight is None:
             return
-        print("storing weight")
+        
         table.data[row][col] = (int(weight.get()), container_name)
         print(table.data)
 
@@ -78,6 +77,7 @@ class CurrentMoveFrame:
         move_info_frame.place(anchor="c", relx=0.25, rely=0.4)
 
         container_name = ""
+        log_entry_string = ""
         input_field = None
         self.current_move_number = current_move_number
         set_move_info(self.total_moves, self.total_minutes, current_move_number, self.operations_list[current_move_number-1][0], self.operations_list[current_move_number-1][1], 7)
@@ -85,6 +85,9 @@ class CurrentMoveFrame:
         if(self.operations_list[current_move_number-1][0] != "[truck]"):
             spacer = ttk.Frame(move_info_frame, height=41)  # Height determines the blank space
             spacer.pack(side="top", pady=10)
+            
+            my_row, my_col = map(int, self.operations_list[current_move_number-1][0][1:-1].split(","))
+            container_name = manifest_data_of_solution_path[current_move_number-2][my_row][my_col][1]
 
             my_row, my_col = map(int, self.operations_list[current_move_number-1][0][1:-1].split(","))
         else:
@@ -92,12 +95,11 @@ class CurrentMoveFrame:
         # LOAD
         if(self.operations_list[current_move_number-1][1] != "[truck]") and (self.operations_list[current_move_number-1][0] == "[truck]"):
             other_row, other_col = map(int, self.operations_list[current_move_number-1][1][1:-1].split(","))
-            
-            add_logEntry("Container is onloaded.")
 
             # get the weight of the laod container
             # get the container name of the best move
             container_name = manifest_data_of_solution_path[current_move_number-1][other_row][other_col][1]
+            log_entry_string = container_name + ' is onloaded.'
         
             # message top of input field
             message = ttk.Label(move_info_frame, text=f'Enter {container_name} Weight: ')
@@ -109,8 +111,9 @@ class CurrentMoveFrame:
         elif(self.operations_list[current_move_number-1][1] != "[truck]") and (self.operations_list[current_move_number-1][0] != "[truck]"): # BALANCE
             other_row, other_col = map(int, self.operations_list[current_move_number-1][1][1:-1].split(","))
         else: # UNLOAD
-            add_logEntry("Container is offloaded.")
+            log_entry_string = container_name + ' is offloaded.'
             other_row, other_col = -1, -1
+        
         
         # UI cue
         table.start_flashing()
@@ -141,9 +144,9 @@ class CurrentMoveFrame:
                     message.destroy()
             next_button = ttk.Button(move_info_frame, text="Next", style="Buttons.TButton", command=lambda: [self.store_weight(input_field, container_name, other_row, other_col, table),
                                                                                                              self.create_current_move_frame(current_move_number+1, table, manifest_data_of_solution_path), 
-                                                                                                             save(current_move_number)])
+                                                                                                             save(current_move_number), add_logEntry(log_entry_string)])
         else:
-            next_button = ttk.Button(move_info_frame, text="Done", style="Buttons.TButton", command=lambda: [self.store_weight(input_field, container_name, other_row, other_col, table),
+            next_button = ttk.Button(move_info_frame, text="Done", style="Buttons.TButton", command=lambda: [add_logEntry(log_entry_string), self.store_weight(input_field, container_name, other_row, other_col, table),
                                                                                                              self.finish_move(self.root, self.frame, table), 
                                                                                                              clear_save_file()])
         

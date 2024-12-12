@@ -112,6 +112,9 @@ def get_move_info():
     return move_info
 
 def add_logEntry(message):
+    if message == '':
+        return
+    
     url = "http://worldtimeapi.org/api/timezone/America/Los_Angeles"
     
     response = requests.get(url)
