@@ -35,6 +35,8 @@ class CurrentMoveFrame:
     def is_number(self, input):
         if input == "": 
             return True
+        if len(input) > 5:
+            return False
         try:
             float(input) 
             return True

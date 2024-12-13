@@ -34,12 +34,12 @@
         <p>9) We would like to point out the following limitations: </p>
         <div>
           <ul class="list">
-              <li> We did not implement “recovery from a power outage”.</li>
-              <li> We did not implement checks for the container name, so a naïve user might type in “NAN” as a container name and we would accept it.</li>
-              <li> We did not implement duplicate name substitution. So, if there are duplicate named containers, and a user requests one of them, we will retrieve the one she asked for 
-                  literally, even if one of the duplicates would have been cheaper to retrieve. </li>
-              <li> If there are more than 30 containers to be offloaded, our program may hang or crash (but this never happens for less than 30 containers)</li>
-          </ui> 
+              <li> We did not implemented buffer area usage.</li>
+              <!-- <li> We implemented recovery from a power outage.</li>
+              <li> We implemented checks for container names so the user cannot enter "NAN", "UNUSED", or "" as a container name.</li>
+              <li> We implemented duplicate name substitution so that if the user inputs a duplicate container to be unloaded, it chooses the faster option. </li>
+              <li> If there are more than 30 containers to be offloaded, our program does not hang or crash.</li> -->
+          </ul> 
         </div>
         <p>10) Here is some additional items you may find useful in grading the project.
           Sources used:
