@@ -1,0 +1,24 @@
+
+2024-12-12 15:23	Bilal has signed in
+2024-12-12 15:23	Manifest SilverQueenOUTBOUND.txt opened, there are 4 containers on the ship.
+2024-12-12 15:23	Starting balance operation for the ship.
+2024-12-12 15:24	Finished the balance operation for the ship. Manifest 'SilverQueenOUTBOUND.txt' was written to desktop, and a reminder pop-up to operator to send file was displayed.
+2024-12-12 15:25	Manifest GoldQueenOUTBOUND.txt opened, there are 4 containers on the ship.
+2024-12-12 15:27	Catfish is offloaded.
+2024-12-12 15:28	The container is dented.
+2024-12-12 15:28	Jerry has signed in
+2024-12-12 15:28	Nat is onloaded.
+2024-12-12 15:28	Batons is offloaded.
+2024-12-12 15:28	Finished a cycle. Manifest 'GoldQueenOUTBOUND.txt' was written to desktop, and a reminder pop-up to operator to send file was displayed.
+2024-12-12 15:29	Manifest WalmartContainersOUTBOUND.txt opened, there are 11 containers on the ship.
+2024-12-12 15:30	Costco is onloaded.
+2024-12-12 15:30	Flying Squirrels is offloaded.
+2024-12-12 15:30	Honda is onloaded.
+2024-12-12 15:30	Cat is offloaded.
+2024-12-12 15:30	Toyota is onloaded.
+2024-12-12 15:31	Pig is offloaded.
+2024-12-12 15:31	Subaru is onloaded.
+2024-12-12 15:31	Dog is offloaded.
+2024-12-12 15:31	Lexus is onloaded.
+2024-12-12 15:31	Camel is offloaded.
+2024-12-12 15:31	Finished a cycle. Manifest 'WalmartContainersOUTBOUND.txt' was written to desktop, and a reminder pop-up to operator to send file was displayed.
