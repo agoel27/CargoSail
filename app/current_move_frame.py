@@ -79,9 +79,13 @@ class CurrentMoveFrame:
         log_entry_string = ""
         input_field = None
         self.current_move_number = current_move_number
-        set_move_info(self.total_moves, self.total_minutes, current_move_number, self.operations_list[current_move_number-1][0], self.operations_list[current_move_number-1][1], self.operations_list[current_move_number-1][2])
+        if self.operations_list:
+            set_move_info(self.total_moves, self.total_minutes, current_move_number, self.operations_list[current_move_number-1][0], self.operations_list[current_move_number-1][1], self.operations_list[current_move_number-1][2])
+        else:
+            set_move_info(self.total_moves, self.total_minutes, current_move_number, "N/A", "N/A", 0)
+
         # if origin is not truck so UNLOAD or balance
-        if(self.operations_list[current_move_number-1][0] != "[truck]"):
+        if(self.operations_list and self.operations_list[current_move_number-1][0] != "[truck]"):
             spacer = ttk.Frame(move_info_frame, height=41)  # Height determines the blank space
             spacer.pack(side="top", pady=10)
             
@@ -92,7 +96,7 @@ class CurrentMoveFrame:
         else:
             my_row, my_col = -1, -1
         # LOAD
-        if(self.operations_list[current_move_number-1][1] != "[truck]") and (self.operations_list[current_move_number-1][0] == "[truck]"):
+        if(self.operations_list and self.operations_list[current_move_number-1][1] != "[truck]") and (self.operations_list[current_move_number-1][0] == "[truck]"):
             other_row, other_col = map(int, self.operations_list[current_move_number-1][1][1:-1].split(","))
 
             # get the weight of the laod container
@@ -107,7 +111,7 @@ class CurrentMoveFrame:
             # input field
             input_field = ttk.Entry(move_info_frame, validate="key", validatecommand=(self.root.register(self.is_number), "%P"))
             input_field.pack(side="top", pady=10)
-        elif(self.operations_list[current_move_number-1][1] != "[truck]") and (self.operations_list[current_move_number-1][0] != "[truck]"): # BALANCE
+        elif(self.operations_list and self.operations_list[current_move_number-1][1] != "[truck]") and (self.operations_list[current_move_number-1][0] != "[truck]"): # BALANCE
             other_row, other_col = map(int, self.operations_list[current_move_number-1][1][1:-1].split(","))
         else: # UNLOAD
             log_entry_string = container_name + ' is offloaded.'
@@ -115,11 +119,13 @@ class CurrentMoveFrame:
         
         
         # UI cue
-        table.start_flashing()
-        table.flash_cells((my_row, my_col), (other_row, other_col))
+        if(self.operations_list):
+            table.start_flashing()
+            table.flash_cells((my_row, my_col), (other_row, other_col))
 
         # Update the table object
-        table.set_data(manifest_data_of_solution_path[current_move_number-1])
+        if(self.operations_list):
+            table.set_data(manifest_data_of_solution_path[current_move_number-1])
     
         # place label in current move frame
         info_label = ttk.Label(move_info_frame, text=get_move_info(), font=("Arial", 16), anchor="center", justify="center")
