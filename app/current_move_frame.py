@@ -47,7 +47,6 @@ class CurrentMoveFrame:
             return
         
         table.data[row][col] = (int(weight.get()), container_name)
-        print(table.data)
 
     def finish_move(self, root, frame, table):
         # save the new manifest

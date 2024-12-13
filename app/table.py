@@ -71,8 +71,6 @@ class Table:
         if len(new_data) == self.rows and len(new_data[0]) == self.columns:
             self.create_table()  # update table UI
             self.data = new_data
-        else:
-            print("Error: The data dimensions do not match the table size.")
 
     def change_cell(self, row, col, value):
         """
@@ -85,8 +83,6 @@ class Table:
         if 0 <= row < self.rows and 0 <= col < self.columns:
             self.data[row][col] = value
             self.create_table()  # update table UI
-        else:
-            print("Error: Invalid cell coordinates.")
 
     def show_hover_label(self, event, row, col):
         """

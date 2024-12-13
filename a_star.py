@@ -38,24 +38,6 @@ def calc_hueristic_cost(node, containers_to_unload, containers_to_load_count, co
     if cur_operation == 'Unload' and col == 0:
         h -= 100
         
-    # if containers_to_load_count > 0 and cur_operation == 'Load':
-    #     row, col = move_coord
-    #     valid_row = row_idx_of_top_container[col]
-        
-    #     container_below_needs_unloading = False
-    #     for row_below in range(valid_row, len(node.state)):  # Check rows below the current valid_row
-    #         below_container = node.state[row_below][col]
-    #         for container in containers_to_unload:
-    #             if below_container[0] == container[0] and below_container[1] == container[1]:
-    #                 container_below_needs_unloading = True
-    #                 break
-    #         if container_below_needs_unloading:
-    #             break
-            
-    #     if container_below_needs_unloading:
-    #         h += 1000
-        
-    
     if cur_operation == 'Move':
         row, col = move_coord
         
@@ -163,9 +145,6 @@ class Node:
         for child in children:
             self.children.append(child)
             child.parent = self
-
-    
-    
 
     
 def expand(node, containers_to_load,containers_to_unload,explored_states):
@@ -330,7 +309,6 @@ def load_manifest(file_path):
     return matrix
 
 
-
 def move_container(current_state, myRow, myCol, otherRow, otherCol):
     """
     Move the container from (myRow, myCol) to (otherRow, otherCol)
@@ -350,17 +328,6 @@ def unload_container(state,row,col):
     copy_state[row][col] = (0,"UNUSED")
     return copy_state
 
-#def a_star(problem,queueing_func):
-    #nodes = makeQueue(Node(problem.initial_state))
-    #loop do
-    #if empty(nodes) then return fail
-        #node = removeFront(nodes)
-    #if goal_test(node.state) succeeds return node
-        #nodes = queueing_function(nodes,expand(node,problem.operators))
-    #end
-
-    
-
 def a_star_load_unload(cargo,containers_to_load,containers_to_unload):
     nodes = priorityQueue()
     initial_node = Node(cargo,containers_to_load,containers_to_unload)
@@ -371,10 +338,7 @@ def a_star_load_unload(cargo,containers_to_load,containers_to_unload):
     while(nodes):
         current_node = nodes.pop()
         if goal_test(current_node.load_list, current_node.unload_list ,current_node.state):
-            print("Goal reached! all the containers have been loaded/unloaded")
             return current_node
-        else:
-            print("not the goal node, expanding child node")
         children = expand(current_node,current_node.load_list,current_node.unload_list,explored_states)
         for child in children:
             explored_states.add(tuple(map(tuple,child.state)))
@@ -386,8 +350,6 @@ def get_operations_info(solution_node):
     operations_list = []
     manifest_list = []
 
-    print("--------------------------------------------------")
-    print("\nSolution Path:\n")
     for _ in range(len(solution_path)):
         current_node = solution_path.pop()
         operation_info = current_node.get_operation_info()
@@ -411,22 +373,7 @@ def main():
     unload = []
     goal_node = a_star_load_unload(cargo_matrix,load,unload)
     output_matrix(goal_node.state)
-   
-    print(get_operations_info(goal_node))
-   
-    
-
-    
 
 
-    
-    
-    
-    
-
-  
-    
-    
-    
 if __name__ == "__main__": 
     main()
